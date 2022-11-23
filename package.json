@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "build": "webpack --mode=production",
     "lint": "eslint './src/**/*.{ts,tsx}' --fix",
-    "format-code": "prettier --write \"./src/**/**.{ts,tsx}\""
+    "format-code": "prettier --write './src/**/**.{ts,tsx}'"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "@hosonokotaro/eslint-rules": "^0.1.0",
     "@hosonokotaro/prettier-format": "^0.1.7",
     "@types/copy-webpack-plugin": "^8.0.1",
+    "@types/node": "^18.11.9",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
     "@types/webpack-env": "^1.16.2",
