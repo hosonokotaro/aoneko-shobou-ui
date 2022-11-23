@@ -1,17 +1,16 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
-import webpack, { Configuration as WebpackConfiguration } from 'webpack';
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import path from 'path'
+import webpack, { Configuration as WebpackConfiguration } from 'webpack'
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
 
 interface Configuration extends WebpackConfiguration {
-  devServer?: WebpackDevServerConfiguration;
+  devServer?: WebpackDevServerConfiguration
 }
 
 let pluginsConfig: Configuration['plugins'] = [
-  new webpack.HotModuleReplacementPlugin(),
   new HTMLWebpackPlugin({ template: './src/index.html' }),
   new CleanWebpackPlugin(),
   new CopyWebpackPlugin({
@@ -34,10 +33,14 @@ let pluginsConfig: Configuration['plugins'] = [
       files: './src/**/*.{ts,tsx,js,jsx}',
     },
   }),
-];
+]
 
 if (process.env.WEBPACK_SERVE) {
-  pluginsConfig = [...pluginsConfig, new webpack.SourceMapDevToolPlugin({})];
+  pluginsConfig = [
+    ...pluginsConfig,
+    new webpack.SourceMapDevToolPlugin({}),
+    new webpack.HotModuleReplacementPlugin(),
+  ]
 }
 
 const config: Configuration = {
@@ -54,10 +57,7 @@ const config: Configuration = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/env'],
-          },
+          loader: 'ts-loader',
         },
       },
       {
@@ -86,6 +86,6 @@ const config: Configuration = {
   },
   devtool: false,
   plugins: pluginsConfig,
-};
+}
 
-export default config;
+export default config
