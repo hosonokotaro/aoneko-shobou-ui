@@ -1,8 +1,8 @@
-import './App.css';
+import './App.css'
 
-import React from 'react';
+import React from 'react'
 
-import Message from '@/Message';
+import Message from '@/Message'
 
 const App: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <h1>Hello, App.</h1>
       <Message text="メッセージをprops で渡す？" no={10} />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

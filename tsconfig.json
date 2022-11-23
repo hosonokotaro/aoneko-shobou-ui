@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/components/*"],
+      "@/*": ["src/components/*"]
     }
   },
   "include": ["./src", "./types/**/*.d.ts"]

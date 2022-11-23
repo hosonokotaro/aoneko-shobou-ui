@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 interface Props {
-  text: string;
-  no: number;
+  text: string
+  no: number
 }
 
 const Message: React.FC<Props> = ({ text, no }) => {
@@ -12,7 +12,7 @@ const Message: React.FC<Props> = ({ text, no }) => {
         {text} {no}
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message
