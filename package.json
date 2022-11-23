@@ -1,7 +1,6 @@
 {
-  "name": "react-typescript-starter",
-  "version": "1.1.0",
-  "private": true,
+  "name": "@hosonokotaro/aoneko-shobou-ui",
+  "version": "0.1.0",
   "description": "",
   "main": "",
   "scripts": {
@@ -10,8 +9,19 @@
     "lint": "eslint './**/*.{ts,tsx}' --fix",
     "prettier-format": "prettier --config .prettierrc './**/*.{ts,tsx}' --write"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hosonokotaro/aoneko-shobou-ui.git"
+  },
   "author": "",
-  "license": "MIT",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/hosonokotaro/aoneko-shobou-ui/issues"
+  },
+  "homepage": "https://github.com/hosonokotaro/aoneko-shobou-ui#readme",
+  "publishConfig": {
+    "@hosonokotaro:registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
