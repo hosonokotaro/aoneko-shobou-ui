@@ -7,7 +7,8 @@
     "start": "webpack serve",
     "build": "webpack --mode=production",
     "lint": "eslint './src/**/*.{ts,tsx}' --fix",
-    "format-code": "prettier --write './src/**/**.{ts,tsx}'"
+    "format-code": "prettier --write './src/**/**.{ts,tsx}'",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
