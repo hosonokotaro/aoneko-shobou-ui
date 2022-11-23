@@ -2,7 +2,7 @@ import './App.css'
 
 import React from 'react'
 
-import Message from '@/Message'
+import Message from '@/atoms/Message'
 
 const App: React.FC = () => {
   return (
