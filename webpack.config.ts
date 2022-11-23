@@ -10,6 +10,36 @@ interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
 }
 
+let pluginsConfig: Configuration['plugins'] = [
+  new webpack.HotModuleReplacementPlugin(),
+  new HTMLWebpackPlugin({ template: './src/index.html' }),
+  new CleanWebpackPlugin(),
+  new CopyWebpackPlugin({
+    patterns: [
+      {
+        from: '**/*',
+        context: 'public/',
+        noErrorOnMissing: true,
+      },
+    ],
+  }),
+  new ForkTsCheckerWebpackPlugin({
+    typescript: {
+      diagnosticOptions: {
+        semantic: true,
+        syntactic: true,
+      },
+    },
+    eslint: {
+      files: './src/**/*.{ts,tsx,js,jsx}',
+    },
+  }),
+];
+
+if (process.env.WEBPACK_SERVE) {
+  pluginsConfig = [...pluginsConfig, new webpack.SourceMapDevToolPlugin({})];
+}
+
 const config: Configuration = {
   mode: 'development',
   entry: ['./src/index.tsx'],
@@ -43,41 +73,19 @@ const config: Configuration = {
     },
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public/'),
     port: 3000,
-    hotOnly: true,
+    hot: 'only',
     historyApiFallback: true,
-    watchOptions: {
-      poll: 1000,
-      ignored: ['node_modules'],
+    static: {
+      directory: path.join(__dirname, 'public/'),
+      watch: {
+        poll: 1000,
+        ignored: ['node_modules'],
+      },
     },
   },
-  devtool: 'source-map',
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new HTMLWebpackPlugin({ template: './src/index.html' }),
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: '**/*',
-          context: 'public/',
-          noErrorOnMissing: true,
-        },
-      ],
-    }),
-    new ForkTsCheckerWebpackPlugin({
-      typescript: {
-        diagnosticOptions: {
-          semantic: true,
-          syntactic: true,
-        },
-      },
-      eslint: {
-        files: './src/**/*.{ts,tsx,js,jsx}',
-      },
-    }),
-  ],
+  devtool: false,
+  plugins: pluginsConfig,
 };
 
 export default config;

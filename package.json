@@ -9,7 +9,7 @@
     "lint": "eslint './**/*.{ts,tsx}' --fix",
     "prettier-format": "prettier --config .prettierrc './**/*.{ts,tsx}' --write"
   },
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/hosonokotaro/aoneko-shobou-ui.git"
   },
@@ -31,7 +31,6 @@
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
-    "@types/webpack-dev-server": "^3.11.5",
     "@types/webpack-env": "^1.16.2",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
@@ -52,9 +51,9 @@
     "style-loader": "^3.2.1",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5",
-    "webpack": "^5.50.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "core-js": "^3.16.1",
