@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
-    "@hosonokotaro/eslint-rules": "^0.1.0",
+    "@hosonokotaro/eslint-rules": "^0.1.1",
     "@hosonokotaro/prettier-format": "^0.1.7",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
