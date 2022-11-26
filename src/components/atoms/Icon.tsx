@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 import Info from '@/atoms/IconSvg/SvgInfo'
@@ -23,7 +22,7 @@ type Props = {
   fillColor: FillColor
 }
 
-const Icon: React.FC<Props> = ({ iconName, fillColor }) => {
+const Icon = ({ iconName, fillColor }: Props) => {
   return (
     <StyledIcon>
       {iconName === ICON_NAME.INFO && <StyledInfo $fillColor={fillColor} />}
