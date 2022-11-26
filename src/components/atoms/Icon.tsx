@@ -3,7 +3,20 @@ import styled from 'styled-components'
 
 import Info from '@/atoms/IconSvg/SvgInfo'
 
-type IconName = 'Info'
+export const ICON_NAME = {
+  INFO: 'info',
+} as const
+
+type IconName = typeof ICON_NAME[keyof typeof ICON_NAME]
+
+export const FILL_COLOR = {
+  DEFAULT: 'default',
+  LINK: 'link',
+  ATTENTION: 'attention',
+  ERROR: 'error',
+} as const
+
+type FillColor = typeof FILL_COLOR[keyof typeof FILL_COLOR]
 
 type Props = {
   iconName: IconName
@@ -13,7 +26,7 @@ type Props = {
 const Icon: React.FC<Props> = ({ iconName, fillColor }) => {
   return (
     <StyledIcon>
-      {iconName === 'Info' && <StyledInfo $fillColor={fillColor} />}
+      {iconName === ICON_NAME.INFO && <StyledInfo $fillColor={fillColor} />}
     </StyledIcon>
   )
 }
@@ -25,8 +38,6 @@ const StyledIcon = styled.i`
   line-height: 1;
 `
 
-type FillColor = 'default' | 'link' | 'attention' | 'error'
-
 /* NOTE: Property を追加する例として引数を残します */
 export const StyledInfo = styled(Info)<{
   $fillColor: FillColor
@@ -35,7 +46,7 @@ export const StyledInfo = styled(Info)<{
 
   ${({ $fillColor }) => {
     switch ($fillColor) {
-      case 'attention':
+      case FILL_COLOR.ATTENTION:
         return `fill: #a370d3;`
       default:
         return `fill: #000;`
