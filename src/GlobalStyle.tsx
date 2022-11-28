@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     appearance: none;
   }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 export default GlobalStyle

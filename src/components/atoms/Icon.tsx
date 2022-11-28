@@ -41,21 +41,18 @@ const Icon = ({ iconKind, fillColor, size }: Props) => {
 export default Icon
 
 const StyledIcon = styled.i`
-  display: inline-block;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 `
 
-/* NOTE: Property を追加する例として引数を残します */
 export const StyledInfo = styled(Info)<{
   $fillColor: Color
 }>`
-  vertical-align: middle;
   ${({ $fillColor }) => `fill: ${COLOR[$fillColor]};`}
 `
 
 export const StyledOpenInNew = styled(OpenInNew)<{
   $fillColor: Color
 }>`
-  vertical-align: middle;
   ${({ $fillColor }) => `fill: ${COLOR[$fillColor]};`}
 `
