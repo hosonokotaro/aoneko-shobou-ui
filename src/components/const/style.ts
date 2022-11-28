@@ -3,6 +3,7 @@ export const COLOR = {
   CAUTION: '#ff8897',
   LIGHT_GRAY: '#efefef',
   LINK: '#6fb2f5',
+  LINK_HOVER: '#4084c7',
   TITLE: '#a370d3',
   WHITE: '#fff',
 } as const
@@ -19,6 +20,7 @@ export const BUTTON_COLOR = {
 export type ButtonColor = keyof typeof BUTTON_COLOR
 
 export const FONT_SIZE = {
+  XXL: '2rem',
   XL: '1.6rem',
   L: '1.2rem',
   M: '1rem',
@@ -43,3 +45,5 @@ export const MARGIN = {
 } as const
 
 export type Margin = keyof typeof MARGIN
+
+export const TRANSITION_TIME = '0.25s ease'
