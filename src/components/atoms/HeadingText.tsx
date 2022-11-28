@@ -42,6 +42,7 @@ const StyledSectionTitle = styled.h2`
   padding-left: 8px;
   border-left: 2px solid ${COLOR.TITLE};
   font-size: ${FONT_SIZE.L};
+  font-weight: ${FONT_WEIGHT.NORMAL};
   color: ${COLOR.TITLE};
 `
 
