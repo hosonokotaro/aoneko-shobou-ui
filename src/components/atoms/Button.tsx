@@ -5,15 +5,23 @@ import { BUTTON_COLOR, ButtonColor, COLOR, FONT_SIZE } from '../const/style'
 type Props = {
   text: string
   buttonColor: ButtonColor
+  isSeeMore: boolean
 }
 
-const Button = ({ text, buttonColor }: Props) => {
-  return <StyledButton $buttonColor={buttonColor}>{text}</StyledButton>
+const Button = ({ text, buttonColor, isSeeMore }: Props) => {
+  return (
+    <StyledButton $buttonColor={buttonColor} $isSeeMore={isSeeMore}>
+      {text}
+    </StyledButton>
+  )
 }
 
 export default Button
 
-const StyledButton = Styled.button<{ $buttonColor: ButtonColor }>`
+const StyledButton = Styled.button<{
+  $buttonColor: ButtonColor
+  $isSeeMore: boolean
+}>`
   display: block;
   width: 100%;
   height: 40px;
@@ -25,6 +33,15 @@ const StyledButton = Styled.button<{ $buttonColor: ButtonColor }>`
   transition: background 0.25s ease;
 
   ${({ $buttonColor }) => `background: ${BUTTON_COLOR[$buttonColor]};`}
+
+  ${({ $isSeeMore }) =>
+    $isSeeMore &&
+    `
+      &::before {
+        margin-right: 12px;
+        content: ">";
+      }
+    `}
 
   @media (any-hover: hover) {
     &:hover {
