@@ -1,6 +1,7 @@
 export const COLOR = {
   ATTENTION: '#a370d3',
   CAUTION: '#ff8897',
+  LIGHT_GRAY: '#efefef',
   LINK: '#6fb2f5',
   TITLE: '#a370d3',
   WHITE: '#fff',
@@ -32,3 +33,13 @@ export const FONT_WEIGHT = {
 } as const
 
 export type FontWeight = keyof typeof FONT_WEIGHT
+
+export const MARGIN = {
+  XL: '20px',
+  L: '16px',
+  M: '12px',
+  S: '8px',
+  XS: '4px',
+} as const
+
+export type Margin = keyof typeof MARGIN

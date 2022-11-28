@@ -1,6 +1,12 @@
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
-import { BUTTON_COLOR, ButtonColor, COLOR, FONT_SIZE } from '../const/style'
+import {
+  BUTTON_COLOR,
+  ButtonColor,
+  COLOR,
+  FONT_SIZE,
+  MARGIN,
+} from '../const/style'
 
 type Props = {
   text: string
@@ -18,7 +24,7 @@ const Button = ({ text, buttonColor, isSeeMore }: Props) => {
 
 export default Button
 
-const StyledButton = Styled.button<{
+const StyledButton = styled.button<{
   $buttonColor: ButtonColor
   $isSeeMore: boolean
 }>`
@@ -38,7 +44,7 @@ const StyledButton = Styled.button<{
     $isSeeMore &&
     `
       &::before {
-        margin-right: 12px;
+        margin-right: ${MARGIN.M};
         content: ">";
       }
     `}
