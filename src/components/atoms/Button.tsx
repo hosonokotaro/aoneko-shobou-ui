@@ -6,6 +6,7 @@ import {
   COLOR,
   FONT_SIZE,
   MARGIN,
+  TRANSITION_TIME,
 } from '../const/style'
 
 type Props = {
@@ -36,7 +37,7 @@ const StyledButton = styled.button<{
   border-radius: 3px;
   color: ${COLOR.WHITE};
   text-shadow: 0 0 5px rgb(0 0 0 / 50%);
-  transition: background 0.25s ease;
+  transition: background ${TRANSITION_TIME};
 
   ${({ $buttonColor }) => `background: ${BUTTON_COLOR[$buttonColor]};`}
 
