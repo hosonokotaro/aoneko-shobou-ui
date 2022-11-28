@@ -18,21 +18,34 @@ type Props = {
 const HeadingText = ({ text, kind }: Props) => {
   return (
     <>
-      {kind === HEADING_KIND.PAGE_TITLE && <h1>{text}</h1>}
-      {kind === HEADING_KIND.SECTION_TITLE && (
-        <StyledHeadingTextH2>{text}</StyledHeadingTextH2>
+      {kind === HEADING_KIND.PAGE_TITLE && (
+        <StyledPageTitle>{text}</StyledPageTitle>
       )}
-      {kind === HEADING_KIND.SUBTITLE && <h3>{text}</h3>}
+      {kind === HEADING_KIND.SECTION_TITLE && (
+        <StyledSectionTitle>{text}</StyledSectionTitle>
+      )}
+      {kind === HEADING_KIND.SUBTITLE && (
+        <StyledSubTitle>{text}</StyledSubTitle>
+      )}
     </>
   )
 }
 
 export default HeadingText
 
-const StyledHeadingTextH2 = styled.h2`
-  padding-left: 8px;
-  border-left: 2px solid ${COLOR.TITLE};
+const StyledPageTitle = styled.h1`
   font-size: ${FONT_SIZE.XL};
   color: ${COLOR.TITLE};
-  font-weight: ${FONT_WEIGHT.NORMAL};
+`
+
+const StyledSectionTitle = styled.h2`
+  padding-left: 8px;
+  border-left: 2px solid ${COLOR.TITLE};
+  font-size: ${FONT_SIZE.L};
+  color: ${COLOR.TITLE};
+`
+
+const StyledSubTitle = styled.h3`
+  font-size: ${FONT_SIZE.M};
+  color: ${COLOR.TITLE};
 `
