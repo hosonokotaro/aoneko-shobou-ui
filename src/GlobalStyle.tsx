@@ -16,6 +16,15 @@ const GlobalStyle = createGlobalStyle`
     /* NOTE: 設定する rem は 1 (87.5% === 14px) から相対的な値を設定する */
     font-size: 87.5%;
   }
+
+  button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+  }
 `
 
 export default GlobalStyle
