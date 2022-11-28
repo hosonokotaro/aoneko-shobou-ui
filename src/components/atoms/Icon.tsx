@@ -1,31 +1,23 @@
 import styled from 'styled-components'
 
 import Info from '@/atoms/IconSvg/SvgInfo'
+import { COLOR, Color } from '@/const/style'
 
-export const ICON_NAME = {
-  INFO: 'info',
+export const ICON_KIND = {
+  INFO: 'INFO',
 } as const
 
-type IconName = typeof ICON_NAME[keyof typeof ICON_NAME]
-
-export const FILL_COLOR = {
-  DEFAULT: 'default',
-  LINK: 'link',
-  ATTENTION: 'attention',
-  ERROR: 'error',
-} as const
-
-type FillColor = typeof FILL_COLOR[keyof typeof FILL_COLOR]
+type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]
 
 type Props = {
-  iconName: IconName
-  fillColor: FillColor
+  iconKind: IconKind
+  fillColor: Color
 }
 
-const Icon = ({ iconName, fillColor }: Props) => {
+const Icon = ({ iconKind, fillColor }: Props) => {
   return (
     <StyledIcon>
-      {iconName === ICON_NAME.INFO && <StyledInfo $fillColor={fillColor} />}
+      {iconKind === ICON_KIND.INFO && <StyledInfo $fillColor={fillColor} />}
     </StyledIcon>
   )
 }
@@ -39,16 +31,8 @@ const StyledIcon = styled.i`
 
 /* NOTE: Property を追加する例として引数を残します */
 export const StyledInfo = styled(Info)<{
-  $fillColor: FillColor
+  $fillColor: Color
 }>`
   vertical-align: middle;
-
-  ${({ $fillColor }) => {
-    switch ($fillColor) {
-      case FILL_COLOR.ATTENTION:
-        return `fill: #a370d3;`
-      default:
-        return `fill: #000;`
-    }
-  }}
+  ${({ $fillColor }) => `fill: ${COLOR[$fillColor]};`}
 `
