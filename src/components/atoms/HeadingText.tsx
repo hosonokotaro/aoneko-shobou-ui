@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { COLOR, FONT_SIZE, FONT_WEIGHT } from '@/const/style'
+import { COLOR, FONT_WEIGHT, INLINE_SIZE } from '@/const/style'
 
 export const HEADING_KIND = {
   PAGE_TITLE: 'PAGE_TITLE',
@@ -34,19 +34,21 @@ const HeadingText = ({ text, kind }: Props) => {
 export default HeadingText
 
 const StyledPageTitle = styled.h1`
-  font-size: ${FONT_SIZE.XL};
+  font-size: ${INLINE_SIZE.XXL};
+  font-weight: ${FONT_WEIGHT.NORMAL};
   color: ${COLOR.TITLE};
 `
 
 const StyledSectionTitle = styled.h2`
   padding-left: 8px;
   border-left: 2px solid ${COLOR.TITLE};
-  font-size: ${FONT_SIZE.L};
+  font-size: ${INLINE_SIZE.XL};
   font-weight: ${FONT_WEIGHT.NORMAL};
   color: ${COLOR.TITLE};
 `
 
 const StyledSubTitle = styled.h3`
-  font-size: ${FONT_SIZE.M};
+  font-size: ${INLINE_SIZE.L};
+  font-weight: ${FONT_WEIGHT.NORMAL};
   color: ${COLOR.TITLE};
 `

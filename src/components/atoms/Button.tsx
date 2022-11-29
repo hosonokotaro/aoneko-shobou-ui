@@ -4,7 +4,7 @@ import {
   BUTTON_COLOR,
   ButtonColor,
   COLOR,
-  FONT_SIZE,
+  INLINE_SIZE,
   MARGIN,
   TRANSITION_TIME,
 } from '../const/style'
@@ -33,7 +33,7 @@ const StyledButton = styled.button<{
   width: 100%;
   height: 40px;
   text-align: center;
-  font-size: ${FONT_SIZE.L};
+  font-size: ${INLINE_SIZE.L};
   border-radius: 3px;
   color: ${COLOR.WHITE};
   text-shadow: 0 0 5px rgb(0 0 0 / 50%);

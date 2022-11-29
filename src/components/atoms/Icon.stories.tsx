@@ -13,4 +13,5 @@ export const Info = Template.bind({})
 Info.args = {
   iconKind: ICON_KIND.INFO,
   fillColor: 'ATTENTION',
+  size: 'XXL',
 }

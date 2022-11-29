@@ -19,7 +19,7 @@ export const BUTTON_COLOR = {
 
 export type ButtonColor = keyof typeof BUTTON_COLOR
 
-export const FONT_SIZE = {
+export const INLINE_SIZE = {
   XXL: '2rem',
   XL: '1.6rem',
   L: '1.2rem',
@@ -27,11 +27,11 @@ export const FONT_SIZE = {
   S: '0.9rem',
 } as const
 
-export type FontSize = keyof typeof FONT_SIZE
+export type InlineSize = keyof typeof INLINE_SIZE
 
 export const FONT_WEIGHT = {
-  BOLD: 'bold',
-  NORMAL: 'normal',
+  BOLD: '600',
+  NORMAL: '300',
 } as const
 
 export type FontWeight = keyof typeof FONT_WEIGHT
