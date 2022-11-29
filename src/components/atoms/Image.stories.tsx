@@ -1,13 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Photo from '@/atoms/Photo'
+import Image from '@/atoms/Image'
 
 export default {
-  title: 'atoms/Photo',
-  component: Photo,
-} as ComponentMeta<typeof Photo>
+  title: 'atoms/Image',
+  component: Image,
+} as ComponentMeta<typeof Image>
 
-const Template: ComponentStory<typeof Photo> = (args) => <Photo {...args} />
+const Template: ComponentStory<typeof Image> = (args) => <Image {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
