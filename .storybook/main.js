@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
   core: {
@@ -17,6 +18,7 @@ module.exports = {
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
+      '~': path.resolve(__dirname, '../src/'),
       '@': path.resolve(__dirname, '../src/components/'),
     }
 

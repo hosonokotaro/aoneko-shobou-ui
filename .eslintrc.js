@@ -12,4 +12,9 @@ module.exports = {
     'plugin:storybook/recommended',
     'prettier',
   ],
+  rules: {
+    ...eslintRules.rules,
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+  },
 }

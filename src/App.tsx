@@ -1,15 +1,11 @@
-import './App.css'
+import GlobalStyle from '~/GlobalStyle'
 
-import React from 'react'
-
-import Message from '@/Message'
-
-const App: React.FC = () => {
+const App = () => {
   return (
-    <div className="App">
+    <>
+      <GlobalStyle />
       <h1>Hello, App.</h1>
-      <Message text="メッセージをprops で渡す？" no={10} />
-    </div>
+    </>
   )
 }
 

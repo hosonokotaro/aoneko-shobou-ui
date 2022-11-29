@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "target": "ES6",
     "moduleResolution": "node",
     "allowJs": true,
@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
+      "~/*": ["src/*"],
       "@/*": ["src/components/*"]
     }
   },

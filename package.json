@@ -10,7 +10,8 @@
     "format-code": "prettier --write './src/**/**.{ts,tsx}'",
     "test": "npm run lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@hosonokotaro/eslint-rules": "^0.1.1",
     "@hosonokotaro/prettier-format": "^0.1.7",
+    "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -36,10 +38,12 @@
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/cli": "^6.5.1",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/node": "^18.11.9",
     "@types/react": "^17.0.52",
-    "@types/react-dom": "^17.0.9",
+    "@types/react-dom": "^17.0.18",
+    "@types/styled-components": "^5.1.26",
     "@types/webpack-env": "^1.16.2",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
@@ -64,8 +68,9 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.6"
   },
   "overrides": {
     "enhanced-resolve": "5.10.0"
