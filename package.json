@@ -10,7 +10,8 @@
     "format-code": "prettier --write './src/**/**.{ts,tsx}'",
     "test": "npm run lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/cli": "^6.5.1",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/node": "^18.11.9",
     "@types/react": "^17.0.52",
