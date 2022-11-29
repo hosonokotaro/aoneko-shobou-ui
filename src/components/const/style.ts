@@ -2,6 +2,7 @@
 export const BASE_COLOR = {
   ATTENTION: '#a370d3',
   CAUTION: '#ff8897',
+  CAPTION: '#999',
   INFORMATION: '#5d7fb3',
   LIGHT_GRAY: '#efefef',
   LINK: '#4a90d6',
@@ -25,6 +26,8 @@ export type ButtonBackgroundColor = keyof typeof BUTTON_BACKGROUND_COLOR
 
 // NOTE: FONT_COLOR は fill などと設定を共有する場合がある
 export const FONT_COLOR = {
+  CAPTION: BASE_COLOR.CAPTION,
+  CAUTION: BASE_COLOR.CAUTION,
   LINK: BASE_COLOR.LINK,
   LINK_HOVER: BASE_COLOR.LINK_HOVER,
   TITLE: BASE_COLOR.TITLE,
@@ -67,5 +70,11 @@ export const MARGIN = {
 
 export type Margin = keyof typeof MARGIN
 
+export const BORDER_RADIUS = {
+  M: '6px',
+  S: '3px',
+} as const
+
+export type BorderRadius = keyof typeof BORDER_RADIUS
+
 export const TRANSITION_TIME = '0.25s ease'
-export const BORDER_RADIUS = '3px'

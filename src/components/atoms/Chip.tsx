@@ -16,7 +16,7 @@ export default Chip
 const StyledChip = styled.span<{ $status: ChipColor }>`
   display: inline-block;
   padding: 2px 8px;
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${BORDER_RADIUS.S};
   background-color: ${({ $status }) => CHIP_COLOR[$status]};
   color: ${FONT_COLOR.WHITE};
 `

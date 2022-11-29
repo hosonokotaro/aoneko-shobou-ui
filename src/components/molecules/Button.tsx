@@ -37,7 +37,7 @@ const StyledButton = styled.button<{
   align-items: center;
   padding: 8px 16px;
   font-size: ${INLINE_SIZE.L};
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${BORDER_RADIUS.S};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};
 
