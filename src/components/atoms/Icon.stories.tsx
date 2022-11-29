@@ -15,3 +15,10 @@ Info.args = {
   fillColor: 'TITLE',
   size: 'XXL',
 }
+
+export const OpenInNew = Template.bind({})
+OpenInNew.args = {
+  iconKind: ICON_KIND.OPEN_IN_NEW,
+  fillColor: 'LINK',
+  size: 'XXL',
+}

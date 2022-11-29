@@ -33,6 +33,13 @@ export const FONT_COLOR = {
 
 export type FontColor = keyof typeof FONT_COLOR
 
+export const CHIP_COLOR = {
+  DEFAULT: BASE_COLOR.INFORMATION,
+  CAUTION: BASE_COLOR.CAUTION,
+} as const
+
+export type ChipColor = keyof typeof CHIP_COLOR
+
 export const INLINE_SIZE = {
   XXL: '2rem',
   XL: '1.6rem',
