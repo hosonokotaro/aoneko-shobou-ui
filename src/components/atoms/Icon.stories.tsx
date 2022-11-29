@@ -12,6 +12,6 @@ const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
 export const Info = Template.bind({})
 Info.args = {
   iconKind: ICON_KIND.INFO,
-  fillColor: 'ATTENTION',
+  fillColor: 'TITLE',
   size: 'XXL',
 }
