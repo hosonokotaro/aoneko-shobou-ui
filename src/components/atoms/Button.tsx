@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 import {
-  BUTTON_COLOR,
-  ButtonColor,
-  COLOR,
+  BUTTON_BACKGROUND_COLOR,
+  ButtonBackgroundColor,
+  FONT_COLOR,
   INLINE_SIZE,
   MARGIN,
   TRANSITION_TIME,
-} from '../const/style'
+} from '@/const/style'
 
 type Props = {
   text: string
-  buttonColor: ButtonColor
+  buttonColor: ButtonBackgroundColor
   isSeeMore: boolean
 }
 
@@ -26,7 +26,7 @@ const Button = ({ text, buttonColor, isSeeMore }: Props) => {
 export default Button
 
 const StyledButton = styled.button<{
-  $buttonColor: ButtonColor
+  $buttonColor: ButtonBackgroundColor
   $isSeeMore: boolean
 }>`
   display: block;
@@ -35,11 +35,12 @@ const StyledButton = styled.button<{
   text-align: center;
   font-size: ${INLINE_SIZE.L};
   border-radius: 3px;
-  color: ${COLOR.WHITE};
+  color: ${FONT_COLOR.WHITE};
   text-shadow: 0 0 5px rgb(0 0 0 / 50%);
   transition: background ${TRANSITION_TIME};
 
-  ${({ $buttonColor }) => `background: ${BUTTON_COLOR[$buttonColor]};`}
+  ${({ $buttonColor }) =>
+    `background: ${BUTTON_BACKGROUND_COLOR[$buttonColor]};`}
 
   ${({ $isSeeMore }) =>
     $isSeeMore &&
@@ -54,11 +55,11 @@ const StyledButton = styled.button<{
     &:hover {
       ${({ $buttonColor }) => {
         if ($buttonColor === 'DEFAULT') {
-          return `background: ${BUTTON_COLOR.DEFAULT_HOVER};`
+          return `background: ${BUTTON_BACKGROUND_COLOR.DEFAULT_HOVER};`
         }
 
         if ($buttonColor === 'EXTERNAL') {
-          return `background: ${BUTTON_COLOR.EXTERNAL_HOVER};`
+          return `background: ${BUTTON_BACKGROUND_COLOR.EXTERNAL_HOVER};`
         }
       }}
     }

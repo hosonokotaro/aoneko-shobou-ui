@@ -1,23 +1,37 @@
-export const COLOR = {
+// NOTE: BASE_COLOR を直接使うのは最後の手段で、取り急ぎ使う場合は利用箇所で TODO コメントを残してリファクタリングを検討すること
+export const BASE_COLOR = {
   ATTENTION: '#a370d3',
   CAUTION: '#ff8897',
+  INFORMATION: '#5d7fb3',
   LIGHT_GRAY: '#efefef',
   LINK: '#6fb2f5',
   LINK_HOVER: '#4084c7',
+  LINK_EXTERNAL: '#cac74e',
+  LINK_EXTERNAL_HOVER: '#969448',
   TITLE: '#a370d3',
   WHITE: '#fff',
 } as const
 
-export type Color = keyof typeof COLOR
+export type BaseColor = keyof typeof BASE_COLOR
 
-export const BUTTON_COLOR = {
-  DEFAULT: '#6fb2f5',
-  DEFAULT_HOVER: '#4084c7',
-  EXTERNAL: '#cac74e',
-  EXTERNAL_HOVER: '#969448',
+export const BUTTON_BACKGROUND_COLOR = {
+  DEFAULT: BASE_COLOR.LINK,
+  DEFAULT_HOVER: BASE_COLOR.LINK_HOVER,
+  EXTERNAL: BASE_COLOR.LINK_EXTERNAL,
+  EXTERNAL_HOVER: BASE_COLOR.LINK_EXTERNAL_HOVER,
 } as const
 
-export type ButtonColor = keyof typeof BUTTON_COLOR
+export type ButtonBackgroundColor = keyof typeof BUTTON_BACKGROUND_COLOR
+
+// NOTE: FONT_COLOR は fill などと設定を共有する場合がある
+export const FONT_COLOR = {
+  LINK: BASE_COLOR.LINK,
+  LINK_HOVER: BASE_COLOR.LINK_HOVER,
+  TITLE: BASE_COLOR.TITLE,
+  WHITE: BASE_COLOR.WHITE,
+} as const
+
+export type FontColor = keyof typeof FONT_COLOR
 
 export const INLINE_SIZE = {
   XXL: '2rem',

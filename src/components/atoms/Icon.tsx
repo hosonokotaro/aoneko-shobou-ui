@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import Info from '@/atoms/IconSvg/SvgInfo'
 import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'
-import { COLOR, Color, INLINE_SIZE, InlineSize } from '@/const/style'
+import { FONT_COLOR, FontColor, INLINE_SIZE, InlineSize } from '@/const/style'
 
 export const ICON_KIND = {
   INFO: 'INFO',
@@ -13,7 +13,7 @@ type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]
 
 type Props = {
   iconKind: IconKind
-  fillColor: Color
+  fillColor: FontColor
   size: InlineSize
 }
 
@@ -46,13 +46,13 @@ const StyledIcon = styled.i`
 `
 
 export const StyledInfo = styled(Info)<{
-  $fillColor: Color
+  $fillColor: FontColor
 }>`
-  ${({ $fillColor }) => `fill: ${COLOR[$fillColor]};`}
+  ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
 export const StyledOpenInNew = styled(OpenInNew)<{
-  $fillColor: Color
+  $fillColor: FontColor
 }>`
-  ${({ $fillColor }) => `fill: ${COLOR[$fillColor]};`}
+  ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `

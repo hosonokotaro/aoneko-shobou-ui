@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { COLOR } from '../const/style'
+import { BASE_COLOR } from '@/const/style'
 
 type Props = {
   text: string
@@ -14,5 +14,6 @@ export default ParagraphText
 
 const StyledParagraphText = styled.p`
   padding: 12px;
-  border-left: 2px solid ${COLOR.LIGHT_GRAY};
+  /* TODO: border の const 設定を作成する */
+  border-left: 2px solid ${BASE_COLOR.LIGHT_GRAY};
 `

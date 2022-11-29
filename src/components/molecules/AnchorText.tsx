@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Icon from '@/atoms/Icon'
-import { COLOR, MARGIN, TRANSITION_TIME } from '@/const/style'
+import { FONT_COLOR, MARGIN, TRANSITION_TIME } from '@/const/style'
 
 export const ANCHOR_TARGET = {
   SELF: '_self',
@@ -37,7 +37,7 @@ export default AnchorText
 
 const StyledAnchorText = styled.a`
   display: inline-flex;
-  color: ${COLOR.LINK};
+  color: ${FONT_COLOR.LINK};
   transition: color ${TRANSITION_TIME};
 
   /* FIXME: 選択する方法を模索しています */
@@ -48,10 +48,10 @@ const StyledAnchorText = styled.a`
 
   @media (any-hover: hover) {
     &:hover {
-      color: ${COLOR.LINK_HOVER};
+      color: ${FONT_COLOR.LINK_HOVER};
 
       > i svg {
-        fill: ${COLOR.LINK_HOVER};
+        fill: ${FONT_COLOR.LINK_HOVER};
       }
     }
   }
