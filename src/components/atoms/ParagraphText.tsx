@@ -12,8 +12,12 @@ const ParagraphText = ({ text }: Props) => {
 
 export default ParagraphText
 
+// NOTE: ここでしか利用しないのでハードコードで対応する
+const PARAGRAPH_TEXT_COLOR = {
+  BORDER_LEFT: BASE_COLOR.LIGHT_GRAY,
+} as const
+
 const StyledParagraphText = styled.p`
   padding: 12px;
-  /* TODO: border の const 設定を作成する */
-  border-left: 2px solid ${BASE_COLOR.LIGHT_GRAY};
+  border-left: 2px solid ${PARAGRAPH_TEXT_COLOR.BORDER_LEFT};
 `
