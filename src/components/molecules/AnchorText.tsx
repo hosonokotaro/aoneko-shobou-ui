@@ -27,7 +27,7 @@ const AnchorText = ({ text, href, target }: Props) => {
     >
       <Text>{text}</Text>
       {target === ANCHOR_TARGET.BLANK && (
-        <Icon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
+        <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
       )}
     </StyledAnchorText>
   )
@@ -35,23 +35,30 @@ const AnchorText = ({ text, href, target }: Props) => {
 
 export default AnchorText
 
+// NOTE: component を選択して styling するため
+const StyledIcon = styled(Icon)``
+
 const StyledAnchorText = styled.a`
   display: inline-flex;
   color: ${FONT_COLOR.LINK};
   transition: color ${TRANSITION_TIME};
 
-  /* FIXME: 選択する方法を模索しています */
-  > i svg {
+  & > ${StyledIcon} {
     margin-left: ${MARGIN.XS};
-    transition: fill ${TRANSITION_TIME};
+
+    & > svg {
+      transition: fill ${TRANSITION_TIME};
+    }
   }
 
   @media (any-hover: hover) {
     &:hover {
       color: ${FONT_COLOR.LINK_HOVER};
 
-      > i svg {
-        fill: ${FONT_COLOR.LINK_HOVER};
+      & > ${StyledIcon} {
+        & > svg {
+          fill: ${FONT_COLOR.LINK_HOVER};
+        }
       }
     }
   }
