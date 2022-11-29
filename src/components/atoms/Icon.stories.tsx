@@ -22,3 +22,10 @@ OpenInNew.args = {
   fillColor: 'LINK',
   size: 'XXL',
 }
+
+export const NavigateNext = Template.bind({})
+NavigateNext.args = {
+  iconKind: ICON_KIND.NAVIGATE_NEXT,
+  fillColor: 'LINK',
+  size: 'XXL',
+}

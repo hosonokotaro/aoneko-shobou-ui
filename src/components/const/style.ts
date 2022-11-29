@@ -4,10 +4,10 @@ export const BASE_COLOR = {
   CAUTION: '#ff8897',
   INFORMATION: '#5d7fb3',
   LIGHT_GRAY: '#efefef',
-  LINK: '#6fb2f5',
-  LINK_HOVER: '#4084c7',
-  LINK_EXTERNAL: '#cac74e',
-  LINK_EXTERNAL_HOVER: '#969448',
+  LINK: '#4a90d6',
+  LINK_HOVER: '#3c73a9',
+  LINK_EXTERNAL: '#a4a368',
+  LINK_EXTERNAL_HOVER: '#827f3c',
   TITLE: '#a370d3',
   WHITE: '#fff',
 } as const
@@ -68,3 +68,4 @@ export const MARGIN = {
 export type Margin = keyof typeof MARGIN
 
 export const TRANSITION_TIME = '0.25s ease'
+export const BORDER_RADIUS = '3px'

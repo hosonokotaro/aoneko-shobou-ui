@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Button from '@/atoms/Button'
+import Button from '@/molecules/Button'
 
 export default {
-  title: 'atoms/Button',
+  title: 'molecules/Button',
   component: Button,
 } as ComponentMeta<typeof Button>
 

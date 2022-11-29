@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
+import Icon from '@/atoms/Icon'
 import {
+  BORDER_RADIUS,
   BUTTON_BACKGROUND_COLOR,
   ButtonBackgroundColor,
   FONT_COLOR,
@@ -17,8 +19,11 @@ type Props = {
 
 const Button = ({ text, buttonColor, isSeeMore }: Props) => {
   return (
-    <StyledButton $buttonColor={buttonColor} $isSeeMore={isSeeMore}>
-      {text}
+    <StyledButton $buttonColor={buttonColor}>
+      {isSeeMore && (
+        <StyledIcon iconKind="NAVIGATE_NEXT" fillColor="WHITE" size="XXL" />
+      )}
+      <Text>{text}</Text>
     </StyledButton>
   )
 }
@@ -27,29 +32,17 @@ export default Button
 
 const StyledButton = styled.button<{
   $buttonColor: ButtonBackgroundColor
-  $isSeeMore: boolean
 }>`
-  display: block;
-  width: 100%;
-  height: 40px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
   font-size: ${INLINE_SIZE.L};
-  border-radius: 3px;
+  border-radius: ${BORDER_RADIUS};
   color: ${FONT_COLOR.WHITE};
-  text-shadow: 0 0 5px rgb(0 0 0 / 50%);
   transition: background ${TRANSITION_TIME};
 
   ${({ $buttonColor }) =>
     `background: ${BUTTON_BACKGROUND_COLOR[$buttonColor]};`}
-
-  ${({ $isSeeMore }) =>
-    $isSeeMore &&
-    `
-      &::before {
-        margin-right: ${MARGIN.M};
-        content: ">";
-      }
-    `}
 
   @media (any-hover: hover) {
     &:hover {
@@ -64,4 +57,12 @@ const StyledButton = styled.button<{
       }}
     }
   }
+`
+
+const StyledIcon = styled(Icon)`
+  margin-right: ${MARGIN.S};
+`
+
+const Text = styled.div`
+  line-height: 28px;
 `
