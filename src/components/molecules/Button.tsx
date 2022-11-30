@@ -12,14 +12,29 @@ import {
 } from '@/const/style'
 
 type Props = {
+  className?: string
+  onClick?: () => void
   text: string
   buttonColor: ButtonBackgroundColor
   isSeeMore: boolean
+  isBorderRadius: boolean
 }
 
-const Button = ({ text, buttonColor, isSeeMore }: Props) => {
+const Button = ({
+  className,
+  onClick,
+  text,
+  buttonColor,
+  isSeeMore,
+  isBorderRadius,
+}: Props) => {
   return (
-    <StyledButton $buttonColor={buttonColor}>
+    <StyledButton
+      className={className}
+      $buttonColor={buttonColor}
+      $isBorderRadius={isBorderRadius}
+      onClick={onClick}
+    >
       {isSeeMore && (
         <StyledIcon iconKind="NAVIGATE_NEXT" fillColor="WHITE" size="XXL" />
       )}
@@ -32,17 +47,20 @@ export default Button
 
 const StyledButton = styled.button<{
   $buttonColor: ButtonBackgroundColor
+  $isBorderRadius: boolean
 }>`
   display: flex;
   align-items: center;
   padding: 8px 16px;
   font-size: ${INLINE_SIZE.L};
-  border-radius: ${BORDER_RADIUS.S};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};
 
   ${({ $buttonColor }) =>
     `background: ${BUTTON_BACKGROUND_COLOR[$buttonColor]};`}
+
+  ${({ $isBorderRadius }) =>
+    `border-radius: ${$isBorderRadius ? BORDER_RADIUS.S : 0}`};
 
   @media (any-hover: hover) {
     &:hover {
