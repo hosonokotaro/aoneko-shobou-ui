@@ -11,7 +11,8 @@
     "test": "npm run lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg"
+    "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "@types/webpack-env": "^1.16.2",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "chromatic": "^6.11.4",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.1.0",
     "css-loader": "^6.7.2",

@@ -3,3 +3,5 @@
 /svg
 
 .DS_Store
+
+*.log
