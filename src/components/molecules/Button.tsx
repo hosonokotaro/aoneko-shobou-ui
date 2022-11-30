@@ -23,7 +23,7 @@ const Button = ({ text, buttonColor, isSeeMore }: Props) => {
       {isSeeMore && (
         <StyledIcon iconKind="NAVIGATE_NEXT" fillColor="WHITE" size="XXL" />
       )}
-      <Text>{text}</Text>
+      <StyledText>{text}</StyledText>
     </StyledButton>
   )
 }
@@ -63,6 +63,6 @@ const StyledIcon = styled(Icon)`
   margin-right: ${MARGIN.S};
 `
 
-const Text = styled.div`
+const StyledText = styled.div`
   line-height: 28px;
 `

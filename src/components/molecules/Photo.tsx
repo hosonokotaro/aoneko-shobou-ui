@@ -5,7 +5,7 @@ import { BASE_COLOR } from '@/const/style'
 
 const Photo = ({ src, alt = '', width, height, loading }: Props) => {
   return (
-    <PhotoWrapper>
+    <StyledPhoto>
       <Image
         src={src}
         alt={alt}
@@ -13,7 +13,7 @@ const Photo = ({ src, alt = '', width, height, loading }: Props) => {
         height={height}
         loading={loading}
       />
-    </PhotoWrapper>
+    </StyledPhoto>
   )
 }
 
@@ -25,7 +25,7 @@ const PHOTO_WRAPPER_COLOR = {
   BACKGROUND: BASE_COLOR.LIGHT_GRAY,
 } as const
 
-const PhotoWrapper = styled.div`
+const StyledPhoto = styled.div`
   display: inline-flex;
   border: 8px solid ${PHOTO_WRAPPER_COLOR.BORDER};
   background: ${PHOTO_WRAPPER_COLOR.BACKGROUND};

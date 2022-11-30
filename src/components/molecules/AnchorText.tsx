@@ -25,7 +25,7 @@ const AnchorText = ({ text, href, target }: Props) => {
       target={target}
       rel={target === ANCHOR_TARGET.BLANK ? externalLinkRel : undefined}
     >
-      <Text>{text}</Text>
+      <StyledText>{text}</StyledText>
       {target === ANCHOR_TARGET.BLANK && (
         <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
       )}
@@ -64,6 +64,6 @@ const StyledAnchorText = styled.a`
   }
 `
 
-const Text = styled.span`
+const StyledText = styled.span`
   display: inline-flex;
 `
