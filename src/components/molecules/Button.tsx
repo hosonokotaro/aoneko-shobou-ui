@@ -1,3 +1,4 @@
+import { MouseEventHandler } from 'react'
 import styled from 'styled-components'
 
 import Icon from '@/atoms/Icon'
@@ -13,7 +14,7 @@ import {
 
 type Props = {
   className?: string
-  onClick?: () => void
+  onClick?: MouseEventHandler<HTMLButtonElement>
   text: string
   buttonColor: ButtonBackgroundColor
   isSeeMore: boolean
