@@ -3,7 +3,14 @@ import styled from 'styled-components'
 import Info from '@/atoms/IconSvg/SvgInfo'
 import NavigateNext from '@/atoms/IconSvg/SvgNavigateNext'
 import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'
-import { FONT_COLOR, FontColor, INLINE_SIZE, InlineSize } from '@/const/style'
+import {
+  FONT_COLOR,
+  FontColor,
+  INLINE_SIZE,
+  InlineSize,
+  ROTATE,
+  Rotate,
+} from '@/const/style'
 
 export const ICON_KIND = {
   INFO: 'INFO',
@@ -18,11 +25,12 @@ type Props = {
   iconKind: IconKind
   fillColor: FontColor
   size: InlineSize
+  iconRotate: Rotate
 }
 
-const Icon = ({ className, iconKind, fillColor, size }: Props) => {
+const Icon = ({ className, iconKind, fillColor, size, iconRotate }: Props) => {
   return (
-    <StyledIcon className={className}>
+    <StyledIcon className={className} $iconRotate={iconRotate}>
       {iconKind === ICON_KIND.INFO && (
         <StyledInfo
           $fillColor={fillColor}
@@ -50,9 +58,10 @@ const Icon = ({ className, iconKind, fillColor, size }: Props) => {
 
 export default Icon
 
-const StyledIcon = styled.i`
+const StyledIcon = styled.i<{ $iconRotate: Rotate }>`
   display: inline-flex;
   align-items: center;
+  transform: rotate(${({ $iconRotate }) => `${ROTATE[$iconRotate]}`});
 `
 
 export const StyledInfo = styled(Info)<{

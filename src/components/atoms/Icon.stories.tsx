@@ -14,6 +14,7 @@ Info.args = {
   iconKind: ICON_KIND.INFO,
   fillColor: 'TITLE',
   size: 'XXL',
+  iconRotate: 'DEFAULT',
 }
 
 export const OpenInNew = Template.bind({})

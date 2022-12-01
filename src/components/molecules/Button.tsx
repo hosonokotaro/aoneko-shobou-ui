@@ -37,7 +37,12 @@ const Button = ({
       onClick={onClick}
     >
       {isSeeMore && (
-        <StyledIcon iconKind="NAVIGATE_NEXT" fillColor="WHITE" size="XXL" />
+        <StyledIcon
+          iconKind="NAVIGATE_NEXT"
+          fillColor="WHITE"
+          size="XXL"
+          iconRotate="DEFAULT"
+        />
       )}
       <StyledText>{text}</StyledText>
     </StyledButton>

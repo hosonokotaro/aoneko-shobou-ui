@@ -27,7 +27,12 @@ const AnchorText = ({ text, href, target }: Props) => {
     >
       <StyledText>{text}</StyledText>
       {target === ANCHOR_TARGET.BLANK && (
-        <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
+        <StyledIcon
+          iconKind="OPEN_IN_NEW"
+          fillColor="LINK"
+          size="M"
+          iconRotate="DEFAULT"
+        />
       )}
     </StyledAnchorText>
   )
