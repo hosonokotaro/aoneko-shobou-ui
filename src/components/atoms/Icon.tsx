@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 import Info from '@/atoms/IconSvg/SvgInfo'
+import Menu from '@/atoms/IconSvg/SvgMenu'
+import MenuOpen from '@/atoms/IconSvg/SvgMenuOpen'
 import NavigateNext from '@/atoms/IconSvg/SvgNavigateNext'
 import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'
 import {
@@ -16,6 +18,8 @@ export const ICON_KIND = {
   INFO: 'INFO',
   OPEN_IN_NEW: 'OPEN_IN_NEW',
   NAVIGATE_NEXT: 'NAVIGATE_NEXT',
+  MENU: 'MENU',
+  MENU_OPEN: 'MENU_OPEN',
 } as const
 
 type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]
@@ -52,6 +56,20 @@ const Icon = ({ className, iconKind, fillColor, size, iconRotate }: Props) => {
           height={INLINE_SIZE[size]}
         />
       )}
+      {iconKind === ICON_KIND.MENU && (
+        <StyledMenu
+          $fillColor={fillColor}
+          width={INLINE_SIZE[size]}
+          height={INLINE_SIZE[size]}
+        />
+      )}
+      {iconKind === ICON_KIND.MENU_OPEN && (
+        <StyledMenuOpen
+          $fillColor={fillColor}
+          width={INLINE_SIZE[size]}
+          height={INLINE_SIZE[size]}
+        />
+      )}
     </StyledIcon>
   )
 }
@@ -77,6 +95,18 @@ export const StyledOpenInNew = styled(OpenInNew)<{
 `
 
 export const StyledNavigateNext = styled(NavigateNext)<{
+  $fillColor: FontColor
+}>`
+  ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
+`
+
+export const StyledMenu = styled(Menu)<{
+  $fillColor: FontColor
+}>`
+  ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
+`
+
+export const StyledMenuOpen = styled(MenuOpen)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}

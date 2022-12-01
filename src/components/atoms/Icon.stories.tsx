@@ -30,3 +30,17 @@ NavigateNext.args = {
   fillColor: 'LINK',
   size: 'XXL',
 }
+
+export const Menu = Template.bind({})
+Menu.args = {
+  iconKind: ICON_KIND.MENU,
+  fillColor: 'LINK',
+  size: 'XXL',
+}
+
+export const MenuOpen = Template.bind({})
+MenuOpen.args = {
+  iconKind: ICON_KIND.MENU_OPEN,
+  fillColor: 'LINK',
+  size: 'XXL',
+}
