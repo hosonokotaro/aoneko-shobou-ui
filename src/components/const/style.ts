@@ -87,3 +87,9 @@ export const ROTATE = {
 } as const
 
 export type Rotate = keyof typeof ROTATE
+
+export const MEDIA_QUERY = {
+  TABLET: '@media screen and (max-width: 768px)',
+} as const
+
+export type MediaQuery = keyof typeof MEDIA_QUERY
