@@ -22,7 +22,7 @@ export const ICON_KIND = {
   MENU_OPEN: 'MENU_OPEN',
 } as const
 
-type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]
+export type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]
 
 type Props = {
   className?: string

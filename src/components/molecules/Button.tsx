@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react'
 import styled from 'styled-components'
 
-import Icon from '@/atoms/Icon'
+import Icon, { IconKind } from '@/atoms/Icon'
 import {
   BORDER_RADIUS,
   BUTTON_BACKGROUND_COLOR,
@@ -9,15 +9,17 @@ import {
   FONT_COLOR,
   INLINE_SIZE,
   MARGIN,
+  Rotate,
   TRANSITION_TIME,
 } from '@/const/style'
 
 type Props = {
   className?: string
   onClick?: MouseEventHandler<HTMLButtonElement>
-  text: string
+  text?: string
   buttonColor: ButtonBackgroundColor
-  isSeeMore: boolean
+  iconKind?: IconKind
+  iconRotate?: Rotate
   isBorderRadius: boolean
 }
 
@@ -26,8 +28,9 @@ const Button = ({
   onClick,
   text,
   buttonColor,
-  isSeeMore,
+  iconKind,
   isBorderRadius,
+  iconRotate,
 }: Props) => {
   return (
     <StyledButton
@@ -36,15 +39,15 @@ const Button = ({
       $isBorderRadius={isBorderRadius}
       onClick={onClick}
     >
-      {isSeeMore && (
+      {iconKind && (
         <StyledIcon
-          iconKind="NAVIGATE_NEXT"
+          iconKind={iconKind}
           fillColor="WHITE"
           size="XXL"
-          iconRotate="DEFAULT"
+          iconRotate={iconRotate ?? 'DEFAULT'}
         />
       )}
-      <StyledText>{text}</StyledText>
+      {text && <StyledText>{text}</StyledText>}
     </StyledButton>
   )
 }
@@ -56,9 +59,11 @@ const StyledButton = styled.button<{
   $isBorderRadius: boolean
 }>`
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 8px 16px;
-  font-size: ${INLINE_SIZE.L};
+  min-width: 40px;
+  min-height: 40px;
+  font-size: ${INLINE_SIZE.M};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};
 
@@ -84,9 +89,15 @@ const StyledButton = styled.button<{
 `
 
 const StyledIcon = styled(Icon)`
-  margin-right: ${MARGIN.S};
+  margin: 0 ${MARGIN.XS};
 `
 
 const StyledText = styled.div`
-  line-height: 28px;
+  margin-right: ${MARGIN.M};
+  text-align: left;
+  user-select: none;
+
+  :not(${StyledIcon} + &) {
+    margin-left: ${MARGIN.M};
+  }
 `
