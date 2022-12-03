@@ -77,8 +77,8 @@ const Icon = ({ className, iconKind, fillColor, size, iconRotate }: Props) => {
 export default Icon
 
 const StyledIcon = styled.i<{ $iconRotate: Rotate }>`
-  display: inline-flex;
-  align-items: center;
+  display: inline-grid;
+  place-content: center;
   transform: rotate(${({ $iconRotate }) => `${ROTATE[$iconRotate]}`});
 `
 
