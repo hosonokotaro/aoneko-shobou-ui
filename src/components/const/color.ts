@@ -1,4 +1,4 @@
-// NOTE: BASE_COLOR を直接使うのは最後の手段で、取り急ぎ使う場合は利用箇所で TODO コメントを残してリファクタリングを検討すること
+// NOTE: BASE_COLOR を直接使うのは最後の手段で、取り急ぎ使う場合は利用箇所にコメントを残してリファクタリングを検討すること
 export const BASE_COLOR = {
   ATTENTION: '#a370d3',
   CAUTION: '#ff8897',
@@ -14,6 +14,12 @@ export const BASE_COLOR = {
 } as const
 
 export type BaseColor = keyof typeof BASE_COLOR
+
+export const BACKGROUND_COLOR = {
+  WHITE: BASE_COLOR.WHITE,
+}
+
+export type BackgroundColor = keyof typeof BACKGROUND_COLOR
 
 export const BUTTON_BACKGROUND_COLOR = {
   DEFAULT: BASE_COLOR.LINK,
@@ -36,12 +42,12 @@ export const FONT_COLOR = {
 
 export type FontColor = keyof typeof FONT_COLOR
 
-export const CHIP_COLOR = {
+export const CHIP_BACKGROUND_COLOR = {
   DEFAULT: BASE_COLOR.INFORMATION,
   CAUTION: BASE_COLOR.CAUTION,
 } as const
 
-export type ChipColor = keyof typeof CHIP_COLOR
+export type ChipBackgroundColor = keyof typeof CHIP_BACKGROUND_COLOR
 
 export const BORDER_COLOR = {
   LIGHT_GRAY: BASE_COLOR.LIGHT_GRAY,
