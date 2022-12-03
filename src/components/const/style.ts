@@ -24,7 +24,7 @@ export const BUTTON_BACKGROUND_COLOR = {
 
 export type ButtonBackgroundColor = keyof typeof BUTTON_BACKGROUND_COLOR
 
-// NOTE: FONT_COLOR は fill などと設定を共有する場合がある
+// NOTE: FONT_COLOR は fill と設定を共有する
 export const FONT_COLOR = {
   CAPTION: BASE_COLOR.CAPTION,
   CAUTION: BASE_COLOR.CAUTION,
@@ -43,6 +43,23 @@ export const CHIP_COLOR = {
 
 export type ChipColor = keyof typeof CHIP_COLOR
 
+export const BORDER_COLOR = {
+  LIGHT_GRAY: BASE_COLOR.LIGHT_GRAY,
+  TITLE: BASE_COLOR.TITLE,
+  WHITE: BASE_COLOR.WHITE,
+} as const
+
+export type BorderColor = keyof typeof BORDER_COLOR
+
+export const BLOCK_WIDTH = {
+  AUTO: 'auto',
+  FULL: '100%',
+  HALF: '50%',
+  ONE_THIRD: 'calc(100% / 3)',
+} as const
+
+export type BlockWidth = keyof typeof BLOCK_WIDTH
+
 export const INLINE_SIZE = {
   XXL: '2rem',
   XL: '1.6rem',
@@ -60,7 +77,7 @@ export const FONT_WEIGHT = {
 
 export type FontWeight = keyof typeof FONT_WEIGHT
 
-export const MARGIN = {
+export const INLINE_MARGIN = {
   XL: '20px',
   L: '16px',
   M: '12px',
@@ -68,11 +85,12 @@ export const MARGIN = {
   XS: '4px',
 } as const
 
-export type Margin = keyof typeof MARGIN
+export type InlineMargin = keyof typeof INLINE_MARGIN
 
 export const BORDER_RADIUS = {
   M: '6px',
   S: '3px',
+  NONE: '0',
 } as const
 
 export type BorderRadius = keyof typeof BORDER_RADIUS

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Image, { Props } from '@/atoms/Image'
-import { BASE_COLOR } from '@/const/style'
+import { BASE_COLOR, BORDER_COLOR } from '@/const/style'
 
 const Photo = ({ src, alt = '', width, height, loading }: Props) => {
   return (
@@ -19,14 +19,10 @@ const Photo = ({ src, alt = '', width, height, loading }: Props) => {
 
 export default Photo
 
-// NOTE: ここでしか利用しないのでハードコードで対応する
-const PHOTO_WRAPPER_COLOR = {
-  BORDER: BASE_COLOR.LIGHT_GRAY,
-  BACKGROUND: BASE_COLOR.LIGHT_GRAY,
-} as const
-
 const StyledPhoto = styled.div`
   display: inline-flex;
-  border: 8px solid ${PHOTO_WRAPPER_COLOR.BORDER};
-  background: ${PHOTO_WRAPPER_COLOR.BACKGROUND};
+  border: 8px solid ${BORDER_COLOR.LIGHT_GRAY};
+
+  /* NOTE: ここでしか利用しないのでハードコードで対応する */
+  background: ${BASE_COLOR.LIGHT_GRAY};
 `

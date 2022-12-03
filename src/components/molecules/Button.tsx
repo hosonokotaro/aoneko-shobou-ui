@@ -7,8 +7,8 @@ import {
   BUTTON_BACKGROUND_COLOR,
   ButtonBackgroundColor,
   FONT_COLOR,
+  INLINE_MARGIN,
   INLINE_SIZE,
-  MARGIN,
   Rotate,
   TRANSITION_TIME,
 } from '@/const/style'
@@ -54,6 +54,11 @@ const Button = ({
 
 export default Button
 
+const BUTTON_SIZE = {
+  WIDTH: '40px',
+  HEIGHT: '40px',
+} as const
+
 const StyledButton = styled.button<{
   $buttonColor: ButtonBackgroundColor
   $isBorderRadius: boolean
@@ -61,8 +66,8 @@ const StyledButton = styled.button<{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 40px;
-  min-height: 40px;
+  min-width: ${BUTTON_SIZE.WIDTH};
+  min-height: ${BUTTON_SIZE.HEIGHT};
   font-size: ${INLINE_SIZE.M};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};
@@ -89,15 +94,15 @@ const StyledButton = styled.button<{
 `
 
 const StyledIcon = styled(Icon)`
-  margin: 0 ${MARGIN.XS};
+  margin: 0 ${INLINE_MARGIN.XS};
 `
 
 const StyledText = styled.div`
-  margin-right: ${MARGIN.M};
+  margin-right: ${INLINE_MARGIN.M};
   text-align: left;
   user-select: none;
 
   &:not(${StyledIcon} + &) {
-    margin-left: ${MARGIN.M};
+    margin-left: ${INLINE_MARGIN.M};
   }
 `
