@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 import Icon from '@/atoms/Icon'
-import { FONT_COLOR, INLINE_MARGIN, TRANSITION_TIME } from '@/const/style'
+import { FONT_COLOR } from '@/const/color'
+import { TRANSITION_TIME } from '@/const/common'
+import { INLINE_MARGIN } from '@/const/size'
 
 export const ANCHOR_TARGET = {
   SELF: '_self',

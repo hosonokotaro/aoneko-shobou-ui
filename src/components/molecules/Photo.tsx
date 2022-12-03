@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Image, { Props } from '@/atoms/Image'
-import { BASE_COLOR, BORDER_COLOR } from '@/const/style'
+import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
 
 const Photo = ({ src, alt = '', width, height, loading }: Props) => {
   return (

@@ -5,14 +5,9 @@ import Menu from '@/atoms/IconSvg/SvgMenu'
 import MenuOpen from '@/atoms/IconSvg/SvgMenuOpen'
 import NavigateNext from '@/atoms/IconSvg/SvgNavigateNext'
 import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'
-import {
-  FONT_COLOR,
-  FontColor,
-  INLINE_SIZE,
-  InlineSize,
-  ROTATE,
-  Rotate,
-} from '@/const/style'
+import { FONT_COLOR, FontColor } from '@/const/color'
+import { ROTATE, Rotate } from '@/const/common'
+import { INLINE_SIZE, InlineSize } from '@/const/size'
 
 export const ICON_KIND = {
   INFO: 'INFO',

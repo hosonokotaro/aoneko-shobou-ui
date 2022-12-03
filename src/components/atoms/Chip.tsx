@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { BORDER_RADIUS, CHIP_COLOR, ChipColor, FONT_COLOR } from '@/const/style'
+import { CHIP_COLOR, ChipColor, FONT_COLOR } from '@/const/color'
+import { BORDER_RADIUS } from '@/const/size'
 
 type Props = {
   status: ChipColor

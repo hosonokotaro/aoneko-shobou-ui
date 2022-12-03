@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 
-import {
-  BORDER_COLOR,
-  FONT_COLOR,
-  FONT_WEIGHT,
-  INLINE_SIZE,
-} from '@/const/style'
+import { BORDER_COLOR, FONT_COLOR } from '@/const/color'
+import { FONT_WEIGHT, INLINE_SIZE } from '@/const/size'
 
 export const HEADING_KIND = {
   PAGE_TITLE: 'PAGE_TITLE',

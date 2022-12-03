@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { BORDER_COLOR } from '@/const/style'
+import { BORDER_COLOR } from '@/const/color'
 
 type Props = {
   text: string

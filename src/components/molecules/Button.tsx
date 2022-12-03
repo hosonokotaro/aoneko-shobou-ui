@@ -3,15 +3,12 @@ import styled from 'styled-components'
 
 import Icon, { IconKind } from '@/atoms/Icon'
 import {
-  BORDER_RADIUS,
   BUTTON_BACKGROUND_COLOR,
   ButtonBackgroundColor,
   FONT_COLOR,
-  INLINE_MARGIN,
-  INLINE_SIZE,
-  Rotate,
-  TRANSITION_TIME,
-} from '@/const/style'
+} from '@/const/color'
+import { Rotate, TRANSITION_TIME } from '@/const/common'
+import { BORDER_RADIUS, INLINE_MARGIN, INLINE_SIZE } from '@/const/size'
 
 type Props = {
   className?: string

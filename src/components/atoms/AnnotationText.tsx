@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { FONT_COLOR, FontColor, INLINE_SIZE } from '@/const/style'
+import { FONT_COLOR, FontColor } from '@/const/color'
+import { INLINE_SIZE } from '@/const/size'
 
 type Props = {
   text: string
