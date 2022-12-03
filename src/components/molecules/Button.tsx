@@ -8,7 +8,12 @@ import {
   FONT_COLOR,
 } from '@/const/color'
 import { Rotate, TRANSITION_TIME } from '@/const/common'
-import { BORDER_RADIUS, INLINE_MARGIN, INLINE_SIZE } from '@/const/size'
+import {
+  BORDER_RADIUS,
+  ICON_BUTTON_SIZE,
+  INLINE_MARGIN,
+  INLINE_SIZE,
+} from '@/const/size'
 
 type Props = {
   className?: string
@@ -51,11 +56,6 @@ const Button = ({
 
 export default Button
 
-const BUTTON_SIZE = {
-  WIDTH: '40px',
-  HEIGHT: '40px',
-} as const
-
 const StyledButton = styled.button<{
   $buttonColor: ButtonBackgroundColor
   $isBorderRadius: boolean
@@ -63,8 +63,8 @@ const StyledButton = styled.button<{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: ${BUTTON_SIZE.WIDTH};
-  min-height: ${BUTTON_SIZE.HEIGHT};
+  min-width: ${ICON_BUTTON_SIZE.WIDTH};
+  min-height: ${ICON_BUTTON_SIZE.HEIGHT};
   font-size: ${INLINE_SIZE.M};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};

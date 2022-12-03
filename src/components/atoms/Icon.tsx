@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Info from '@/atoms/IconSvg/SvgInfo'
-import Menu from '@/atoms/IconSvg/SvgMenu'
+import Menu from '@/atoms/IconSvg/SvgMenuClose'
 import MenuOpen from '@/atoms/IconSvg/SvgMenuOpen'
 import NavigateNext from '@/atoms/IconSvg/SvgNavigateNext'
 import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'

@@ -24,6 +24,13 @@ export const FONT_WEIGHT = {
 
 export type FontWeight = keyof typeof FONT_WEIGHT
 
+export const ICON_BUTTON_SIZE = {
+  WIDTH: '40px',
+  HEIGHT: '40px',
+} as const
+
+export type IconButtonSize = keyof typeof ICON_BUTTON_SIZE
+
 export const INLINE_MARGIN = {
   XL: '20px',
   L: '16px',
