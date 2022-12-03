@@ -97,7 +97,7 @@ const StyledText = styled.div`
   text-align: left;
   user-select: none;
 
-  :not(${StyledIcon} + &) {
+  &:not(${StyledIcon} + &) {
     margin-left: ${MARGIN.M};
   }
 `
