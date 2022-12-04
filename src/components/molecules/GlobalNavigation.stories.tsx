@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { map } from 'lodash-es'
 
@@ -59,6 +60,5 @@ map(PAGE_LIST, (item) => {
 export const Default = Template.bind({})
 Default.args = {
   navigationList: fixedList,
-  handleClick: (path: string, isExternal: boolean) =>
-    console.log(path, isExternal),
+  handleClick: action('[path, isExternal]'),
 }

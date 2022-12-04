@@ -51,9 +51,9 @@ const GlobalNavigation = ({ navigationList, handleClick }: Props) => {
             <StyledButton
               key={index}
               text={navigationItem.name}
-              buttonColor="DEFAULT"
+              buttonColor={navigationItem.isExternal ? 'EXTERNAL' : 'DEFAULT'}
               isBorderRadius={isTablet}
-              onClick={() =>
+              handleClick={() =>
                 handleClick(navigationItem.path, navigationItem.isExternal)
               }
             />

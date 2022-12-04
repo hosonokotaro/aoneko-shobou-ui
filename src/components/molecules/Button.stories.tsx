@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import Button from '@/molecules/Button'
@@ -14,6 +15,7 @@ Default.args = {
   text: '予約する',
   buttonColor: 'DEFAULT',
   isBorderRadius: true,
+  handleClick: action('Default'),
 }
 
 export const SeeMore = Template.bind({})
@@ -22,6 +24,7 @@ SeeMore.args = {
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
+  handleClick: action('SeeMore'),
 }
 
 export const External = Template.bind({})
@@ -30,6 +33,7 @@ External.args = {
   buttonColor: 'EXTERNAL',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
+  handleClick: action('External'),
 }
 
 export const IconOnly = Template.bind({})
@@ -37,4 +41,5 @@ IconOnly.args = {
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
+  handleClick: action('IconOnly'),
 }
