@@ -12,7 +12,7 @@ import {
   BLOCK_WIDTH,
   BORDER_RADIUS,
   ICON_BUTTON_SIZE,
-  INLINE_MARGIN,
+  MARGIN,
 } from '@/const/size'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import Button from '@/molecules/Button'
@@ -91,10 +91,10 @@ const StyledGlobalNavigation = styled.div`
     right: 0;
     flex-direction: column;
     align-items: flex-end;
-    height: calc((${ICON_BUTTON_SIZE.HEIGHT} * 6) + (${INLINE_MARGIN.S} * 6));
+    height: calc((${ICON_BUTTON_SIZE.HEIGHT} * 6) + (${MARGIN.S} * 6));
     margin-left: auto;
     margin-bottom: 80px;
-    margin-right: ${INLINE_MARGIN.XL};
+    margin-right: ${MARGIN.XL};
     border-radius: ${BORDER_RADIUS.NONE};
     background: none;
   }
@@ -127,8 +127,8 @@ const StyledToggleButton = styled.input`
   display: none;
   width: ${ICON_BUTTON_SIZE.WIDTH};
   height: ${ICON_BUTTON_SIZE.HEIGHT};
-  margin-right: ${INLINE_MARGIN.XL};
-  margin-bottom: ${INLINE_MARGIN.XL};
+  margin-right: ${MARGIN.XL};
+  margin-bottom: ${MARGIN.XL};
   border-radius: ${BORDER_RADIUS.S};
   background: url('${ICON_SVG_STRING.MENU_CLOSE}') center center no-repeat
     ${BUTTON_BACKGROUND_COLOR.DEFAULT};

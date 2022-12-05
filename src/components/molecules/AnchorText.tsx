@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Icon from '@/atoms/Icon'
 import { FONT_COLOR } from '@/const/color'
 import { TRANSITION_TIME } from '@/const/common'
-import { INLINE_MARGIN } from '@/const/size'
+import { MARGIN } from '@/const/size'
 
 export const ANCHOR_TARGET = {
   SELF: '_self',
@@ -51,7 +51,7 @@ const StyledAnchorText = styled.a`
   transition: color ${TRANSITION_TIME};
 
   & > ${StyledIcon} {
-    margin-left: ${INLINE_MARGIN.XS};
+    margin-left: ${MARGIN.XS};
 
     & > svg {
       transition: fill ${TRANSITION_TIME};

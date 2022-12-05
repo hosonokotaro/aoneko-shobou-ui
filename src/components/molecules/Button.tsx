@@ -11,8 +11,8 @@ import { Rotate, TRANSITION_TIME } from '@/const/common'
 import {
   BORDER_RADIUS,
   ICON_BUTTON_SIZE,
-  INLINE_MARGIN,
   INLINE_SIZE,
+  MARGIN,
 } from '@/const/size'
 
 type Props = {
@@ -91,15 +91,15 @@ const StyledButton = styled.button<{
 `
 
 const StyledIcon = styled(Icon)`
-  margin: 0 ${INLINE_MARGIN.XS};
+  margin: 0 ${MARGIN.XS};
 `
 
 const StyledText = styled.div`
-  margin-right: ${INLINE_MARGIN.M};
+  margin-right: ${MARGIN.M};
   text-align: left;
   user-select: none;
 
   &:not(${StyledIcon} + &) {
-    margin-left: ${INLINE_MARGIN.M};
+    margin-left: ${MARGIN.M};
   }
 `
