@@ -32,11 +32,13 @@ export const ICON_BUTTON_SIZE = {
 export type IconButtonSize = keyof typeof ICON_BUTTON_SIZE
 
 export const MARGIN = {
+  AUTO: 'auto',
   XL: '20px',
   L: '16px',
   M: '12px',
   S: '8px',
   XS: '4px',
+  NONE: '0',
 } as const
 
 export type Margin = keyof typeof MARGIN

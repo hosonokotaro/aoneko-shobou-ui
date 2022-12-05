@@ -69,7 +69,7 @@ export default GlobalNavigation
 const StyledButton = styled(Button)`
   justify-content: center;
   flex-grow: 1;
-  margin: 0;
+  margin: ${MARGIN.NONE};
 
   ${MEDIA_QUERY.TABLET} {
     flex-grow: 0;
@@ -92,7 +92,7 @@ const StyledGlobalNavigation = styled.div`
     flex-direction: column;
     align-items: flex-end;
     height: calc((${ICON_BUTTON_SIZE.HEIGHT} * 6) + (${MARGIN.S} * 6));
-    margin-left: auto;
+    margin-left: ${MARGIN.AUTO};
     margin-bottom: 80px;
     margin-right: ${MARGIN.XL};
     border-radius: ${BORDER_RADIUS.NONE};

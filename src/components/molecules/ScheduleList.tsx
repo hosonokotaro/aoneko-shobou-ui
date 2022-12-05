@@ -54,7 +54,7 @@ const StyledScheduleList = styled.div`
   flex-wrap: wrap;
 
   & > :nth-of-type(-n + 2) {
-    margin-top: 0;
+    margin-top: ${MARGIN.NONE};
   }
 
   ${MEDIA_QUERY.MOBILE} {

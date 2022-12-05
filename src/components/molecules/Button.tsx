@@ -91,7 +91,7 @@ const StyledButton = styled.button<{
 `
 
 const StyledIcon = styled(Icon)`
-  margin: 0 ${MARGIN.XS};
+  margin: ${MARGIN.NONE} ${MARGIN.XS};
 `
 
 const StyledText = styled.div`
