@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { BACKGROUND_COLOR, BORDER_COLOR } from '@/const/color'
+import { BORDER_COLOR } from '@/const/color'
 
 type Props = {
   text: string
@@ -15,5 +15,4 @@ export default ParagraphText
 const StyledParagraphText = styled.p`
   padding: 12px;
   border-left: 2px solid ${BORDER_COLOR.LIGHT_GRAY};
-  background: ${BACKGROUND_COLOR.WHITE};
 `
