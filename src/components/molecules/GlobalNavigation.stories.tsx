@@ -60,5 +60,5 @@ map(PAGE_LIST, (item) => {
 export const Default = Template.bind({})
 Default.args = {
   navigationList: fixedList,
-  handleClick: action('[path, isExternal]'),
+  handleLinkEvent: action('[path, isExternal]'),
 }

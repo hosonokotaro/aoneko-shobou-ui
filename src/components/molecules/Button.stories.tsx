@@ -15,7 +15,7 @@ Default.args = {
   text: '予約する',
   buttonColor: 'DEFAULT',
   isBorderRadius: true,
-  handleClick: action('Default'),
+  callback: action('Default'),
 }
 
 export const SeeMore = Template.bind({})
@@ -24,7 +24,7 @@ SeeMore.args = {
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
-  handleClick: action('SeeMore'),
+  callback: action('SeeMore'),
 }
 
 export const External = Template.bind({})
@@ -33,7 +33,7 @@ External.args = {
   buttonColor: 'EXTERNAL',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
-  handleClick: action('External'),
+  callback: action('External'),
 }
 
 export const IconOnly = Template.bind({})
@@ -41,5 +41,5 @@ IconOnly.args = {
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
-  handleClick: action('IconOnly'),
+  callback: action('IconOnly'),
 }

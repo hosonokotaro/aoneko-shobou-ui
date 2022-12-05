@@ -17,7 +17,7 @@ import {
 
 type Props = {
   className?: string
-  handleClick?: MouseEventHandler<HTMLButtonElement>
+  callback?: MouseEventHandler<HTMLButtonElement>
   text?: string
   buttonColor: ButtonBackgroundColor
   iconKind?: IconKind
@@ -27,7 +27,7 @@ type Props = {
 
 const Button = ({
   className,
-  handleClick,
+  callback,
   text,
   buttonColor,
   iconKind,
@@ -39,7 +39,7 @@ const Button = ({
       className={className}
       $buttonColor={buttonColor}
       $isBorderRadius={isBorderRadius}
-      onClick={handleClick}
+      onClick={callback}
     >
       {iconKind && (
         <StyledIcon
