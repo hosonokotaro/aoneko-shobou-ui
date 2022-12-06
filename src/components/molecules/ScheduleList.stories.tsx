@@ -13,22 +13,22 @@ const Template: ComponentStory<typeof ScheduleList> = (args) => (
 
 const scheduleList: ScheduleItem[] = [
   {
-    period: '2022年11月23日(水)～2022年12月26日(月)',
+    startDate: '2022/11/23',
+    endDate: '2022/12/26',
     timeFrame: '11:00～18:00',
     description: '「おとうさんとぼく」展示会',
-    endDate: '2022/12/26',
   },
   {
-    period: '2022年12月3日(土)',
+    startDate: '2022/12/3',
+    endDate: '2022/12/3',
     timeFrame: '14:30～15:00',
     description: 'プレコンサート■ダミアン原田シターコンサート　無料',
-    endDate: '2022/12/3',
   },
   {
-    period: '2022年12月4日(日)',
+    startDate: '2022/12/4',
+    endDate: '2022/12/4',
     timeFrame: '13:15～15:15',
     description: '＊サロン占有使用に付き、展示は見られません🙇',
-    endDate: '2022/12/4',
   },
 ]
 

@@ -1,6 +1,8 @@
+import 'dayjs/locale/ja'
+
 import dayjs from 'dayjs'
 import { map } from 'lodash-es'
-import { Fragment } from 'react'
+import { Fragment, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { BORDER_COLOR } from '../const/color'
@@ -8,12 +10,13 @@ import { MEDIA_QUERY } from '../const/mediaQuery'
 import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '../const/size'
 
 dayjs().format()
+dayjs.locale('ja')
 
 export type ScheduleItem = {
-  period: string
+  startDate: string
+  endDate: string
   timeFrame: string
   description: string
-  endDate: string
 }
 
 type Props = {
@@ -22,23 +25,50 @@ type Props = {
 }
 
 const ScheduleList = ({ scheduleList, currentTime }: Props) => {
-  const currentTimeDayJs = dayjs(currentTime)
+  const dateFormat = useCallback((dateText: string) => {
+    return dayjs(dateText).format('YYYY年M月D日(ddd)')
+  }, [])
 
-  if (!scheduleList.length) return null
+  const beforeScheduleList = useMemo(() => {
+    const currentTimeDayJs = dayjs(currentTime)
+    let tempBeforeScheduleList: ScheduleItem[] = []
+
+    map(scheduleList, (scheduleItem) => {
+      if (currentTimeDayJs.isAfter(dayjs(scheduleItem.endDate), 'day')) return
+
+      const startDate = dateFormat(scheduleItem.startDate)
+      const endDate = dateFormat(scheduleItem.endDate)
+
+      const formattedScheduleItem: ScheduleItem = {
+        ...scheduleItem,
+        startDate,
+        endDate,
+      }
+
+      tempBeforeScheduleList = [
+        ...tempBeforeScheduleList,
+        formattedScheduleItem,
+      ]
+    })
+
+    return tempBeforeScheduleList
+  }, [currentTime, dateFormat, scheduleList])
 
   return (
     <StyledScheduleList>
-      {map(scheduleList, (scheduleItem, index) => {
+      {!beforeScheduleList.length && <div>準備中です</div>}
+      {map(beforeScheduleList, (beforeScheduleItem, index) => {
         return (
           <Fragment key={index}>
-            {!currentTimeDayJs.isAfter(dayjs(scheduleItem.endDate), 'day') && (
-              <>
-                <StyledPeriod>{scheduleItem.period}</StyledPeriod>
-                <StyledDescription>
-                  {scheduleItem.description}
-                </StyledDescription>
-              </>
-            )}
+            <StyledPeriod>
+              {beforeScheduleItem.startDate}
+              {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
+                `〜${beforeScheduleItem.endDate}`}
+            </StyledPeriod>
+            <StyledDescription>
+              <StyledTimeFrame>{beforeScheduleItem.timeFrame}</StyledTimeFrame>
+              <span>{beforeScheduleItem.description}</span>
+            </StyledDescription>
           </Fragment>
         )
       })}
@@ -98,4 +128,9 @@ const StyledDescription = styled.div`
     width: ${BLOCK_WIDTH.FULL};
     margin-top: ${MARGIN.XS};
   }
+`
+
+const StyledTimeFrame = styled.span`
+  margin-right: ${MARGIN.M};
+  font-weight: ${FONT_WEIGHT.BOLD};
 `
