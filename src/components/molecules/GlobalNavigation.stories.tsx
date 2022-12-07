@@ -61,4 +61,5 @@ export const Default = Template.bind({})
 Default.args = {
   navigationList: fixedList,
   handleLinkEvent: action('[path, isExternal]'),
+  currentPath: '/',
 }

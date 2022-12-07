@@ -72,6 +72,15 @@ const StyledButton = styled.button<{
   ${({ $buttonColor }) =>
     `background: ${BUTTON_BACKGROUND_COLOR[$buttonColor]};`}
 
+  ${({ $buttonColor }) => {
+    if ($buttonColor === 'DEFAULT_CURRENT') {
+      return `
+        cursor: pointer;
+        pointer-events: none;
+      `
+    }
+  }}
+
   ${({ $isBorderRadius }) =>
     `border-radius: ${$isBorderRadius ? BORDER_RADIUS.S : 0}`};
 

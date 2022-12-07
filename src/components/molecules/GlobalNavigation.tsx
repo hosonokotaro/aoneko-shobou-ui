@@ -26,9 +26,14 @@ export type NavigationItem = {
 type Props = {
   navigationList: NavigationItem[]
   handleLinkEvent: (path: string, isExternal: boolean) => void
+  currentPath: string
 }
 
-const GlobalNavigation = ({ navigationList, handleLinkEvent }: Props) => {
+const GlobalNavigation = ({
+  navigationList,
+  handleLinkEvent,
+  currentPath,
+}: Props) => {
   const { isTablet } = useMatchMedia()
   const checkboxRef = useRef<HTMLInputElement>(null)
 
@@ -51,7 +56,13 @@ const GlobalNavigation = ({ navigationList, handleLinkEvent }: Props) => {
             <StyledButton
               key={index}
               text={navigationItem.name}
-              buttonColor={navigationItem.isExternal ? 'EXTERNAL' : 'DEFAULT'}
+              buttonColor={
+                navigationItem.isExternal
+                  ? 'EXTERNAL'
+                  : navigationItem.path === currentPath
+                  ? 'DEFAULT_CURRENT'
+                  : 'DEFAULT'
+              }
               isBorderRadius={isTablet}
               callback={() =>
                 handleLinkEvent(navigationItem.path, navigationItem.isExternal)
