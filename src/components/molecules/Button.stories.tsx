@@ -33,7 +33,9 @@ External.args = {
   buttonColor: 'EXTERNAL',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
-  callback: action('External'),
+  isAnchor: true,
+  href: 'https://www.google.com/',
+  target: 'BLANK',
 }
 
 export const IconOnly = Template.bind({})

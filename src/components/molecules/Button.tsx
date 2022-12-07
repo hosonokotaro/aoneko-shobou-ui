@@ -1,6 +1,7 @@
 import { MouseEventHandler } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
+import Anchor, { AnchorTarget } from '@/atoms/Anchor'
 import Icon, { IconKind } from '@/atoms/Icon'
 import {
   BUTTON_BACKGROUND_COLOR,
@@ -23,6 +24,9 @@ type Props = {
   iconKind?: IconKind
   iconRotate?: Rotate
   isBorderRadius: boolean
+  isAnchor?: boolean
+  href?: string
+  target?: AnchorTarget
 }
 
 const Button = ({
@@ -33,34 +37,62 @@ const Button = ({
   iconKind,
   isBorderRadius,
   iconRotate,
+  isAnchor,
+  href,
+  target,
 }: Props) => {
   return (
-    <StyledButton
-      className={className}
-      $buttonColor={buttonColor}
-      $isBorderRadius={isBorderRadius}
-      onClick={callback}
-    >
-      {iconKind && (
-        <StyledIcon
-          iconKind={iconKind}
-          fillColor="WHITE"
-          size="XXL"
-          iconRotate={iconRotate ?? 'DEFAULT'}
-        />
+    <StyledButtonWrapper className={className}>
+      {isAnchor && (
+        <StyledAnchorButton
+          href={href || ''}
+          target={target}
+          $buttonColor={buttonColor}
+          $isBorderRadius={isBorderRadius}
+        >
+          {iconKind && (
+            <StyledIcon
+              iconKind={iconKind}
+              fillColor="WHITE"
+              size="XXL"
+              iconRotate={iconRotate ?? 'DEFAULT'}
+            />
+          )}
+          {text && <StyledText>{text}</StyledText>}
+        </StyledAnchorButton>
       )}
-      {text && <StyledText>{text}</StyledText>}
-    </StyledButton>
+      {!isAnchor && (
+        <StyledButton
+          $buttonColor={buttonColor}
+          $isBorderRadius={isBorderRadius}
+          onClick={callback}
+        >
+          {iconKind && (
+            <StyledIcon
+              iconKind={iconKind}
+              fillColor="WHITE"
+              size="XXL"
+              iconRotate={iconRotate ?? 'DEFAULT'}
+            />
+          )}
+          {text && <StyledText>{text}</StyledText>}
+        </StyledButton>
+      )}
+    </StyledButtonWrapper>
   )
 }
 
 export default Button
 
-const StyledButton = styled.button<{
+const StyledButtonWrapper = styled.div`
+  display: inline-flex;
+`
+
+const baseStyle = css<{
   $buttonColor: ButtonBackgroundColor
   $isBorderRadius: boolean
 }>`
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   min-width: ${ICON_BUTTON_SIZE.WIDTH};
@@ -92,11 +124,22 @@ const StyledButton = styled.button<{
         }
 
         if ($buttonColor === 'EXTERNAL') {
-          return `background: ${BUTTON_BACKGROUND_COLOR.EXTERNAL_HOVER};`
+          return `
+            color: ${FONT_COLOR.WHITE};
+            background: ${BUTTON_BACKGROUND_COLOR.EXTERNAL_HOVER};
+          `
         }
       }}
     }
   }
+`
+
+const StyledButton = styled.button`
+  ${baseStyle}
+`
+
+const StyledAnchorButton = styled(Anchor)`
+  ${baseStyle}
 `
 
 const StyledIcon = styled(Icon)`

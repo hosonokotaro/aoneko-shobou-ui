@@ -67,6 +67,9 @@ const GlobalNavigation = ({
               callback={() =>
                 handleLinkEvent(navigationItem.path, navigationItem.isExternal)
               }
+              isAnchor={navigationItem.isExternal}
+              href={navigationItem.path}
+              target={navigationItem.isExternal ? 'BLANK' : 'SELF'}
             />
           )
         })}
@@ -84,6 +87,12 @@ const StyledButton = styled(Button)`
 
   ${MEDIA_QUERY.TABLET} {
     flex-grow: 0;
+  }
+
+  /* HACK: 子要素が別のタグの為 */
+  & > button,
+  & > a {
+    width: 100%;
   }
 `
 
