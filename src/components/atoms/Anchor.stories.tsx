@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import Anchor from '@/atoms/Anchor'
+import Image from '@/atoms/Image'
 
 export default {
   title: 'atoms/Anchor',
@@ -21,4 +22,18 @@ Blank.args = {
   href: '#',
   target: 'BLANK',
   children: 'blank link text',
+}
+
+export const ImageLink = Template.bind({})
+ImageLink.args = {
+  href: '#',
+  target: 'BLANK',
+  children: (
+    <Image
+      src="https://picsum.photos/640/480"
+      alt="default"
+      width={640}
+      height={480}
+    />
+  ),
 }
