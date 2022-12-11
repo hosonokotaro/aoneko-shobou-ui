@@ -5,9 +5,9 @@ import { map } from 'lodash-es'
 import { Fragment, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
-import { BORDER_COLOR } from '../const/color'
-import { MEDIA_QUERY } from '../const/mediaQuery'
-import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '../const/size'
+import { BORDER_COLOR } from '@/const/color'
+import { MEDIA_QUERY } from '@/const/mediaQuery'
+import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '@/const/size'
 
 dayjs().format()
 dayjs.locale('ja')
