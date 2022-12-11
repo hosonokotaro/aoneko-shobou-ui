@@ -4,14 +4,15 @@ export const BASE_COLOR = {
   CAUTION: '#ff8897',
   CAPTION: '#999',
   INFORMATION: '#5d7fb3',
-  LIGHT_GRAY: '#efefef',
   LINK: '#4a90d6',
   LINK_HOVER: '#417cb5',
   LINK_CURRENT: '#34628f',
   LINK_EXTERNAL: '#a4a368',
   LINK_EXTERNAL_HOVER: '#827f3c',
   TITLE: '#a370d3',
-  WHITE: '#fff',
+  BLACK: '#111',
+  LIGHT_GRAY: '#eee',
+  WHITE: '#fcfcfc',
 } as const
 
 export type BaseColor = keyof typeof BASE_COLOR
@@ -40,6 +41,7 @@ export const FONT_COLOR = {
   LINK_HOVER: BASE_COLOR.LINK_HOVER,
   TITLE: BASE_COLOR.TITLE,
   WHITE: BASE_COLOR.WHITE,
+  BLACK: BASE_COLOR.BLACK,
 } as const
 
 export type FontColor = keyof typeof FONT_COLOR

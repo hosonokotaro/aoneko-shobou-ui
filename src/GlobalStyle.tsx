@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { FONT_COLOR } from '@/const/color'
+
 const GlobalStyle = createGlobalStyle`
   /* Reset CSS */
   html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6, input {
@@ -19,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: ${FONT_COLOR.BLACK};
   }
 
   button {
