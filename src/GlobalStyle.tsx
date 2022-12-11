@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 87.5%;
   }
 
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  }
+
   button {
     padding: 0;
     border: none;

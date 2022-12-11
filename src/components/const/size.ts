@@ -24,16 +24,19 @@ export const FONT_WEIGHT = {
 
 export type FontWeight = keyof typeof FONT_WEIGHT
 
-// NOTE: この設定方法が正しいのか、しばらく様子を見ること
+const ICON_BUTTON_SIZE_MEDIUM = {
+  WIDTH: '40px',
+  HEIGHT: '40px',
+} as const
+
+const ICON_BUTTON_SIZE_SMALL = {
+  WIDTH: '20px',
+  HEIGHT: '20px',
+}
+
 export const ICON_BUTTON_SIZE = {
-  M: {
-    WIDTH: '40px',
-    HEIGHT: '40px',
-  },
-  S: {
-    WIDTH: '20px',
-    HEIGHT: '20px',
-  },
+  M: ICON_BUTTON_SIZE_MEDIUM,
+  S: ICON_BUTTON_SIZE_SMALL,
 } as const
 
 export type IconButtonSize = keyof typeof ICON_BUTTON_SIZE
