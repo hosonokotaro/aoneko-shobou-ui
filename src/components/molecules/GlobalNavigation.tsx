@@ -53,7 +53,7 @@ const GlobalNavigation = ({
                 handleLinkEvent(navigationItem.path, navigationItem.isExternal)
               }
               text={navigationItem.name}
-              buttonSize={isTablet ? 'S' : 'M'}
+              buttonSize="M"
               buttonColor={
                 navigationItem.isExternal
                   ? 'EXTERNAL'
@@ -85,6 +85,7 @@ const GlobalNavigation = ({
 export default GlobalNavigation
 
 const StyledGlobalNavigationWrapper = styled.div<{ $isOpen: boolean }>`
+  overflow-y: auto;
   transition: background 0.25s ease;
 
   ${MEDIA_QUERY.TABLET} {
@@ -143,7 +144,7 @@ const StyledGlobalNavigation = styled.nav<{ $isOpen: boolean }>`
   ${MEDIA_QUERY.TABLET} {
     flex-direction: column;
     align-items: flex-end;
-    height: calc((${ICON_BUTTON_SIZE.S.HEIGHT} * 6) + (${MARGIN.L} * 5));
+    height: calc((${ICON_BUTTON_SIZE.M.HEIGHT} * 6) + (${MARGIN.L} * 5));
     margin-bottom: ${MARGIN.L};
     border-radius: ${BORDER_RADIUS.NONE};
     background: none;
