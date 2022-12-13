@@ -3,5 +3,6 @@
 /svg
 
 .DS_Store
+.env
 
 *.log
