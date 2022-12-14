@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { map } from 'lodash-es'
 
 import GlobalNavigation, { NavigationItem } from '@/molecules/GlobalNavigation'
 
@@ -13,53 +12,42 @@ const Template: ComponentStory<typeof GlobalNavigation> = (args) => (
   <GlobalNavigation {...args} />
 )
 
-const PAGE_LIST = [
+const navigationList: NavigationItem[] = [
   {
-    PATH: '/',
-    NAME: 'HOME',
-    IS_EXTERNAL: false,
+    path: '/',
+    name: 'HOME',
+    isExternal: false,
   },
   {
-    PATH: '/overture',
-    NAME: '青猫書房について',
-    IS_EXTERNAL: false,
+    path: '/overture',
+    name: '青猫書房について',
+    isExternal: false,
   },
   {
-    PATH: '/info',
-    NAME: '店舗情報',
-    IS_EXTERNAL: false,
+    path: '/info',
+    name: '店舗情報',
+    isExternal: false,
   },
   {
-    PATH: '/salon-gallery',
-    NAME: 'サロン・ギャラリー',
-    IS_EXTERNAL: false,
+    path: '/salon-gallery',
+    name: 'サロン・ギャラリー',
+    isExternal: false,
   },
   {
-    PATH: '/contact',
-    NAME: 'お問い合わせ',
-    IS_EXTERNAL: false,
+    path: '/contact',
+    name: 'お問い合わせ',
+    isExternal: false,
   },
   {
-    PATH: 'https://blog.aoneko-shobou.jp',
-    NAME: '青猫書房の日々',
-    IS_EXTERNAL: true,
+    path: 'https://blog.aoneko-shobou.jp',
+    name: '青猫書房の日々',
+    isExternal: true,
   },
-] as const
-
-// NOTE: 定数なので大文字になるが、実際に component で利用するには小文字が望ましいので、変換作業をする
-const fixedList: NavigationItem[] = []
-
-map(PAGE_LIST, (item) => {
-  fixedList.push({
-    path: item.PATH,
-    name: item.NAME,
-    isExternal: item.IS_EXTERNAL,
-  })
-})
+]
 
 export const Default = Template.bind({})
 Default.args = {
-  navigationList: fixedList,
+  navigationList,
   handleLinkEvent: action('[path, isExternal]'),
   currentPath: '/',
 }
