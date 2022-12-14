@@ -7,6 +7,7 @@ export const LOADING_PARAMS = {
 type LoadingParams = keyof typeof LOADING_PARAMS
 
 export type Props = {
+  className?: string
   src: string
   alt?: string
   width?: number
@@ -14,7 +15,7 @@ export type Props = {
   loading?: LoadingParams
 }
 
-const Image = ({ src, alt = '', width, height, loading }: Props) => {
+const Image = ({ className, src, alt = '', width, height, loading }: Props) => {
   const loadingParam =
     loading === 'EAGER'
       ? LOADING_PARAMS.EAGER
@@ -24,6 +25,7 @@ const Image = ({ src, alt = '', width, height, loading }: Props) => {
 
   return (
     <img
+      className={className}
       src={src}
       alt={alt}
       width={width}
