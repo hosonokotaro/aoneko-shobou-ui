@@ -14,6 +14,7 @@ Info.args = {
   iconKind: ICON_KIND.INFO,
   fillColor: 'TITLE',
   size: 'XXL',
+  iconRotate: 'DEFAULT',
 }
 
 export const OpenInNew = Template.bind({})
@@ -26,6 +27,20 @@ OpenInNew.args = {
 export const NavigateNext = Template.bind({})
 NavigateNext.args = {
   iconKind: ICON_KIND.NAVIGATE_NEXT,
+  fillColor: 'LINK',
+  size: 'XXL',
+}
+
+export const Menu = Template.bind({})
+Menu.args = {
+  iconKind: ICON_KIND.MENU,
+  fillColor: 'LINK',
+  size: 'XXL',
+}
+
+export const MenuOpen = Template.bind({})
+MenuOpen.args = {
+  iconKind: ICON_KIND.MENU_OPEN,
   fillColor: 'LINK',
   size: 'XXL',
 }

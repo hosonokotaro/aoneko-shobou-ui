@@ -9,11 +9,15 @@ export default {
 
 const Template: ComponentStory<typeof Photo> = (args) => <Photo {...args} />
 
-export const Default = Template.bind({})
-Default.args = {
+const imageProps = {
   src: 'https://picsum.photos/640/480',
   alt: 'default',
   width: 640,
   height: 480,
   loading: undefined,
+} as const
+
+export const Default = Template.bind({})
+Default.args = {
+  imageProps,
 }

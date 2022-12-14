@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 
-import { BORDER_RADIUS, CHIP_COLOR, ChipColor, FONT_COLOR } from '@/const/style'
+import {
+  CHIP_BACKGROUND_COLOR,
+  ChipBackgroundColor,
+  FONT_COLOR,
+} from '@/const/color'
+import { BORDER_RADIUS } from '@/const/size'
 
 type Props = {
-  status: ChipColor
+  status: ChipBackgroundColor
   text: string
 }
 
@@ -13,10 +18,10 @@ const Chip = ({ status, text }: Props) => {
 
 export default Chip
 
-const StyledChip = styled.span<{ $status: ChipColor }>`
+const StyledChip = styled.span<{ $status: ChipBackgroundColor }>`
   display: inline-block;
   padding: 2px 8px;
   border-radius: ${BORDER_RADIUS.S};
-  background-color: ${({ $status }) => CHIP_COLOR[$status]};
+  background: ${({ $status }) => CHIP_BACKGROUND_COLOR[$status]};
   color: ${FONT_COLOR.WHITE};
 `

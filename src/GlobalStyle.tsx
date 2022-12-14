@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { FONT_COLOR } from '@/const/color'
+
 const GlobalStyle = createGlobalStyle`
   /* Reset CSS */
-  html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6, input {
     margin: 0;
     padding: 0;
   }
@@ -15,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     /* NOTE: 設定する rem は 1 (87.5% === 14px) から相対的な値を設定する */
     font-size: 87.5%;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: ${FONT_COLOR.BLACK};
   }
 
   button {

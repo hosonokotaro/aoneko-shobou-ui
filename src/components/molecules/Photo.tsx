@@ -1,32 +1,32 @@
 import styled from 'styled-components'
 
-import Image, { Props } from '@/atoms/Image'
-import { BASE_COLOR } from '@/const/style'
+import Image, { Props as ImageProps } from '@/atoms/Image'
+import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
 
-const Photo = ({ src, alt = '', width, height, loading }: Props) => {
+type Props = {
+  imageProps: ImageProps
+}
+
+const Photo = ({ imageProps }: Props) => {
   return (
-    <PhotoWrapper>
+    <StyledPhoto>
       <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        loading={loading}
+        src={imageProps.src}
+        alt={imageProps.alt}
+        width={imageProps.width}
+        height={imageProps.height}
+        loading={imageProps.loading}
       />
-    </PhotoWrapper>
+    </StyledPhoto>
   )
 }
 
 export default Photo
 
-// NOTE: ここでしか利用しないのでハードコードで対応する
-const PHOTO_WRAPPER_COLOR = {
-  BORDER: BASE_COLOR.LIGHT_GRAY,
-  BACKGROUND: BASE_COLOR.LIGHT_GRAY,
-} as const
-
-const PhotoWrapper = styled.div`
+const StyledPhoto = styled.div`
   display: inline-flex;
-  border: 8px solid ${PHOTO_WRAPPER_COLOR.BORDER};
-  background: ${PHOTO_WRAPPER_COLOR.BACKGROUND};
+  border: 8px solid ${BORDER_COLOR.LIGHT_GRAY};
+
+  /* NOTE: ここでしか利用しないのでハードコードで対応する */
+  background: ${BASE_COLOR.LIGHT_GRAY};
 `

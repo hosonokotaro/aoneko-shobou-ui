@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-import { FONT_COLOR, FONT_WEIGHT, INLINE_SIZE } from '@/const/style'
+import { BORDER_COLOR, FONT_COLOR } from '@/const/color'
+import { FONT_WEIGHT, INLINE_SIZE } from '@/const/size'
 
 export const HEADING_KIND = {
   PAGE_TITLE: 'PAGE_TITLE',
@@ -41,7 +42,7 @@ const StyledPageTitle = styled.h1`
 
 const StyledSectionTitle = styled.h2`
   padding-left: 8px;
-  border-left: 2px solid ${FONT_COLOR.TITLE};
+  border-left: 2px solid ${BORDER_COLOR.TITLE};
   font-size: ${INLINE_SIZE.XL};
   font-weight: ${FONT_WEIGHT.NORMAL};
   color: ${FONT_COLOR.TITLE};

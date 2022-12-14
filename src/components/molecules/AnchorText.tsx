@@ -1,14 +1,10 @@
 import styled from 'styled-components'
 
+import Anchor, { AnchorTarget } from '@/atoms/Anchor'
 import Icon from '@/atoms/Icon'
-import { FONT_COLOR, MARGIN, TRANSITION_TIME } from '@/const/style'
-
-export const ANCHOR_TARGET = {
-  SELF: '_self',
-  BLANK: '_blank',
-} as const
-
-type AnchorTarget = typeof ANCHOR_TARGET[keyof typeof ANCHOR_TARGET]
+import { FONT_COLOR } from '@/const/color'
+import { TRANSITION_TIME } from '@/const/common'
+import { MARGIN } from '@/const/size'
 
 type Props = {
   text: string
@@ -16,18 +12,17 @@ type Props = {
   target?: AnchorTarget
 }
 
-const externalLinkRel = 'noopener noreferrer'
-
 const AnchorText = ({ text, href, target }: Props) => {
   return (
-    <StyledAnchorText
-      href={href}
-      target={target}
-      rel={target === ANCHOR_TARGET.BLANK ? externalLinkRel : undefined}
-    >
-      <Text>{text}</Text>
-      {target === ANCHOR_TARGET.BLANK && (
-        <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
+    <StyledAnchorText href={href} target={target}>
+      <StyledText>{text}</StyledText>
+      {target === 'BLANK' && (
+        <StyledIcon
+          iconKind="OPEN_IN_NEW"
+          fillColor="LINK"
+          size="M"
+          iconRotate="DEFAULT"
+        />
       )}
     </StyledAnchorText>
   )
@@ -38,10 +33,8 @@ export default AnchorText
 // NOTE: component を選択して styling するため
 const StyledIcon = styled(Icon)``
 
-const StyledAnchorText = styled.a`
+const StyledAnchorText = styled(Anchor)`
   display: inline-flex;
-  color: ${FONT_COLOR.LINK};
-  transition: color ${TRANSITION_TIME};
 
   & > ${StyledIcon} {
     margin-left: ${MARGIN.XS};
@@ -53,8 +46,6 @@ const StyledAnchorText = styled.a`
 
   @media (any-hover: hover) {
     &:hover {
-      color: ${FONT_COLOR.LINK_HOVER};
-
       & > ${StyledIcon} {
         & > svg {
           fill: ${FONT_COLOR.LINK_HOVER};
@@ -64,6 +55,6 @@ const StyledAnchorText = styled.a`
   }
 `
 
-const Text = styled.span`
+const StyledText = styled.span`
   display: inline-flex;
 `

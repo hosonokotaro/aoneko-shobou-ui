@@ -9,6 +9,7 @@
     "lint": "eslint './src/**/*.{ts,tsx}' --fix",
     "format-code": "prettier --write './src/**/**.{ts,tsx}'",
     "test": "npm run lint",
+    "typecheck": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg",
@@ -30,17 +31,19 @@
   "devDependencies": {
     "@hosonokotaro/eslint-rules": "^0.1.1",
     "@hosonokotaro/prettier-format": "^0.1.7",
-    "@storybook/addon-a11y": "^6.5.13",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-webpack5": "^6.5.13",
-    "@storybook/manager-webpack5": "^6.5.13",
-    "@storybook/react": "^6.5.13",
+    "@storybook/addon-a11y": "^6.5.14",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.14",
+    "@storybook/manager-webpack5": "^6.5.14",
+    "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "@svgr/cli": "^6.5.1",
     "@types/copy-webpack-plugin": "^8.0.1",
+    "@types/google.maps": "^3.51.0",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.11.9",
     "@types/react": "^17.0.52",
     "@types/react-dom": "^17.0.18",
@@ -52,12 +55,13 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.1.0",
     "css-loader": "^6.7.2",
+    "dotenv": "^16.0.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-storybook": "^0.6.7",
+    "eslint-plugin-storybook": "^0.6.8",
     "fork-ts-checker-webpack-plugin": "^6.5.2",
     "html-webpack-plugin": "^5.3.2",
     "prettier": "^2.8.0",
@@ -70,12 +74,13 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.1",
+    "dayjs": "^1.11.6",
+    "lodash-es": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.3.6"
-  },
-  "overrides": {
-    "enhanced-resolve": "5.10.0"
+    "styled-components": "^5.3.6",
+    "swiper": "^8.4.5"
   },
   "prettier": "@hosonokotaro/prettier-format"
 }
