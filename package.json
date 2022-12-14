@@ -31,14 +31,14 @@
   "devDependencies": {
     "@hosonokotaro/eslint-rules": "^0.1.1",
     "@hosonokotaro/prettier-format": "^0.1.7",
-    "@storybook/addon-a11y": "^6.5.13",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-webpack5": "^6.5.13",
-    "@storybook/manager-webpack5": "^6.5.13",
-    "@storybook/react": "^6.5.13",
+    "@storybook/addon-a11y": "^6.5.14",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-webpack5": "^6.5.14",
+    "@storybook/manager-webpack5": "^6.5.14",
+    "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "@svgr/cli": "^6.5.1",
     "@types/copy-webpack-plugin": "^8.0.1",
@@ -61,7 +61,7 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-storybook": "^0.6.7",
+    "eslint-plugin-storybook": "^0.6.8",
     "fork-ts-checker-webpack-plugin": "^6.5.2",
     "html-webpack-plugin": "^5.3.2",
     "prettier": "^2.8.0",
@@ -81,9 +81,6 @@
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.6",
     "swiper": "^8.4.5"
-  },
-  "overrides": {
-    "enhanced-resolve": "5.10.0"
   },
   "prettier": "@hosonokotaro/prettier-format"
 }
