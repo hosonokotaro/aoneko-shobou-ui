@@ -28,21 +28,9 @@ const imageProps2: ImageProps = {
   loading: 'LAZY',
 } as const
 
-const carouselParams = {
-  loop: true,
-  slidesPerView: 1,
-  speedMs: 800,
-  autoPlauDelay: 4000,
-  autoplayDisableOnInteraction: false,
-  autoplayPauseOnMouseEnter: true,
-  autoHeight: true,
-  pagenationClickable: true,
-} as const
-
 const imageList = [imageProps1, imageProps2]
 
 export const Default = Template.bind({})
 Default.args = {
   imageList,
-  carouselParams,
 }
