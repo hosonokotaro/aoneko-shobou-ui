@@ -69,7 +69,7 @@ const GlobalNavigation = ({
           )
         })}
       </StyledGlobalNavigation>
-      <StyledToggleButtonWrapper>
+      <StyledToggleButtonWrapper $isOpen={isOpenNavigation}>
         <Button
           callback={() => setIsOpenNavigation(!isOpenNavigation)}
           buttonSize="M"
@@ -151,11 +151,16 @@ const StyledGlobalNavigation = styled.nav<{ $isOpen: boolean }>`
   }
 `
 
-const StyledToggleButtonWrapper = styled.div`
+// NOTE: ここでしか利用しないのでハードコードで対応する
+const MOBILE_NAVIGATION_HEIGHT = '336px'
+
+const StyledToggleButtonWrapper = styled.div<{ $isOpen: boolean }>`
   display: none;
 
   ${MEDIA_QUERY.TABLET} {
     display: flex;
     justify-content: flex-end;
+
+    margin-top: ${({ $isOpen }) => (!$isOpen ? MOBILE_NAVIGATION_HEIGHT : '0')};
   }
 `
