@@ -13,7 +13,10 @@
     "paths": {
       "~/*": ["src/*"],
       "@/*": ["src/components/*"]
-    }
+    },
+    "outDir": "./build/",
+    "module": "esnext",
+    "declaration": true
   },
   "include": ["./src", "./types/**/*.d.ts"]
 }
