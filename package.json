@@ -65,7 +65,9 @@
     "rollup": "^3.7.4",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
-    "typescript": "<4.8.0"
+    "ttypescript": "^1.5.15",
+    "typescript": "<4.8.0",
+    "typescript-transform-paths": "^3.4.4"
   },
   "peerDependencies": {
     "@googlemaps/js-api-loader": "^1.15.1",

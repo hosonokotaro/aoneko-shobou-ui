@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import ttypescript from 'ttypescript'
 
 import packageJson from './package.json' assert { type: 'json' }
 
@@ -20,5 +21,13 @@ export default {
       sourcemap: true,
     },
   ],
-  plugins: [peerDepsExternal(), resolve(), commonjs(), typescript(), terser()],
+  plugins: [
+    peerDepsExternal(),
+    resolve(),
+    commonjs(),
+    typescript({
+      typescript: ttypescript,
+    }),
+    terser(),
+  ],
 }
