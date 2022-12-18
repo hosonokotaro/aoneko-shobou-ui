@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "module": "build/index.mjs",
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs",
+    "build": "npm run remove-build && rollup -c --bundleConfigAsCjs",
+    "remove-build": "node -e 'fs.rmSync(`build`, {recursive:true, force:true})'",
     "lint": "eslint './src/**/*.{ts,tsx}' --fix",
     "format-code": "prettier --write './src/**/**.{ts,tsx}'",
     "test": "npm run lint",
