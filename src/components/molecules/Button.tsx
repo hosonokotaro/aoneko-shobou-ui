@@ -120,6 +120,7 @@ const baseStyle = css<{
       ? ICON_BUTTON_SIZE.S.HEIGHT
       : ICON_BUTTON_SIZE.M.HEIGHT};
 
+  margin: ${MARGIN.NONE};
   font-size: ${INLINE_SIZE.M};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};

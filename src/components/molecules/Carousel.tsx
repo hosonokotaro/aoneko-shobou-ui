@@ -75,7 +75,7 @@ const StyledCarousel = styled(Swiper)`
     object-fit: cover;
   }
 
-  & .swiper-pagination {
+  & .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 0;
   }
 
