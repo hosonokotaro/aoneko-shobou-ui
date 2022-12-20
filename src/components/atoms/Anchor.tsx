@@ -9,9 +9,9 @@ const ANCHOR_TARGET = {
   BLANK: '_blank',
 } as const
 
-export type AnchorTarget = keyof typeof ANCHOR_TARGET
+type AnchorTarget = keyof typeof ANCHOR_TARGET
 
-type Props = {
+type AnchorTextProps = {
   className?: string
   href: string
   target?: AnchorTarget
@@ -20,7 +20,7 @@ type Props = {
 
 const externalLinkRel = 'noopener noreferrer'
 
-const AnchorText = ({ className, href, target, children }: Props) => {
+const AnchorText = ({ className, href, target, children }: AnchorTextProps) => {
   return (
     <StyledAnchor
       className={className}

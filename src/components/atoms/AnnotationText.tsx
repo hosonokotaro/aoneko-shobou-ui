@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { FONT_COLOR, FontColor } from '@/const/color'
 import { INLINE_SIZE } from '@/const/size'
 
-type Props = {
+type AnnotationTextProps = {
   text: string
   color: FontColor
 }
 
-const AnnotationText = ({ text, color }: Props) => {
+const AnnotationText = ({ text, color }: AnnotationTextProps) => {
   return <StyledAnnotationText $color={color}>{text}</StyledAnnotationText>
 }
 

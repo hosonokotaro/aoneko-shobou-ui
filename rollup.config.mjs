@@ -25,6 +25,7 @@ export default {
     commonjs(),
     typescript({
       typescript: ttypescript,
+      exclude: ['**/*.stories.tsx'],
     }),
     terser(),
   ],

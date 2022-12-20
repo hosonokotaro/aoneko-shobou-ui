@@ -7,12 +7,12 @@ import {
 } from '@/const/color'
 import { BORDER_RADIUS } from '@/const/size'
 
-type Props = {
+type ChipProps = {
   status: ChipBackgroundColor
   text: string
 }
 
-const Chip = ({ status, text }: Props) => {
+const Chip = ({ status, text }: ChipProps) => {
   return <StyledChip $status={status}>{text}</StyledChip>
 }
 

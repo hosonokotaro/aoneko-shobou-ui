@@ -2,7 +2,7 @@ import { Loader, LoaderOptions } from '@googlemaps/js-api-loader'
 import { useCallback, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
-export type Props = {
+type Props = {
   loaderOptions: LoaderOptions
   height: string
 }

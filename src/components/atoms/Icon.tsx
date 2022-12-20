@@ -6,18 +6,8 @@ import MenuOpen from '@/atoms/IconSvg/SvgMenuOpen'
 import NavigateNext from '@/atoms/IconSvg/SvgNavigateNext'
 import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'
 import { FONT_COLOR, FontColor } from '@/const/color'
-import { ROTATE, Rotate } from '@/const/common'
+import { ICON_KIND, IconKind, ROTATE, Rotate } from '@/const/common'
 import { INLINE_SIZE, InlineSize } from '@/const/size'
-
-export const ICON_KIND = {
-  INFO: 'INFO',
-  OPEN_IN_NEW: 'OPEN_IN_NEW',
-  NAVIGATE_NEXT: 'NAVIGATE_NEXT',
-  MENU: 'MENU',
-  MENU_OPEN: 'MENU_OPEN',
-} as const
-
-export type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]
 
 type Props = {
   className?: string
@@ -77,31 +67,31 @@ const StyledIcon = styled.i<{ $iconRotate: Rotate }>`
   transform: rotate(${({ $iconRotate }) => `${ROTATE[$iconRotate]}`});
 `
 
-export const StyledInfo = styled(Info)<{
+const StyledInfo = styled(Info)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-export const StyledOpenInNew = styled(OpenInNew)<{
+const StyledOpenInNew = styled(OpenInNew)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-export const StyledNavigateNext = styled(NavigateNext)<{
+const StyledNavigateNext = styled(NavigateNext)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-export const StyledMenu = styled(Menu)<{
+const StyledMenu = styled(Menu)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-export const StyledMenuOpen = styled(MenuOpen)<{
+const StyledMenuOpen = styled(MenuOpen)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}

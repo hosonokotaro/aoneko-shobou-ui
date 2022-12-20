@@ -11,12 +11,12 @@ export const HEADING_KIND = {
 
 type HeadingKind = typeof HEADING_KIND[keyof typeof HEADING_KIND]
 
-type Props = {
+type HeadingTextProps = {
   text: string
   kind: HeadingKind
 }
 
-const HeadingText = ({ text, kind }: Props) => {
+const HeadingText = ({ text, kind }: HeadingTextProps) => {
   return (
     <>
       {kind === HEADING_KIND.PAGE_TITLE && (

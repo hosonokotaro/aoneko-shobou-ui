@@ -1,8 +1,8 @@
-import { MouseEventHandler } from 'react'
+import { ComponentProps, MouseEventHandler } from 'react'
 import styled, { css } from 'styled-components'
 
-import Anchor, { AnchorTarget } from '@/atoms/Anchor'
-import Icon, { IconKind } from '@/atoms/Icon'
+import Anchor from '@/atoms/Anchor'
+import Icon from '@/atoms/Icon'
 import {
   BUTTON_BACKGROUND_COLOR,
   ButtonBackgroundColor,
@@ -21,7 +21,7 @@ export const BUTTON_SIZE = {
   S: 'S',
 } as const
 
-export type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
+type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 
 type Props = {
   className?: string
@@ -29,12 +29,12 @@ type Props = {
   text?: string
   buttonSize: ButtonSize
   buttonColor: ButtonBackgroundColor
-  iconKind?: IconKind
+  iconKind?: ComponentProps<typeof Icon>['iconKind']
   iconRotate?: Rotate
   isBorderRadius: boolean
   isAnchor?: boolean
   href?: string
-  target?: AnchorTarget
+  target?: ComponentProps<typeof Anchor>['target']
 }
 
 const Button = ({
