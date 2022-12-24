@@ -14,8 +14,8 @@ import {
   ICON_BUTTON_SIZE,
   MARGIN,
 } from '@/const/size'
-import useMatchMedia from '@/hooks/useMatchMedia'
-import Button from '@/molecules/Button'
+import { useMatchMedia } from '@/hooks/useMatchMedia'
+import { Button } from '@/molecules/Button'
 
 export type NavigationItem = {
   path: string
@@ -29,7 +29,7 @@ type Props = {
   currentPath: string
 }
 
-const GlobalNavigation = ({
+export const GlobalNavigation = ({
   navigationList,
   handleLinkEvent,
   currentPath,
@@ -81,8 +81,6 @@ const GlobalNavigation = ({
     </StyledGlobalNavigationWrapper>
   )
 }
-
-export default GlobalNavigation
 
 const StyledGlobalNavigationWrapper = styled.div<{ $isOpen: boolean }>`
   overflow-y: auto;

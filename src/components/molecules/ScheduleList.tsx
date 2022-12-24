@@ -24,7 +24,7 @@ type Props = {
   currentTime: string
 }
 
-const ScheduleList = ({ scheduleList, currentTime }: Props) => {
+export const ScheduleList = ({ scheduleList, currentTime }: Props) => {
   const dateFormat = useCallback((dateText: string) => {
     return dayjs(dateText).format('YYYY年M月D日(ddd)')
   }, [])
@@ -75,8 +75,6 @@ const ScheduleList = ({ scheduleList, currentTime }: Props) => {
     </StyledScheduleList>
   )
 }
-
-export default ScheduleList
 
 const StyledScheduleList = styled.div`
   display: flex;

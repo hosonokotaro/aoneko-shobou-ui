@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-import Info from '@/atoms/IconSvg/SvgInfo'
-import Menu from '@/atoms/IconSvg/SvgMenuClose'
-import MenuOpen from '@/atoms/IconSvg/SvgMenuOpen'
-import NavigateNext from '@/atoms/IconSvg/SvgNavigateNext'
-import OpenInNew from '@/atoms/IconSvg/SvgOpenInNew'
+import { SvgInfo } from '@/atoms/IconSvg/SvgInfo'
+import { SvgMenu } from '@/atoms/IconSvg/SvgMenuClose'
+import { SvgMenuOpen } from '@/atoms/IconSvg/SvgMenuOpen'
+import { SvgNavigateNext } from '@/atoms/IconSvg/SvgNavigateNext'
+import { SvgOpenInNew } from '@/atoms/IconSvg/SvgOpenInNew'
 import { FONT_COLOR, FontColor } from '@/const/color'
 import { ICON_KIND, IconKind, ROTATE, Rotate } from '@/const/common'
 import { INLINE_SIZE, InlineSize } from '@/const/size'
@@ -17,7 +17,13 @@ type Props = {
   iconRotate: Rotate
 }
 
-const Icon = ({ className, iconKind, fillColor, size, iconRotate }: Props) => {
+export const Icon = ({
+  className,
+  iconKind,
+  fillColor,
+  size,
+  iconRotate,
+}: Props) => {
   return (
     <StyledIcon className={className} $iconRotate={iconRotate}>
       {iconKind === ICON_KIND.INFO && (
@@ -59,39 +65,37 @@ const Icon = ({ className, iconKind, fillColor, size, iconRotate }: Props) => {
   )
 }
 
-export default Icon
-
 const StyledIcon = styled.i<{ $iconRotate: Rotate }>`
   display: inline-grid;
   place-content: center;
   transform: rotate(${({ $iconRotate }) => `${ROTATE[$iconRotate]}`});
 `
 
-const StyledInfo = styled(Info)<{
+const StyledInfo = styled(SvgInfo)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-const StyledOpenInNew = styled(OpenInNew)<{
+const StyledOpenInNew = styled(SvgOpenInNew)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-const StyledNavigateNext = styled(NavigateNext)<{
+const StyledNavigateNext = styled(SvgNavigateNext)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-const StyledMenu = styled(Menu)<{
+const StyledMenu = styled(SvgMenu)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}
 `
 
-const StyledMenuOpen = styled(MenuOpen)<{
+const StyledMenuOpen = styled(SvgMenuOpen)<{
   $fillColor: FontColor
 }>`
   ${({ $fillColor }) => `fill: ${FONT_COLOR[$fillColor]};`}

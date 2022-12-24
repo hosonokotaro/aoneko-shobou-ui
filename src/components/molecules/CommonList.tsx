@@ -15,7 +15,7 @@ type Props = {
   commonList: CommonItem[]
 }
 
-const CommonList = ({ commonList }: Props) => {
+export const CommonList = ({ commonList }: Props) => {
   return (
     <StyledCommonList>
       {map(commonList, (commonItem, index) => {
@@ -29,8 +29,6 @@ const CommonList = ({ commonList }: Props) => {
     </StyledCommonList>
   )
 }
-
-export default CommonList
 
 const StyledCommonList = styled.dl`
   display: flex;

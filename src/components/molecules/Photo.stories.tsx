@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Photo from '@/molecules/Photo'
+import { Photo } from '@/molecules/Photo'
 
 export default {
   title: 'molecules/Photo',

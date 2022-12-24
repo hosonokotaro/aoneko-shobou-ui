@@ -16,7 +16,7 @@ type HeadingTextProps = {
   kind: HeadingKind
 }
 
-const HeadingText = ({ text, kind }: HeadingTextProps) => {
+export const HeadingText = ({ text, kind }: HeadingTextProps) => {
   return (
     <>
       {kind === HEADING_KIND.PAGE_TITLE && (
@@ -31,8 +31,6 @@ const HeadingText = ({ text, kind }: HeadingTextProps) => {
     </>
   )
 }
-
-export default HeadingText
 
 const StyledPageTitle = styled.h1`
   font-size: ${INLINE_SIZE.XXL};

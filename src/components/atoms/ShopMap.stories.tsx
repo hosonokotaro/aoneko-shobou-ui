@@ -1,7 +1,7 @@
 import { LoaderOptions } from '@googlemaps/js-api-loader'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import ShopMap from '@/atoms/ShopMap'
+import { ShopMap } from '@/atoms/ShopMap'
 import { mapKey } from '~/config/environment'
 
 export default {

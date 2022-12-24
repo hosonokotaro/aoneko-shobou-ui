@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Button, { BUTTON_SIZE } from '@/molecules/Button'
+import { Button, BUTTON_SIZE } from '@/molecules/Button'
 
 export default {
   title: 'molecules/Button',

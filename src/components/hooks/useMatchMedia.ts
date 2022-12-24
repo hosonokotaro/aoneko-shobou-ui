@@ -4,7 +4,7 @@ import { MATCH_MEDIA } from '@/const/mediaQuery'
 
 const tabletDevice = matchMedia(MATCH_MEDIA.TABLET)
 
-const useMatchMedia = () => {
+export const useMatchMedia = () => {
   const [isTablet, setIsTablet] = useState(tabletDevice.matches)
 
   const handleIsTablet = useCallback((event: MediaQueryListEvent) => {
@@ -21,5 +21,3 @@ const useMatchMedia = () => {
 
   return { isTablet }
 }
-
-export default useMatchMedia

@@ -12,11 +12,9 @@ type ChipProps = {
   text: string
 }
 
-const Chip = ({ status, text }: ChipProps) => {
+export const Chip = ({ status, text }: ChipProps) => {
   return <StyledChip $status={status}>{text}</StyledChip>
 }
-
-export default Chip
 
 const StyledChip = styled.span<{ $status: ChipBackgroundColor }>`
   display: inline-block;

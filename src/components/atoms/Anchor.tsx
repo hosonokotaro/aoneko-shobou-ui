@@ -20,7 +20,12 @@ type AnchorTextProps = {
 
 const externalLinkRel = 'noopener noreferrer'
 
-const AnchorText = ({ className, href, target, children }: AnchorTextProps) => {
+export const Anchor = ({
+  className,
+  href,
+  target,
+  children,
+}: AnchorTextProps) => {
   return (
     <StyledAnchor
       className={className}
@@ -32,8 +37,6 @@ const AnchorText = ({ className, href, target, children }: AnchorTextProps) => {
     </StyledAnchor>
   )
 }
-
-export default AnchorText
 
 const StyledAnchor = styled.a`
   color: ${FONT_COLOR.LINK};

@@ -8,11 +8,9 @@ type AnnotationTextProps = {
   color: FontColor
 }
 
-const AnnotationText = ({ text, color }: AnnotationTextProps) => {
+export const AnnotationText = ({ text, color }: AnnotationTextProps) => {
   return <StyledAnnotationText $color={color}>{text}</StyledAnnotationText>
 }
-
-export default AnnotationText
 
 const StyledAnnotationText = styled.span<{ $color: FontColor }>`
   font-size: ${INLINE_SIZE.M};

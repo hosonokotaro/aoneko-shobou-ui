@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Chip from '@/atoms/Chip'
+import { Chip } from '@/atoms/Chip'
 
 export default {
   title: 'atoms/Chip',

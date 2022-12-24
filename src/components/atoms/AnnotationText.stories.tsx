@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import AnnotationText from '@/atoms/AnnotationText'
+import { AnnotationText } from '@/atoms/AnnotationText'
 
 export default {
   title: 'atoms/AnnotationText',

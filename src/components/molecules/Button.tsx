@@ -1,8 +1,8 @@
 import { ComponentProps, MouseEventHandler } from 'react'
 import styled, { css } from 'styled-components'
 
-import Anchor from '@/atoms/Anchor'
-import Icon from '@/atoms/Icon'
+import { Anchor } from '@/atoms/Anchor'
+import { Icon } from '@/atoms/Icon'
 import {
   BUTTON_BACKGROUND_COLOR,
   ButtonBackgroundColor,
@@ -37,7 +37,7 @@ type Props = {
   target?: ComponentProps<typeof Anchor>['target']
 }
 
-const Button = ({
+export const Button = ({
   className,
   callback,
   text,
@@ -94,8 +94,6 @@ const Button = ({
     </StyledButtonWrapper>
   )
 }
-
-export default Button
 
 const StyledButtonWrapper = styled.div`
   display: inline-flex;

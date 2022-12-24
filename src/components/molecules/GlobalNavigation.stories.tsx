@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import GlobalNavigation, { NavigationItem } from '@/molecules/GlobalNavigation'
+import { GlobalNavigation, NavigationItem } from '@/molecules/GlobalNavigation'
 
 export default {
   title: 'molecules/GlobalNavigation',

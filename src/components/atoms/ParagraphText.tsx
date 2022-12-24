@@ -6,11 +6,9 @@ type Props = {
   text: string
 }
 
-const ParagraphText = ({ text }: Props) => {
+export const ParagraphText = ({ text }: Props) => {
   return <StyledParagraphText>{text}</StyledParagraphText>
 }
-
-export default ParagraphText
 
 const StyledParagraphText = styled.p`
   padding: 12px;

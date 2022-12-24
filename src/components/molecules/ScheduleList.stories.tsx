@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import ScheduleList, { ScheduleItem } from '@/molecules/ScheduleList'
+import { ScheduleItem, ScheduleList } from '@/molecules/ScheduleList'
 
 export default {
   title: 'molecules/ScheduleList',

@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import AnchorText from '@/molecules/AnchorText'
+import { AnchorText } from '@/molecules/AnchorText'
 
 export default {
   title: 'molecules/AnchorText',
