@@ -7,26 +7,24 @@ import ttypescript from 'ttypescript'
 
 import packageJson from './package.json' assert { type: 'json' }
 
-export default {
-  input: './src/index.ts',
-  output: [
-    {
-      file: packageJson.main,
-      format: 'cjs',
-    },
-    {
-      file: packageJson.module,
-      format: 'esm',
-    },
-  ],
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    typescript({
-      typescript: ttypescript,
-      exclude: ['**/*.stories.tsx'],
-    }),
-    terser(),
-  ],
-}
+export default [
+  {
+    input: './src/index.ts',
+    output: [
+      {
+        file: packageJson.main,
+        format: 'esm',
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      terser(),
+      typescript({
+        typescript: ttypescript,
+        exclude: ['**/*.stories.tsx'],
+      }),
+    ],
+  },
+]
