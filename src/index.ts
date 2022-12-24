@@ -25,7 +25,6 @@ export {
   MARGIN,
 } from '@/const/size'
 export { useMatchMedia } from '@/hooks/useMatchMedia'
-export * from '@/hooks/useMatchMedia'
 export { AnchorText } from '@/molecules/AnchorText'
 export { Button } from '@/molecules/Button'
 export { CommonList } from '@/molecules/CommonList'
