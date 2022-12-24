@@ -32,7 +32,7 @@ const ICON_BUTTON_SIZE_MEDIUM = {
 const ICON_BUTTON_SIZE_SMALL = {
   WIDTH: '20px',
   HEIGHT: '20px',
-}
+} as const
 
 export const ICON_BUTTON_SIZE = {
   M: ICON_BUTTON_SIZE_MEDIUM,

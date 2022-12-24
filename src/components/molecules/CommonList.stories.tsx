@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import CommonList, { CommonItem } from '@/molecules/CommonList'
+import { CommonItem, CommonList } from '@/molecules/CommonList'
 
 export default {
   title: 'molecules/CommonList',

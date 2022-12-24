@@ -11,10 +11,19 @@ module.exports = {
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-webpack5',
+    builder: {
+      name: 'webpack5',
+      options: {
+        lazyCompilation: true,
+        fsCache: true,
+      },
+    },
   },
   typescript: {
     check: true,
+  },
+  features: {
+    storyStoreV7: true,
   },
   webpackFinal: async (config) => {
     config.resolve.alias = {

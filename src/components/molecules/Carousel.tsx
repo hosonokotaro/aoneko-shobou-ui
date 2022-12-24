@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import Image, { Props as ImageProps } from '@/atoms/Image'
+import { Image, Props as ImageProps } from '@/atoms/Image'
 
 import { MEDIA_QUERY } from '../const/mediaQuery'
 import { ICON_BUTTON_SIZE, MARGIN } from '../const/size'
@@ -19,7 +19,7 @@ const renderBullet = (_: number, className: string) => {
   return `<button class="${className}"><span class="inner"></span></button>`
 }
 
-const Carousel = ({ imageList }: Props) => {
+export const Carousel = ({ imageList }: Props) => {
   return (
     <StyledCarousel
       modules={[Autoplay, Pagination]}
@@ -55,8 +55,6 @@ const Carousel = ({ imageList }: Props) => {
   )
 }
 
-export default Carousel
-
 const StyledImage = styled(Image)``
 
 // NOTE: ここでしか利用しないのでハードコードで対応する
@@ -75,7 +73,7 @@ const StyledCarousel = styled(Swiper)`
     object-fit: cover;
   }
 
-  & .swiper-pagination {
+  & .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 0;
   }
 

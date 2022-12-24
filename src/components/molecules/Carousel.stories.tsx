@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Props as ImageProps } from '@/atoms/Image'
-import Carousel from '@/molecules/Carousel'
+import { Carousel } from '@/molecules/Carousel'
 
 export default {
   title: 'molecules/Carousel',

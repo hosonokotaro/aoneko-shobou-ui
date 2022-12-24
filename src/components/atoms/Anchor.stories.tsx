@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Anchor from '@/atoms/Anchor'
-import Image from '@/atoms/Image'
+import { Anchor } from '@/atoms/Anchor'
+import { Image } from '@/atoms/Image'
 
 export default {
   title: 'atoms/Anchor',

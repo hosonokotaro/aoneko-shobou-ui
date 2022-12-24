@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import Icon, { ICON_KIND } from '@/atoms/Icon'
+import { Icon } from '@/atoms/Icon'
+import { ICON_KIND } from '@/const/common'
 
 export default {
   title: 'atoms/Icon',

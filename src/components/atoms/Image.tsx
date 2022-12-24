@@ -15,7 +15,14 @@ export type Props = {
   loading?: LoadingParams
 }
 
-const Image = ({ className, src, alt = '', width, height, loading }: Props) => {
+export const Image = ({
+  className,
+  src,
+  alt = '',
+  width,
+  height,
+  loading,
+}: Props) => {
   const loadingParam =
     loading === 'EAGER'
       ? LOADING_PARAMS.EAGER
@@ -34,5 +41,3 @@ const Image = ({ className, src, alt = '', width, height, loading }: Props) => {
     />
   )
 }
-
-export default Image

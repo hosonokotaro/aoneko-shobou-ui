@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-import Image, { Props as ImageProps } from '@/atoms/Image'
+import { Image, Props as ImageProps } from '@/atoms/Image'
 import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
 
 type Props = {
   imageProps: ImageProps
 }
 
-const Photo = ({ imageProps }: Props) => {
+export const Photo = ({ imageProps }: Props) => {
   return (
     <StyledPhoto>
       <Image
@@ -20,8 +20,6 @@ const Photo = ({ imageProps }: Props) => {
     </StyledPhoto>
   )
 }
-
-export default Photo
 
 const StyledPhoto = styled.div`
   display: inline-flex;

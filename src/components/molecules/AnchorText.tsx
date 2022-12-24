@@ -1,7 +1,8 @@
+import { ComponentProps } from 'react'
 import styled from 'styled-components'
 
-import Anchor, { AnchorTarget } from '@/atoms/Anchor'
-import Icon from '@/atoms/Icon'
+import { Anchor } from '@/atoms/Anchor'
+import { Icon } from '@/atoms/Icon'
 import { FONT_COLOR } from '@/const/color'
 import { TRANSITION_TIME } from '@/const/common'
 import { MARGIN } from '@/const/size'
@@ -9,10 +10,10 @@ import { MARGIN } from '@/const/size'
 type Props = {
   text: string
   href: string
-  target?: AnchorTarget
+  target?: ComponentProps<typeof Anchor>['target']
 }
 
-const AnchorText = ({ text, href, target }: Props) => {
+export const AnchorText = ({ text, href, target }: Props) => {
   return (
     <StyledAnchorText href={href} target={target}>
       <StyledText>{text}</StyledText>
@@ -27,8 +28,6 @@ const AnchorText = ({ text, href, target }: Props) => {
     </StyledAnchorText>
   )
 }
-
-export default AnchorText
 
 // NOTE: component を選択して styling するため
 const StyledIcon = styled(Icon)``

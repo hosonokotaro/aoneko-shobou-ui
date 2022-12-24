@@ -13,7 +13,19 @@
     "paths": {
       "~/*": ["src/*"],
       "@/*": ["src/components/*"]
-    }
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ],
+    "outDir": "./build/",
+    "module": "esnext",
+    "declaration": true
   },
   "include": ["./src", "./types/**/*.d.ts"]
 }

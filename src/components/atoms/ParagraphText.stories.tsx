@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import ParagraphText from '@/atoms/ParagraphText'
+import { ParagraphText } from '@/atoms/ParagraphText'
 
 export default {
   title: 'atoms/ParagraphText',
