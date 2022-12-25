@@ -1,3 +1,4 @@
+export { globalStyle } from './GlobalStyle'
 export { Anchor } from '@/atoms/Anchor'
 export { AnnotationText } from '@/atoms/AnnotationText'
 export { Chip } from '@/atoms/Chip'
