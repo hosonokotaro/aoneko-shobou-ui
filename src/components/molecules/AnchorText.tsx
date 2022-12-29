@@ -7,13 +7,13 @@ import { FONT_COLOR } from '@/const/color'
 import { TRANSITION_TIME } from '@/const/common'
 import { MARGIN } from '@/const/size'
 
-type Props = {
+export type AnchorTextProps = {
   text: string
   href: string
   target?: ComponentProps<typeof Anchor>['target']
 }
 
-export const AnchorText = ({ text, href, target }: Props) => {
+export const AnchorText = ({ text, href, target }: AnchorTextProps) => {
   return (
     <StyledAnchorText href={href} target={target}>
       <StyledText>{text}</StyledText>

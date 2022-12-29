@@ -6,12 +6,12 @@ import styled from 'styled-components'
 import { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Image, Props as ImageProps } from '@/atoms/Image'
+import { Image, ImageProps } from '@/atoms/Image'
 
 import { MEDIA_QUERY } from '../const/mediaQuery'
 import { ICON_BUTTON_SIZE, MARGIN } from '../const/size'
 
-type Props = {
+export type CarouselProps = {
   imageList: ImageProps[]
 }
 
@@ -19,7 +19,7 @@ const renderBullet = (_: number, className: string) => {
   return `<button class="${className}"><span class="inner"></span></button>`
 }
 
-export const Carousel = ({ imageList }: Props) => {
+export const Carousel = ({ imageList }: CarouselProps) => {
   return (
     <StyledCarousel
       modules={[Autoplay, Pagination]}

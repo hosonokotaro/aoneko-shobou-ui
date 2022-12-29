@@ -2,7 +2,7 @@ import { Loader, LoaderOptions } from '@googlemaps/js-api-loader'
 import { useCallback, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
-type Props = {
+export type ShopMapProps = {
   loaderOptions: LoaderOptions
   height: string
 }
@@ -234,7 +234,7 @@ const styledMap = [
   },
 ]
 
-export const ShopMap = ({ loaderOptions, height }: Props) => {
+export const ShopMap = ({ loaderOptions, height }: ShopMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null)
 
   const mapLoader = useCallback(async () => {

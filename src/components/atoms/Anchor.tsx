@@ -11,7 +11,7 @@ const ANCHOR_TARGET = {
 
 type AnchorTarget = keyof typeof ANCHOR_TARGET
 
-type AnchorTextProps = {
+export type AnchorProps = {
   className?: string
   href: string
   target?: AnchorTarget
@@ -20,12 +20,7 @@ type AnchorTextProps = {
 
 const externalLinkRel = 'noopener noreferrer'
 
-export const Anchor = ({
-  className,
-  href,
-  target,
-  children,
-}: AnchorTextProps) => {
+export const Anchor = ({ className, href, target, children }: AnchorProps) => {
   return (
     <StyledAnchor
       className={className}

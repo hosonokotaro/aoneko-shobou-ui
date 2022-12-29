@@ -9,7 +9,7 @@ import { FONT_COLOR, FontColor } from '@/const/color'
 import { ICON_KIND, IconKind, ROTATE, Rotate } from '@/const/common'
 import { INLINE_SIZE, InlineSize } from '@/const/size'
 
-type Props = {
+export type IconProps = {
   className?: string
   iconKind: IconKind
   fillColor: FontColor
@@ -23,7 +23,7 @@ export const Icon = ({
   fillColor,
   size,
   iconRotate,
-}: Props) => {
+}: IconProps) => {
   return (
     <StyledIcon className={className} $iconRotate={iconRotate}>
       {iconKind === ICON_KIND.INFO && (
