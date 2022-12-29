@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 import { BORDER_COLOR } from '@/const/color'
 
-type Props = {
+export type ParagraphTextProps = {
   text: string
 }
 
-export const ParagraphText = ({ text }: Props) => {
+export const ParagraphText = ({ text }: ParagraphTextProps) => {
   return <StyledParagraphText>{text}</StyledParagraphText>
 }
 

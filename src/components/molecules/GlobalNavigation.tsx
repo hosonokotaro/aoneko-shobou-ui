@@ -17,13 +17,13 @@ import {
 import { useMatchMedia } from '@/hooks/useMatchMedia'
 import { Button } from '@/molecules/Button'
 
-export type NavigationItem = {
+type NavigationItem = {
   path: string
   name: string
   isExternal: boolean
 }
 
-type Props = {
+export type GlobalNavigationProps = {
   navigationList: NavigationItem[]
   handleLinkEvent: (path: string, isExternal: boolean) => void
   currentPath: string
@@ -33,7 +33,7 @@ export const GlobalNavigation = ({
   navigationList,
   handleLinkEvent,
   currentPath,
-}: Props) => {
+}: GlobalNavigationProps) => {
   const [isOpenNavigation, setIsOpenNavigation] = useState(false)
   const { isTablet } = useMatchMedia()
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { FONT_COLOR, FontColor } from '@/const/color'
 import { INLINE_SIZE } from '@/const/size'
 
-type AnnotationTextProps = {
+export type AnnotationTextProps = {
   text: string
   color: FontColor
 }

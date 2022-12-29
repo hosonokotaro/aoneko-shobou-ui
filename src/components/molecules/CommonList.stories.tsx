@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { CommonItem, CommonList } from '@/molecules/CommonList'
+import { CommonList, CommonListProps } from '@/molecules/CommonList'
 
 export default {
   title: 'molecules/CommonList',
@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof CommonList> = (args) => (
   <CommonList {...args} />
 )
 
-const commonList: CommonItem[] = [
+const commonList: CommonListProps['commonList'] = [
   {
     title: 'ホットコーヒー',
     description: '￥400（税込）',

@@ -1,7 +1,10 @@
 import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { GlobalNavigation, NavigationItem } from '@/molecules/GlobalNavigation'
+import {
+  GlobalNavigation,
+  GlobalNavigationProps,
+} from '@/molecules/GlobalNavigation'
 
 export default {
   title: 'molecules/GlobalNavigation',
@@ -12,7 +15,7 @@ const Template: ComponentStory<typeof GlobalNavigation> = (args) => (
   <GlobalNavigation {...args} />
 )
 
-const navigationList: NavigationItem[] = [
+const navigationList: GlobalNavigationProps['navigationList'] = [
   {
     path: '/',
     name: 'HOME',

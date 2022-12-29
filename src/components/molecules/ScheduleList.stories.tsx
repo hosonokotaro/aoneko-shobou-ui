@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { ScheduleItem, ScheduleList } from '@/molecules/ScheduleList'
+import { ScheduleList, ScheduleListProps } from '@/molecules/ScheduleList'
 
 export default {
   title: 'molecules/ScheduleList',
@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof ScheduleList> = (args) => (
   <ScheduleList {...args} />
 )
 
-const scheduleList: ScheduleItem[] = [
+const scheduleList: ScheduleListProps['scheduleList'] = [
   {
     startDate: '2022/11/23',
     endDate: '2022/12/26',

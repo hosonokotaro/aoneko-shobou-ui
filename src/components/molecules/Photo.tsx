@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-import { Image, Props as ImageProps } from '@/atoms/Image'
+import { Image, ImageProps } from '@/atoms/Image'
 import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
 
-type Props = {
+export type PhotoProps = {
   imageProps: ImageProps
 }
 
-export const Photo = ({ imageProps }: Props) => {
+export const Photo = ({ imageProps }: PhotoProps) => {
   return (
     <StyledPhoto>
       <Image

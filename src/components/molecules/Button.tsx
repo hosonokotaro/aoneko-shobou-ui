@@ -16,14 +16,14 @@ import {
   MARGIN,
 } from '@/const/size'
 
-export const BUTTON_SIZE = {
+const BUTTON_SIZE = {
   M: 'M',
   S: 'S',
 } as const
 
 type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 
-type Props = {
+export type ButtonProps = {
   className?: string
   callback?: MouseEventHandler<HTMLButtonElement>
   text?: string
@@ -49,7 +49,7 @@ export const Button = ({
   isAnchor,
   href,
   target,
-}: Props) => {
+}: ButtonProps) => {
   return (
     <StyledButtonWrapper className={className}>
       {isAnchor && (

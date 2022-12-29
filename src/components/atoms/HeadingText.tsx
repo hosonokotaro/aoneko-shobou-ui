@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BORDER_COLOR, FONT_COLOR } from '@/const/color'
 import { FONT_WEIGHT, INLINE_SIZE } from '@/const/size'
 
-export const HEADING_KIND = {
+const HEADING_KIND = {
   PAGE_TITLE: 'PAGE_TITLE',
   SECTION_TITLE: 'SECTION_TITLE',
   SUBTITLE: 'SUBTITLE',
@@ -11,7 +11,7 @@ export const HEADING_KIND = {
 
 type HeadingKind = typeof HEADING_KIND[keyof typeof HEADING_KIND]
 
-type HeadingTextProps = {
+export type HeadingTextProps = {
   text: string
   kind: HeadingKind
 }

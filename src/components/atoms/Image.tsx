@@ -1,4 +1,4 @@
-export const LOADING_PARAMS = {
+const LOADING_PARAMS = {
   EAGER: 'eager',
   LAZY: 'lazy',
   NONE: undefined,
@@ -6,7 +6,7 @@ export const LOADING_PARAMS = {
 
 type LoadingParams = keyof typeof LOADING_PARAMS
 
-export type Props = {
+export type ImageProps = {
   className?: string
   src: string
   alt?: string
@@ -22,7 +22,7 @@ export const Image = ({
   width,
   height,
   loading,
-}: Props) => {
+}: ImageProps) => {
   const loadingParam =
     loading === 'EAGER'
       ? LOADING_PARAMS.EAGER

@@ -12,19 +12,22 @@ import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '@/const/size'
 dayjs().format()
 dayjs.locale('ja')
 
-export type ScheduleItem = {
+type ScheduleItem = {
   startDate: string
   endDate: string
   timeFrame: string
   description: string
 }
 
-type Props = {
+export type ScheduleListProps = {
   scheduleList: ScheduleItem[]
   currentTime: string
 }
 
-export const ScheduleList = ({ scheduleList, currentTime }: Props) => {
+export const ScheduleList = ({
+  scheduleList,
+  currentTime,
+}: ScheduleListProps) => {
   const dateFormat = useCallback((dateText: string) => {
     return dayjs(dateText).format('YYYY年M月D日(ddd)')
   }, [])

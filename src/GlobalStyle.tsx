@@ -1,15 +1,40 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 import { FONT_COLOR } from '@/const/color'
 
-const GlobalStyle = createGlobalStyle`
+export const globalStyle = css`
   /* Reset CSS */
-  html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6, input {
+  html,
+  body,
+  p,
+  ol,
+  ul,
+  li,
+  dl,
+  dt,
+  dd,
+  blockquote,
+  figure,
+  fieldset,
+  legend,
+  textarea,
+  pre,
+  iframe,
+  hr,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  input {
     margin: 0;
     padding: 0;
   }
 
-  *, *:before, *:after {
+  *,
+  *:before,
+  *:after {
     box-sizing: inherit;
   }
 
@@ -20,7 +45,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN',
+      'Hiragino Sans', Meiryo, sans-serif;
     color: ${FONT_COLOR.BLACK};
   }
 
@@ -36,6 +62,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+`
+
+const GlobalStyle = createGlobalStyle`
+  ${globalStyle}
 `
 
 export default GlobalStyle

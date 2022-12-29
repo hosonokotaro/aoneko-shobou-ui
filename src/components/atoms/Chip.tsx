@@ -7,7 +7,7 @@ import {
 } from '@/const/color'
 import { BORDER_RADIUS } from '@/const/size'
 
-type ChipProps = {
+export type ChipProps = {
   status: ChipBackgroundColor
   text: string
 }

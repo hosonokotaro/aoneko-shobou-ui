@@ -6,16 +6,16 @@ import { BORDER_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
 import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '@/const/size'
 
-export type CommonItem = {
+type CommonItem = {
   title: string
   description: string
 }
 
-type Props = {
+export type CommonListProps = {
   commonList: CommonItem[]
 }
 
-export const CommonList = ({ commonList }: Props) => {
+export const CommonList = ({ commonList }: CommonListProps) => {
   return (
     <StyledCommonList>
       {map(commonList, (commonItem, index) => {
