@@ -6,14 +6,16 @@ const tabletDevice =
   typeof window !== 'undefined' && window.matchMedia(MATCH_MEDIA.TABLET)
 
 export const useMatchMedia = () => {
-  const [isTablet, setIsTablet] = useState(false)
+  const [isTablet, setIsTablet] = useState(
+    tabletDevice !== false && tabletDevice.matches
+  )
 
   const handleIsTablet = useCallback((event: MediaQueryListEvent) => {
     setIsTablet(event.matches)
   }, [])
 
   useEffect(() => {
-    if (!tabletDevice) return
+    if (tabletDevice === false) return
     tabletDevice.addEventListener('change', handleIsTablet, false)
 
     return () => {

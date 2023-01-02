@@ -25,6 +25,7 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  reactOptions: { legacyRootApi: true },
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
