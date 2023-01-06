@@ -8,7 +8,8 @@ export declare type AnchorProps = {
     className?: string;
     href: string;
     target?: AnchorTarget;
+    handleClickEvent?: () => void;
     children: ReactNode;
 };
-export declare const Anchor: ({ className, href, target, children }: AnchorProps) => JSX.Element;
+export declare const Anchor: ({ className, href, target, handleClickEvent, children, }: AnchorProps) => JSX.Element;
 export {};

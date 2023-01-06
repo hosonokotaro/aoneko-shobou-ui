@@ -15,18 +15,30 @@ export type AnchorProps = {
   className?: string
   href: string
   target?: AnchorTarget
+  handleClickEvent?: () => void
   children: ReactNode
 }
 
 const externalLinkRel = 'noopener noreferrer'
 
-export const Anchor = ({ className, href, target, children }: AnchorProps) => {
+export const Anchor = ({
+  className,
+  href,
+  target,
+  handleClickEvent,
+  children,
+}: AnchorProps) => {
   return (
     <StyledAnchor
       className={className}
       href={href}
       target={target && ANCHOR_TARGET[target]}
       rel={target === 'BLANK' ? externalLinkRel : undefined}
+      onClick={(event) => {
+        if (typeof handleClickEvent !== 'function' || target !== 'SELF') return
+        event.preventDefault()
+        handleClickEvent()
+      }}
     >
       {children}
     </StyledAnchor>

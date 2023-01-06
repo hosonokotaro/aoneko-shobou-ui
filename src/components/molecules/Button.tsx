@@ -25,7 +25,8 @@ type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 
 export type ButtonProps = {
   className?: string
-  callback?: MouseEventHandler<HTMLButtonElement>
+  buttonCallback?: MouseEventHandler<HTMLButtonElement>
+  anchorCallback?: () => void
   text?: string
   buttonSize: ButtonSize
   buttonColor: ButtonBackgroundColor
@@ -39,7 +40,8 @@ export type ButtonProps = {
 
 export const Button = ({
   className,
-  callback,
+  buttonCallback,
+  anchorCallback,
   text,
   buttonSize,
   buttonColor,
@@ -56,6 +58,7 @@ export const Button = ({
         <StyledAnchorButton
           href={href || ''}
           target={target}
+          handleClickEvent={anchorCallback}
           $buttonColor={buttonColor}
           $isBorderRadius={isBorderRadius}
           $buttonSize={buttonSize}
@@ -77,7 +80,7 @@ export const Button = ({
           $buttonColor={buttonColor}
           $isBorderRadius={isBorderRadius}
           $buttonSize={buttonSize}
-          onClick={callback}
+          onClick={buttonCallback}
         >
           {iconKind && (
             <StyledIcon
