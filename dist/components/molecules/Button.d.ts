@@ -10,7 +10,8 @@ declare const BUTTON_SIZE: {
 declare type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
 export declare type ButtonProps = {
     className?: string;
-    callback?: MouseEventHandler<HTMLButtonElement>;
+    buttonCallback?: MouseEventHandler<HTMLButtonElement>;
+    anchorCallback?: () => void;
     text?: string;
     buttonSize: ButtonSize;
     buttonColor: ButtonBackgroundColor;
@@ -21,5 +22,5 @@ export declare type ButtonProps = {
     href?: string;
     target?: ComponentProps<typeof Anchor>['target'];
 };
-export declare const Button: ({ className, callback, text, buttonSize, buttonColor, iconKind, isBorderRadius, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
+export declare const Button: ({ className, buttonCallback, anchorCallback, text, buttonSize, buttonColor, iconKind, isBorderRadius, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
 export {};
