@@ -157,7 +157,9 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
 
   @media (any-hover: hover) {
     &:hover {
-      ${({$buttonColor:e})=>"DEFAULT"===e?`background: ${m.DEFAULT_HOVER};`:"EXTERNAL"===e?`\n            color: ${L.WHITE};\n            background: ${m.EXTERNAL_HOVER};\n          `:void 0}
+      color: ${L.WHITE};
+
+      ${({$buttonColor:e})=>"DEFAULT"===e?`\n            background: ${m.DEFAULT_HOVER};\n          `:"EXTERNAL"===e?`\n            background: ${m.EXTERNAL_HOVER};\n          `:void 0}
     }
   }
 `,Oe=e.button`
@@ -210,7 +212,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
     width: ${v.FULL};
     margin-top: ${_.XS};
   }
-`,Be=({navigationList:e,handleLinkEvent:t,currentPath:i})=>{const[r,l]=c(!1),{isTablet:a}=ge();return h((()=>{l(!a)}),[a]),n(Se,Object.assign({$isOpen:r},{children:[o(De,Object.assign({$isOpen:r},{children:g(e,((e,n)=>o(Ue,{callback:()=>t(e.path,e.isExternal),text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===i?"DEFAULT_CURRENT":"DEFAULT",isBorderRadius:a,isAnchor:e.isExternal,href:e.path,target:e.isExternal?"BLANK":"SELF"},n)))})),o(Ke,Object.assign({$isOpen:r},{children:o(ue,{callback:()=>l(!r),buttonSize:"M",buttonColor:"DEFAULT",iconKind:r?"MENU_OPEN":"MENU",isBorderRadius:!0})}))]}))},Se=e.div`
+`,Be=({navigationList:e,handleLinkEvent:t,currentPath:i})=>{const[r,l]=c(!1),{isTablet:a}=ge();return h((()=>{l(!a)}),[a]),n(Se,Object.assign({$isOpen:r},{children:[o(De,Object.assign({$isOpen:r},{children:g(e,((e,n)=>o(Ue,{callback:()=>t(e.path,e.isExternal),text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===i?"DEFAULT_CURRENT":"DEFAULT",isBorderRadius:a,isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},n)))})),o(Ke,Object.assign({$isOpen:r},{children:o(ue,{callback:()=>l(!r),buttonSize:"M",buttonColor:"DEFAULT",iconKind:r?"MENU_OPEN":"MENU",isBorderRadius:!0})}))]}))},Se=e.div`
   overflow-y: auto;
   transition: background 0.25s ease;
 
