@@ -140,14 +140,17 @@ const baseStyle = css<{
 
   @media (any-hover: hover) {
     &:hover {
+      color: ${FONT_COLOR.WHITE};
+
       ${({ $buttonColor }) => {
         if ($buttonColor === 'DEFAULT') {
-          return `background: ${BUTTON_BACKGROUND_COLOR.DEFAULT_HOVER};`
+          return `
+            background: ${BUTTON_BACKGROUND_COLOR.DEFAULT_HOVER};
+          `
         }
 
         if ($buttonColor === 'EXTERNAL') {
           return `
-            color: ${FONT_COLOR.WHITE};
             background: ${BUTTON_BACKGROUND_COLOR.EXTERNAL_HOVER};
           `
         }
