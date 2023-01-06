@@ -62,7 +62,8 @@ export const GlobalNavigation = ({
                   : 'DEFAULT'
               }
               isBorderRadius={isTablet}
-              isAnchor={navigationItem.isExternal}
+              // NOTE: SEO のため、全て a tag にする
+              isAnchor={true}
               href={navigationItem.path}
               target={navigationItem.isExternal ? 'BLANK' : 'SELF'}
             />
