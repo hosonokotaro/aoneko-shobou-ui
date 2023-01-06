@@ -49,7 +49,7 @@ export const GlobalNavigation = ({
           return (
             <StyledButton
               key={index}
-              callback={() =>
+              anchorCallback={() =>
                 handleLinkEvent(navigationItem.path, navigationItem.isExternal)
               }
               text={navigationItem.name}
@@ -72,7 +72,7 @@ export const GlobalNavigation = ({
       </StyledGlobalNavigation>
       <StyledToggleButtonWrapper $isOpen={isOpenNavigation}>
         <Button
-          callback={() => setIsOpenNavigation(!isOpenNavigation)}
+          buttonCallback={() => setIsOpenNavigation(!isOpenNavigation)}
           buttonSize="M"
           buttonColor="DEFAULT"
           iconKind={isOpenNavigation ? 'MENU_OPEN' : 'MENU'}

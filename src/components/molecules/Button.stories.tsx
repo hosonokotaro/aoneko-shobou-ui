@@ -16,7 +16,7 @@ Default.args = {
   buttonSize: 'M',
   buttonColor: 'DEFAULT',
   isBorderRadius: true,
-  callback: action('Default'),
+  buttonCallback: action('Default'),
 }
 
 export const SeeMore = Template.bind({})
@@ -26,7 +26,7 @@ SeeMore.args = {
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
-  callback: action('SeeMore'),
+  buttonCallback: action('SeeMore'),
 }
 
 export const External = Template.bind({})
@@ -47,5 +47,5 @@ IconOnly.args = {
   buttonSize: 'M',
   iconKind: 'NAVIGATE_NEXT',
   isBorderRadius: true,
-  callback: action('IconOnly'),
+  buttonCallback: action('IconOnly'),
 }
