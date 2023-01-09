@@ -17,10 +17,9 @@ export declare type ButtonProps = {
     buttonColor: ButtonBackgroundColor;
     iconKind?: ComponentProps<typeof Icon>['iconKind'];
     iconRotate?: Rotate;
-    isBorderRadius: boolean;
     isAnchor?: boolean;
     href?: string;
     target?: ComponentProps<typeof Anchor>['target'];
 };
-export declare const Button: ({ className, buttonCallback, anchorCallback, text, buttonSize, buttonColor, iconKind, isBorderRadius, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
+export declare const Button: ({ className, buttonCallback, anchorCallback, text, buttonSize, buttonColor, iconKind, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
 export {};

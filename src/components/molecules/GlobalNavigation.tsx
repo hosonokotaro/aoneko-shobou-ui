@@ -12,6 +12,7 @@ import {
   BLOCK_WIDTH,
   BORDER_RADIUS,
   ICON_BUTTON_SIZE,
+  INLINE_SIZE,
   MARGIN,
 } from '@/const/size'
 import { useMatchMedia } from '@/hooks/useMatchMedia'
@@ -34,7 +35,7 @@ export const GlobalNavigation = ({
   handleLinkEvent,
   currentPath,
 }: GlobalNavigationProps) => {
-  const [isOpenNavigation, setIsOpenNavigation] = useState(false)
+  const [isOpenNavigation, setIsOpenNavigation] = useState(true)
   const { isTablet } = useMatchMedia()
 
   // NOTE: 画面がちらつくため、isTablet が変更されるまで画面の更新を待つ
@@ -61,7 +62,6 @@ export const GlobalNavigation = ({
                   ? 'DEFAULT_CURRENT'
                   : 'DEFAULT'
               }
-              isBorderRadius={isTablet}
               // NOTE: SEO のため、全て a tag にする
               isAnchor={true}
               href={navigationItem.path}
@@ -76,7 +76,6 @@ export const GlobalNavigation = ({
           buttonSize="M"
           buttonColor="DEFAULT"
           iconKind={isOpenNavigation ? 'MENU_OPEN' : 'MENU'}
-          isBorderRadius
         />
       </StyledToggleButtonWrapper>
     </StyledGlobalNavigationWrapper>
@@ -97,7 +96,15 @@ const StyledGlobalNavigationWrapper = styled.div<{ $isOpen: boolean }>`
     height: 100vh;
     height: 100dvh;
 
-    background: ${({ $isOpen }) => ($isOpen ? BACKGROUND_COLOR.WHITE : 'none')};
+    background: none;
+    pointer-events: none;
+
+    ${({ $isOpen }) =>
+      $isOpen &&
+      `
+        background: ${BACKGROUND_COLOR.WHITE};
+        pointer-events: auto;
+      `}
   }
 
   ${MEDIA_QUERY.MOBILE} {
@@ -118,6 +125,12 @@ const StyledButton = styled(Button)`
   & > button,
   & > a {
     width: 100%;
+
+    & > div {
+      ${MEDIA_QUERY.OVER_PC} {
+        font-size: ${INLINE_SIZE.L};
+      }
+    }
   }
 `
 
@@ -159,7 +172,6 @@ const StyledToggleButtonWrapper = styled.div<{ $isOpen: boolean }>`
   ${MEDIA_QUERY.TABLET} {
     display: flex;
     justify-content: flex-end;
-
     margin-top: ${({ $isOpen }) => (!$isOpen ? MOBILE_NAVIGATION_HEIGHT : '0')};
   }
 `

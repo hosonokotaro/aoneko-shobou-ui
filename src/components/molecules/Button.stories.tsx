@@ -15,7 +15,6 @@ Default.args = {
   text: '予約する',
   buttonSize: 'M',
   buttonColor: 'DEFAULT',
-  isBorderRadius: true,
   buttonCallback: action('Default'),
 }
 
@@ -25,7 +24,6 @@ SeeMore.args = {
   buttonSize: 'M',
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
-  isBorderRadius: true,
   buttonCallback: action('SeeMore'),
 }
 
@@ -35,7 +33,6 @@ External.args = {
   buttonSize: 'M',
   buttonColor: 'EXTERNAL',
   iconKind: 'NAVIGATE_NEXT',
-  isBorderRadius: true,
   isAnchor: true,
   href: 'https://www.google.com/',
   target: 'BLANK',
@@ -46,6 +43,5 @@ IconOnly.args = {
   buttonColor: 'DEFAULT',
   buttonSize: 'M',
   iconKind: 'NAVIGATE_NEXT',
-  isBorderRadius: true,
   buttonCallback: action('IconOnly'),
 }
