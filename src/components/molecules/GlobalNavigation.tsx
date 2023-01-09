@@ -62,7 +62,6 @@ export const GlobalNavigation = ({
                   ? 'DEFAULT_CURRENT'
                   : 'DEFAULT'
               }
-              isBorderRadius={isTablet}
               // NOTE: SEO のため、全て a tag にする
               isAnchor={true}
               href={navigationItem.path}
@@ -77,7 +76,6 @@ export const GlobalNavigation = ({
           buttonSize="M"
           buttonColor="DEFAULT"
           iconKind={isOpenNavigation ? 'MENU_OPEN' : 'MENU'}
-          isBorderRadius
         />
       </StyledToggleButtonWrapper>
     </StyledGlobalNavigationWrapper>

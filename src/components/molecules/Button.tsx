@@ -32,7 +32,6 @@ export type ButtonProps = {
   buttonColor: ButtonBackgroundColor
   iconKind?: ComponentProps<typeof Icon>['iconKind']
   iconRotate?: Rotate
-  isBorderRadius: boolean
   isAnchor?: boolean
   href?: string
   target?: ComponentProps<typeof Anchor>['target']
@@ -46,7 +45,6 @@ export const Button = ({
   buttonSize,
   buttonColor,
   iconKind,
-  isBorderRadius,
   iconRotate,
   isAnchor,
   href,
@@ -60,7 +58,6 @@ export const Button = ({
           target={target}
           handleClickEvent={anchorCallback}
           $buttonColor={buttonColor}
-          $isBorderRadius={isBorderRadius}
           $buttonSize={buttonSize}
         >
           {iconKind && (
@@ -78,7 +75,6 @@ export const Button = ({
       {!isAnchor && (
         <StyledButton
           $buttonColor={buttonColor}
-          $isBorderRadius={isBorderRadius}
           $buttonSize={buttonSize}
           onClick={buttonCallback}
         >
@@ -105,7 +101,6 @@ const StyledButtonWrapper = styled.div`
 
 const baseStyle = css<{
   $buttonColor: ButtonBackgroundColor
-  $isBorderRadius: boolean
   $buttonSize: ButtonSize
 }>`
   display: inline-flex;
@@ -139,8 +134,7 @@ const baseStyle = css<{
     }
   }}
 
-  ${({ $isBorderRadius }) =>
-    `border-radius: ${$isBorderRadius ? BORDER_RADIUS.S : 0}`};
+  border-radius: ${BORDER_RADIUS.S};
 
   @media (any-hover: hover) {
     &:hover {
