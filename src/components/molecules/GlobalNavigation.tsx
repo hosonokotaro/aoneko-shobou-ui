@@ -97,7 +97,15 @@ const StyledGlobalNavigationWrapper = styled.div<{ $isOpen: boolean }>`
     height: 100vh;
     height: 100dvh;
 
-    background: ${({ $isOpen }) => ($isOpen ? BACKGROUND_COLOR.WHITE : 'none')};
+    background: none;
+    pointer-events: none;
+
+    ${({ $isOpen }) =>
+      $isOpen &&
+      `
+        background: ${BACKGROUND_COLOR.WHITE};
+        pointer-events: auto;
+      `}
   }
 
   ${MEDIA_QUERY.MOBILE} {
@@ -159,7 +167,6 @@ const StyledToggleButtonWrapper = styled.div<{ $isOpen: boolean }>`
   ${MEDIA_QUERY.TABLET} {
     display: flex;
     justify-content: flex-end;
-
     margin-top: ${({ $isOpen }) => (!$isOpen ? MOBILE_NAVIGATION_HEIGHT : '0')};
   }
 `

@@ -100,6 +100,7 @@ export const Button = ({
 
 const StyledButtonWrapper = styled.div`
   display: inline-flex;
+  pointer-events: auto;
 `
 
 const baseStyle = css<{
