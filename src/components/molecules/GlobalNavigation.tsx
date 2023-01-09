@@ -12,6 +12,7 @@ import {
   BLOCK_WIDTH,
   BORDER_RADIUS,
   ICON_BUTTON_SIZE,
+  INLINE_SIZE,
   MARGIN,
 } from '@/const/size'
 import { useMatchMedia } from '@/hooks/useMatchMedia'
@@ -126,6 +127,12 @@ const StyledButton = styled(Button)`
   & > button,
   & > a {
     width: 100%;
+
+    & > div {
+      ${MEDIA_QUERY.OVER_PC} {
+        font-size: ${INLINE_SIZE.L};
+      }
+    }
   }
 `
 
