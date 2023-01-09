@@ -34,7 +34,7 @@ export const GlobalNavigation = ({
   handleLinkEvent,
   currentPath,
 }: GlobalNavigationProps) => {
-  const [isOpenNavigation, setIsOpenNavigation] = useState(false)
+  const [isOpenNavigation, setIsOpenNavigation] = useState(true)
   const { isTablet } = useMatchMedia()
 
   // NOTE: 画面がちらつくため、isTablet が変更されるまで画面の更新を待つ
