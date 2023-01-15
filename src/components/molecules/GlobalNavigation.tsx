@@ -25,12 +25,14 @@ type NavigationItem = {
 }
 
 export type GlobalNavigationProps = {
+  className?: string
   navigationList: NavigationItem[]
   handleLinkEvent: (path: string, isExternal: boolean) => void
   currentPath: string
 }
 
 export const GlobalNavigation = ({
+  className,
   navigationList,
   handleLinkEvent,
   currentPath,
@@ -44,7 +46,10 @@ export const GlobalNavigation = ({
   }, [isTablet])
 
   return (
-    <StyledGlobalNavigationWrapper $isOpen={isOpenNavigation}>
+    <StyledGlobalNavigationWrapper
+      className={className}
+      $isOpen={isOpenNavigation}
+    >
       <StyledGlobalNavigation $isOpen={isOpenNavigation}>
         {map(navigationList, (navigationItem, index) => {
           return (
