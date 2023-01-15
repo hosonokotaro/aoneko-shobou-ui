@@ -213,7 +213,7 @@ import e,{css as t,createGlobalStyle as n}from"styled-components";import{jsx as 
     width: ${A.FULL};
     margin-top: ${C.XS};
   }
-`,Se=({navigationList:e,handleLinkEvent:t,currentPath:n})=>{const[r,l]=c(!0),{isTablet:a}=ge();return h((()=>{l(!a)}),[a]),i(Ue,Object.assign({$isOpen:r},{children:[o(De,Object.assign({$isOpen:r},{children:g(e,((e,i)=>o(Be,{anchorCallback:()=>t(e.path,e.isExternal),text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===n?"DEFAULT_CURRENT":"DEFAULT",isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},i)))})),o(ke,Object.assign({$isOpen:r},{children:o(ue,{buttonCallback:()=>l(!r),buttonSize:"M",buttonColor:"DEFAULT",iconKind:r?"MENU_OPEN":"MENU"})}))]}))},Ue=e.div`
+`,Se=({className:e,navigationList:t,handleLinkEvent:n,currentPath:r})=>{const[l,a]=c(!0),{isTablet:s}=ge();return h((()=>{a(!s)}),[s]),i(Ue,Object.assign({className:e,$isOpen:l},{children:[o(De,Object.assign({$isOpen:l},{children:g(t,((e,t)=>o(Be,{anchorCallback:()=>n(e.path,e.isExternal),text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===r?"DEFAULT_CURRENT":"DEFAULT",isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},t)))})),o(ke,Object.assign({$isOpen:l},{children:o(ue,{buttonCallback:()=>a(!l),buttonSize:"M",buttonColor:"DEFAULT",iconKind:l?"MENU_OPEN":"MENU"})}))]}))},Ue=e.div`
   overflow-y: auto;
   transition: background 0.25s ease;
 

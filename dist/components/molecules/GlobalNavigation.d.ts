@@ -5,9 +5,10 @@ declare type NavigationItem = {
     isExternal: boolean;
 };
 export declare type GlobalNavigationProps = {
+    className?: string;
     navigationList: NavigationItem[];
     handleLinkEvent: (path: string, isExternal: boolean) => void;
     currentPath: string;
 };
-export declare const GlobalNavigation: ({ navigationList, handleLinkEvent, currentPath, }: GlobalNavigationProps) => JSX.Element;
+export declare const GlobalNavigation: ({ className, navigationList, handleLinkEvent, currentPath, }: GlobalNavigationProps) => JSX.Element;
 export {};
