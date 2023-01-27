@@ -33,6 +33,7 @@ export {
   INLINE_SIZE,
   MARGIN,
 } from '@/const/size'
+export { useIsomorphicEffect } from '@/hooks/useIsomorphicEffect'
 export { useMatchMedia } from '@/hooks/useMatchMedia'
 export type { AnchorTextProps } from '@/molecules/AnchorText'
 export { AnchorText } from '@/molecules/AnchorText'

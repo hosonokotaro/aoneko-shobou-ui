@@ -1,5 +1,5 @@
 import { map } from 'lodash-es'
-import { useLayoutEffect, useState } from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -15,6 +15,7 @@ import {
   INLINE_SIZE,
   MARGIN,
 } from '@/const/size'
+import { useIsomorphicEffect } from '@/hooks/useIsomorphicEffect'
 import { useMatchMedia } from '@/hooks/useMatchMedia'
 import { Button } from '@/molecules/Button'
 
@@ -39,9 +40,10 @@ export const GlobalNavigation = ({
 }: GlobalNavigationProps) => {
   const [isOpenNavigation, setIsOpenNavigation] = useState(true)
   const { isTablet } = useMatchMedia()
+  const isomorphicEffect = useIsomorphicEffect()
 
   // NOTE: 画面がちらつくため、isTablet が変更されるまで画面の更新を待つ
-  useLayoutEffect(() => {
+  isomorphicEffect(() => {
     setIsOpenNavigation(!isTablet)
   }, [isTablet])
 
