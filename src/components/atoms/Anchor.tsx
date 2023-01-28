@@ -35,8 +35,7 @@ export const Anchor = ({
       target={target && ANCHOR_TARGET[target]}
       rel={target === 'BLANK' ? externalLinkRel : undefined}
       onClick={(event) => {
-        if (typeof onClick !== 'function' || target !== 'SELF') return
-        event.preventDefault()
+        if (typeof onClick !== 'function' || target === 'BLANK') return
         onClick(event)
       }}
     >

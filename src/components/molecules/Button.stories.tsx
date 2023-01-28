@@ -45,3 +45,12 @@ IconOnly.args = {
   iconKind: 'NAVIGATE_NEXT',
   buttonCallback: action('IconOnly'),
 }
+
+export const HasAnchorCallback = Template.bind({})
+HasAnchorCallback.args = {
+  text: 'Anchor かつ Callback 付',
+  buttonSize: 'M',
+  buttonColor: 'DEFAULT',
+  isAnchor: true,
+  anchorCallback: action('HasAnchorCallback'),
+}

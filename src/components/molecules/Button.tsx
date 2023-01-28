@@ -54,7 +54,7 @@ export const Button = ({
     <StyledButtonWrapper className={className}>
       {isAnchor && (
         <StyledAnchorButton
-          href={href || ''}
+          href={href}
           target={target}
           onClick={anchorCallback}
           $buttonColor={buttonColor}
