@@ -13,7 +13,7 @@ type AnchorTarget = keyof typeof ANCHOR_TARGET
 
 export type AnchorProps = {
   className?: string
-  href: string
+  href?: string
   target?: AnchorTarget
   handleClickEvent?: () => void
   children: ReactNode
