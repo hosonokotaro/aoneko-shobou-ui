@@ -213,7 +213,7 @@ import e,{css as t,createGlobalStyle as n}from"styled-components";import{jsx as 
     width: ${A.FULL};
     margin-top: ${C.XS};
   }
-`,Ue=({className:e,navigationList:t,handleLinkEvent:n,currentPath:r})=>{const[l,a]=p(!0),{isTablet:s}=fe();return Te()((()=>{a(!s)}),[s]),i(Be,Object.assign({className:e,$isOpen:l},{children:[o(ke,Object.assign({$isOpen:l},{children:g(t,((e,t)=>o(De,{anchorCallback:()=>n(e.path,e.isExternal),text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===r?"DEFAULT_CURRENT":"DEFAULT",isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},t)))})),o(Ke,Object.assign({$isOpen:l},{children:o(Ne,{buttonCallback:()=>a(!l),buttonSize:"M",buttonColor:"DEFAULT",iconKind:l?"MENU_OPEN":"MENU"})}))]}))},Be=e.div`
+`,Ue=({className:e,navigationList:t,handleLinkEvent:n,currentPath:r})=>{const[l,a]=p(!0),{isTablet:s}=fe();return Te()((()=>{a(!s)}),[s]),i(Be,Object.assign({className:e,$isOpen:l},{children:[o(ke,Object.assign({$isOpen:l},{children:g(t,((e,t)=>o(De,{anchorCallback:()=>{n(e.path,e.isExternal),s&&a(!1)},text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===r?"DEFAULT_CURRENT":"DEFAULT",isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},t)))})),o(Ke,Object.assign({$isOpen:l},{children:o(Ne,{buttonCallback:()=>a(!l),buttonSize:"M",buttonColor:"DEFAULT",iconKind:l?"MENU_OPEN":"MENU"})}))]}))},Be=e.div`
   overflow-y: auto;
   transition: background 0.25s ease;
 
