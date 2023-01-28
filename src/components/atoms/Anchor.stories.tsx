@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Anchor } from '@/atoms/Anchor'
@@ -22,6 +23,14 @@ Blank.args = {
   href: '#',
   target: 'BLANK',
   children: 'blank link text',
+}
+
+export const HasEventHandler = Template.bind({})
+HasEventHandler.args = {
+  href: '#',
+  target: 'SELF',
+  children: 'Action event',
+  onClick: action('HasEventHandler'),
 }
 
 export const ImageLink = Template.bind({})

@@ -9,7 +9,7 @@ import { MARGIN } from '@/const/size'
 
 export type AnchorTextProps = {
   text: string
-  href: string
+  href?: string
   target?: ComponentProps<typeof Anchor>['target']
 }
 

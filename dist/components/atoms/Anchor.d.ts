@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 declare const ANCHOR_TARGET: {
     readonly SELF: "_self";
     readonly BLANK: "_blank";
@@ -6,10 +6,10 @@ declare const ANCHOR_TARGET: {
 declare type AnchorTarget = keyof typeof ANCHOR_TARGET;
 export declare type AnchorProps = {
     className?: string;
-    href: string;
+    href?: string;
     target?: AnchorTarget;
-    handleClickEvent?: () => void;
+    onClick?: MouseEventHandler<HTMLAnchorElement>;
     children: ReactNode;
 };
-export declare const Anchor: ({ className, href, target, handleClickEvent, children, }: AnchorProps) => JSX.Element;
+export declare const Anchor: ({ className, href, target, onClick, children, }: AnchorProps) => JSX.Element;
 export {};

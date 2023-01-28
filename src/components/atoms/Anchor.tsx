@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { FONT_COLOR } from '@/const/color'
@@ -13,9 +13,9 @@ type AnchorTarget = keyof typeof ANCHOR_TARGET
 
 export type AnchorProps = {
   className?: string
-  href: string
+  href?: string
   target?: AnchorTarget
-  handleClickEvent?: () => void
+  onClick?: MouseEventHandler<HTMLAnchorElement>
   children: ReactNode
 }
 
@@ -25,7 +25,7 @@ export const Anchor = ({
   className,
   href,
   target,
-  handleClickEvent,
+  onClick,
   children,
 }: AnchorProps) => {
   return (
@@ -35,9 +35,8 @@ export const Anchor = ({
       target={target && ANCHOR_TARGET[target]}
       rel={target === 'BLANK' ? externalLinkRel : undefined}
       onClick={(event) => {
-        if (typeof handleClickEvent !== 'function' || target !== 'SELF') return
-        event.preventDefault()
-        handleClickEvent()
+        if (typeof onClick !== 'function' || target === 'BLANK') return
+        onClick(event)
       }}
     >
       {children}
