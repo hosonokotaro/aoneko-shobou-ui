@@ -57,9 +57,10 @@ export const GlobalNavigation = ({
           return (
             <StyledButton
               key={index}
-              anchorCallback={() =>
+              anchorCallback={() => {
                 handleLinkEvent(navigationItem.path, navigationItem.isExternal)
-              }
+                isTablet && setIsOpenNavigation(false)
+              }}
               text={navigationItem.name}
               buttonSize="M"
               buttonColor={
