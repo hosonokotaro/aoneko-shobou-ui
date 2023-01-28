@@ -56,7 +56,7 @@ export const Button = ({
         <StyledAnchorButton
           href={href || ''}
           target={target}
-          handleClickEvent={anchorCallback}
+          onClick={anchorCallback}
           $buttonColor={buttonColor}
           $buttonSize={buttonSize}
         >
