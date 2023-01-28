@@ -6,7 +6,7 @@ declare const ANCHOR_TARGET: {
 declare type AnchorTarget = keyof typeof ANCHOR_TARGET;
 export declare type AnchorProps = {
     className?: string;
-    href: string;
+    href?: string;
     target?: AnchorTarget;
     handleClickEvent?: () => void;
     children: ReactNode;
