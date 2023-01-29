@@ -26,13 +26,16 @@ type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 export type ButtonProps = {
   /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
   className?: string
+  /** button 要素の場合の関数を受け取る */
   buttonCallback?: MouseEventHandler<HTMLButtonElement>
-  anchorCallback?: () => void
+  /** anchor 要素の場合の関数を受け取る */
+  anchorCallback?: MouseEventHandler<HTMLAnchorElement>
   text?: string
   buttonSize: ButtonSize
   buttonColor: ButtonBackgroundColor
   iconKind?: ComponentProps<typeof Icon>['iconKind']
   iconRotate?: Rotate
+  /** Button 要素ではなく Anchor 要素として表現する場合 */
   isAnchor?: boolean
   href?: string
   target?: ComponentProps<typeof Anchor>['target']
