@@ -8,6 +8,7 @@ import {
 import { BORDER_RADIUS } from '@/const/size'
 
 export type ChipProps = {
+  /** 利用したい状態を名前で指定する */
   status: ChipBackgroundColor
   text: string
 }

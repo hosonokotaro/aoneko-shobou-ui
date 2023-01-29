@@ -12,9 +12,11 @@ const ANCHOR_TARGET = {
 type AnchorTarget = keyof typeof ANCHOR_TARGET
 
 export type AnchorProps = {
+  /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
   className?: string
   href?: string
   target?: AnchorTarget
+  /** preventDefault 無しの設定 */
   onClick?: MouseEventHandler<HTMLAnchorElement>
   children: ReactNode
 }
