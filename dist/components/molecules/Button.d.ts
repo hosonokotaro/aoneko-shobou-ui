@@ -9,6 +9,7 @@ declare const BUTTON_SIZE: {
 };
 declare type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
 export declare type ButtonProps = {
+    /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
     className?: string;
     buttonCallback?: MouseEventHandler<HTMLButtonElement>;
     anchorCallback?: () => void;

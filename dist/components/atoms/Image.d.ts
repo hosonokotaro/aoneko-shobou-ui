@@ -6,11 +6,13 @@ declare const LOADING_PARAMS: {
 };
 declare type LoadingParams = keyof typeof LOADING_PARAMS;
 export declare type ImageProps = {
+    /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
     className?: string;
     src: string;
     alt?: string;
     width?: number;
     height?: number;
+    /** img の loading param */
     loading?: LoadingParams;
 };
 export declare const Image: ({ className, src, alt, width, height, loading, }: ImageProps) => JSX.Element;
