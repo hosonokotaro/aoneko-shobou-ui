@@ -13,6 +13,7 @@ type HeadingKind = typeof HEADING_KIND[keyof typeof HEADING_KIND]
 
 export type HeadingTextProps = {
   text: string
+  /** heading tag のレベルを用途名で受け取る */
   kind: HeadingKind
 }
 

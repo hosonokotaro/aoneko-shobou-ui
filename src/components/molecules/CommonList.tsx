@@ -12,6 +12,7 @@ type CommonItem = {
 }
 
 export type CommonListProps = {
+  /** title, description の配列を受け取る */
   commonList: CommonItem[]
 }
 

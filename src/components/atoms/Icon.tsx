@@ -10,10 +10,13 @@ import { ICON_KIND, IconKind, ROTATE, Rotate } from '@/const/common'
 import { INLINE_SIZE, InlineSize } from '@/const/size'
 
 export type IconProps = {
+  /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
   className?: string
   iconKind: IconKind
+  /** SVG の fill color を受け取る */
   fillColor: FontColor
   size: InlineSize
+  /** 左回りの角度（deg）を受け取る */
   iconRotate: Rotate
 }
 

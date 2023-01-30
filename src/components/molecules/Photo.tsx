@@ -4,6 +4,7 @@ import { Image, ImageProps } from '@/atoms/Image'
 import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
 
 export type PhotoProps = {
+  /** Atoms の Image component の props を受け取る */
   imageProps: ImageProps
 }
 
