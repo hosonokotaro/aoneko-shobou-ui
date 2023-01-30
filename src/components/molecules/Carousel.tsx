@@ -12,6 +12,7 @@ import { MEDIA_QUERY } from '../const/mediaQuery'
 import { ICON_BUTTON_SIZE, MARGIN } from '../const/size'
 
 export type CarouselProps = {
+  /** Atoms の Image component の props の配列を受け取る */
   imageList: ImageProps[]
 }
 

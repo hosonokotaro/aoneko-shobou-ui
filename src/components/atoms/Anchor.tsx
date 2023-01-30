@@ -16,7 +16,6 @@ export type AnchorProps = {
   className?: string
   href?: string
   target?: AnchorTarget
-  /** preventDefault 無しの設定 */
   onClick?: MouseEventHandler<HTMLAnchorElement>
   children: ReactNode
 }

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 export type ShopMapProps = {
   /** see https://developers.google.com/maps/documentation/javascript/overview?hl=ja */
   loaderOptions: LoaderOptions
-  /** ShopMap の高さを明示的に指定する必要があるため */
+  /** ShopMap の高さを明示的に指定する必要があるために受け取る */
   height: string
 }
 

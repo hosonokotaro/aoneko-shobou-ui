@@ -13,7 +13,7 @@ export type ImageProps = {
   alt?: string
   width?: number
   height?: number
-  /** img の loading param */
+  /** img の loading param を受け取る */
   loading?: LoadingParams
 }
 
