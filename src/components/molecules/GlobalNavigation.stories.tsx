@@ -51,6 +51,6 @@ const navigationList: GlobalNavigationProps['navigationList'] = [
 export const Default = Template.bind({})
 Default.args = {
   navigationList,
-  handleLinkEvent: action('[path, isExternal]'),
+  handleLinkEvent: action('[event, path, isExternal]'),
   currentPath: '/',
 }
