@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { MouseEvent } from 'react';
 declare type NavigationItem = {
     path: string;
     name: string;
@@ -9,8 +9,8 @@ export declare type GlobalNavigationProps = {
     className?: string;
     /** path, name, isExternal の配列を受け取る */
     navigationList: NavigationItem[];
-    /** path, isExternal を利用側に渡す。実行したい関数を受け取る */
-    handleLinkEvent: (path: string, isExternal: boolean) => void;
+    /** event, path, isExternal を利用側に渡す。実行したい関数を受け取る */
+    handleLinkEvent: (event: MouseEvent<HTMLAnchorElement>, path: string, isExternal: boolean) => void;
     /** 現在の path (e.g. /about/) を受け取る。Library 側では URL に責任を持たない為 */
     currentPath: string;
 };
