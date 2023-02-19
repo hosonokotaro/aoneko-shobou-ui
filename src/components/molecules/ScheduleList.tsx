@@ -71,7 +71,11 @@ export const ScheduleList = ({
                 `〜${beforeScheduleItem.endDate}`}
             </StyledPeriod>
             <StyledDescription>
-              <StyledTimeFrame>{beforeScheduleItem.timeFrame}</StyledTimeFrame>
+              {beforeScheduleItem.timeFrame && (
+                <StyledTimeFrame>
+                  {beforeScheduleItem.timeFrame}
+                </StyledTimeFrame>
+              )}
               <span>{beforeScheduleItem.description}</span>
             </StyledDescription>
           </Fragment>
