@@ -25,6 +25,8 @@ export type { AnchorTextProps } from "./components/molecules/AnchorText";
 export { AnchorText } from "./components/molecules/AnchorText";
 export type { ButtonProps } from "./components/molecules/Button";
 export { Button } from "./components/molecules/Button";
+export type { CarouselProps } from "./components/molecules/Carousel";
+export { Carousel } from "./components/molecules/Carousel";
 export type { CommonListProps } from "./components/molecules/CommonList";
 export { CommonList } from "./components/molecules/CommonList";
 export type { GlobalNavigationProps } from "./components/molecules/GlobalNavigation";
