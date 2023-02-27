@@ -1,7 +1,7 @@
 import 'dayjs/locale/ja'
 
 import dayjs from 'dayjs'
-import { map } from 'lodash-es'
+import { map, slice } from 'lodash-es'
 import { Fragment, useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
@@ -24,11 +24,14 @@ export type ScheduleListProps = {
   scheduleList: ScheduleItem[]
   /** 現在の日時 (e.g. 2022/12/1) を受け取る。Library 側では日時の取得に責任を持たない為 */
   currentTime: string
+  /** 要約して表示する。また、表示件数を最大5件で制限する */
+  isSummary?: boolean
 }
 
 export const ScheduleList = ({
   scheduleList,
   currentTime,
+  isSummary = false,
 }: ScheduleListProps) => {
   const dateFormat = useCallback((dateText: string) => {
     return dayjs(dateText).format('YYYY年M月D日(ddd)')
@@ -56,21 +59,25 @@ export const ScheduleList = ({
       ]
     })
 
+    if (isSummary) {
+      tempBeforeScheduleList = slice(tempBeforeScheduleList, 0, 5)
+    }
+
     return tempBeforeScheduleList
-  }, [currentTime, dateFormat, scheduleList])
+  }, [currentTime, dateFormat, isSummary, scheduleList])
 
   return (
-    <StyledScheduleList>
+    <StyledScheduleList isSummary={isSummary}>
       {!beforeScheduleList.length && <div>準備中です</div>}
       {map(beforeScheduleList, (beforeScheduleItem, index) => {
         return (
           <Fragment key={index}>
-            <StyledPeriod>
+            <StyledPeriod isSummary={isSummary}>
               {beforeScheduleItem.startDate}
               {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
                 `〜${beforeScheduleItem.endDate}`}
             </StyledPeriod>
-            <StyledDescription>
+            <StyledDescription isSummary={isSummary}>
               {beforeScheduleItem.timeFrame && (
                 <StyledTimeFrame>
                   {beforeScheduleItem.timeFrame}
@@ -85,7 +92,7 @@ export const ScheduleList = ({
   )
 }
 
-const StyledScheduleList = styled.div`
+const StyledScheduleList = styled.div<{ isSummary: boolean }>`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -99,6 +106,14 @@ const StyledScheduleList = styled.div`
       margin-top: ${MARGIN.XS};
     }
   }
+
+  ${({ isSummary }) =>
+    isSummary &&
+    `
+      & > :nth-of-type(2) {
+        margin-top: ${MARGIN.XS};
+      }
+    `}
 `
 
 // NOTE: ここでしか利用しないのでハードコードで対応する
@@ -109,7 +124,7 @@ const SCHEDULE_ITEM = {
   PADDING_LEFT_RIGHT: '12px',
 } as const
 
-const StyledPeriod = styled.div`
+const StyledPeriod = styled.div<{ isSummary: boolean }>`
   width: ${SCHEDULE_ITEM.WIDTH_EVEN};
   margin-top: ${MARGIN.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
@@ -121,9 +136,16 @@ const StyledPeriod = styled.div`
     width: ${BLOCK_WIDTH.FULL};
     margin-top: ${MARGIN.M};
   }
+
+  ${({ isSummary }) =>
+    isSummary &&
+    `
+      width: ${BLOCK_WIDTH.FULL};
+      margin-top: ${MARGIN.M};
+    `}
 `
 
-const StyledDescription = styled.div`
+const StyledDescription = styled.div<{ isSummary: boolean }>`
   width: ${SCHEDULE_ITEM.WIDTH_ODD};
   margin-top: ${MARGIN.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
@@ -135,6 +157,17 @@ const StyledDescription = styled.div`
     width: ${BLOCK_WIDTH.FULL};
     margin-top: ${MARGIN.XS};
   }
+
+  ${({ isSummary }) =>
+    isSummary &&
+    `
+      display: -webkit-box;
+      width: ${BLOCK_WIDTH.FULL};
+      margin-top: ${MARGIN.XS};
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    `}
 `
 
 const StyledTimeFrame = styled.span`
