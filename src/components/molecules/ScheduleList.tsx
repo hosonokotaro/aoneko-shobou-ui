@@ -1,8 +1,8 @@
 import 'dayjs/locale/ja'
 
 import dayjs from 'dayjs'
-import { map, slice } from 'lodash-es'
-import { Fragment, useCallback, useMemo } from 'react'
+import { map } from 'lodash-es'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { BORDER_COLOR } from '@/const/color'
@@ -59,19 +59,15 @@ export const ScheduleList = ({
       ]
     })
 
-    if (isSummary) {
-      tempBeforeScheduleList = slice(tempBeforeScheduleList, 0, 5)
-    }
-
     return tempBeforeScheduleList
-  }, [currentTime, dateFormat, isSummary, scheduleList])
+  }, [currentTime, dateFormat, scheduleList])
 
   return (
-    <StyledScheduleList isSummary={isSummary}>
+    <div>
       {!beforeScheduleList.length && <div>準備中です</div>}
       {map(beforeScheduleList, (beforeScheduleItem, index) => {
         return (
-          <Fragment key={index}>
+          <StyledScheduleItem key={index} isSummary={isSummary}>
             <StyledPeriod isSummary={isSummary}>
               {beforeScheduleItem.startDate}
               {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
@@ -85,33 +81,32 @@ export const ScheduleList = ({
               )}
               <span>{beforeScheduleItem.description}</span>
             </StyledDescription>
-          </Fragment>
+          </StyledScheduleItem>
         )
       })}
-    </StyledScheduleList>
+    </div>
   )
 }
 
-const StyledScheduleList = styled.div<{ isSummary: boolean }>`
+const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 
-  & > :nth-of-type(-n + 2) {
-    margin-top: ${MARGIN.NONE};
+  &:not(:first-of-type) {
+    margin-top: ${MARGIN.M};
   }
 
   ${MEDIA_QUERY.MOBILE} {
-    & > :nth-of-type(2) {
-      margin-top: ${MARGIN.XS};
-    }
+    flex-direction: column;
   }
 
   ${({ isSummary }) =>
     isSummary &&
     `
-      & > :nth-of-type(2) {
-        margin-top: ${MARGIN.XS};
+      flex-direction: column;
+
+      &:nth-of-type(n+6) {
+        display: none;
       }
     `}
 `
@@ -126,7 +121,6 @@ const SCHEDULE_ITEM = {
 
 const StyledPeriod = styled.div<{ isSummary: boolean }>`
   width: ${SCHEDULE_ITEM.WIDTH_EVEN};
-  margin-top: ${MARGIN.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-right: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
@@ -134,20 +128,17 @@ const StyledPeriod = styled.div<{ isSummary: boolean }>`
 
   ${MEDIA_QUERY.MOBILE} {
     width: ${BLOCK_WIDTH.FULL};
-    margin-top: ${MARGIN.M};
   }
 
   ${({ isSummary }) =>
     isSummary &&
     `
       width: ${BLOCK_WIDTH.FULL};
-      margin-top: ${MARGIN.M};
     `}
 `
 
 const StyledDescription = styled.div<{ isSummary: boolean }>`
   width: ${SCHEDULE_ITEM.WIDTH_ODD};
-  margin-top: ${MARGIN.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-left: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
