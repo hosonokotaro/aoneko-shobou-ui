@@ -42,6 +42,7 @@ export const ScheduleList = ({
     let tempBeforeScheduleList: ScheduleItem[] = []
 
     map(scheduleList, (scheduleItem) => {
+      // FIXME: 日付によるフィルタリング（data の整形）は organisms で行うべきこと
       if (currentTimeDayJs.isAfter(dayjs(scheduleItem.endDate), 'day')) return
 
       const startDate = dateFormat(scheduleItem.startDate)
