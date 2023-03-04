@@ -11,8 +11,10 @@ export declare type ScheduleListProps = {
     scheduleList: ScheduleItem[];
     /** 現在の日時 (e.g. 2022/12/1) を受け取る。Library 側では日時の取得に責任を持たない為 */
     currentTime: string;
-    /** 要約して表示する。また、表示件数を最大5件で制限する */
+    /** 要約して表示する */
     isSummary?: boolean;
+    /** 要約して表示する最大件数。デフォルト5件 */
+    maxSummaryCount?: number;
 };
-export declare const ScheduleList: ({ scheduleList, currentTime, isSummary, }: ScheduleListProps) => JSX.Element;
+export declare const ScheduleList: ({ scheduleList, currentTime, isSummary, maxSummaryCount, }: ScheduleListProps) => JSX.Element;
 export {};
