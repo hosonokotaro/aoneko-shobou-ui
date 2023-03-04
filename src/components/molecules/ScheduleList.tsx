@@ -2,7 +2,7 @@ import 'dayjs/locale/ja'
 
 import dayjs from 'dayjs'
 import { map } from 'lodash-es'
-import { Fragment, useCallback, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { BORDER_COLOR } from '@/const/color'
@@ -24,11 +24,14 @@ export type ScheduleListProps = {
   scheduleList: ScheduleItem[]
   /** 現在の日時 (e.g. 2022/12/1) を受け取る。Library 側では日時の取得に責任を持たない為 */
   currentTime: string
+  /** 要約して表示する */
+  isSummary?: boolean
 }
 
 export const ScheduleList = ({
   scheduleList,
   currentTime,
+  isSummary = false,
 }: ScheduleListProps) => {
   const dateFormat = useCallback((dateText: string) => {
     return dayjs(dateText).format('YYYY年M月D日(ddd)')
@@ -39,6 +42,7 @@ export const ScheduleList = ({
     let tempBeforeScheduleList: ScheduleItem[] = []
 
     map(scheduleList, (scheduleItem) => {
+      // FIXME: 日付によるフィルタリング（data の整形）は organisms で行うべきこと
       if (currentTimeDayJs.isAfter(dayjs(scheduleItem.endDate), 'day')) return
 
       const startDate = dateFormat(scheduleItem.startDate)
@@ -60,17 +64,17 @@ export const ScheduleList = ({
   }, [currentTime, dateFormat, scheduleList])
 
   return (
-    <StyledScheduleList>
+    <div>
       {!beforeScheduleList.length && <div>準備中です</div>}
       {map(beforeScheduleList, (beforeScheduleItem, index) => {
         return (
-          <Fragment key={index}>
-            <StyledPeriod>
+          <StyledScheduleItem key={index} isSummary={isSummary}>
+            <StyledPeriod isSummary={isSummary}>
               {beforeScheduleItem.startDate}
               {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
                 `〜${beforeScheduleItem.endDate}`}
             </StyledPeriod>
-            <StyledDescription>
+            <StyledDescription isSummary={isSummary}>
               {beforeScheduleItem.timeFrame && (
                 <StyledTimeFrame>
                   {beforeScheduleItem.timeFrame}
@@ -78,27 +82,26 @@ export const ScheduleList = ({
               )}
               <span>{beforeScheduleItem.description}</span>
             </StyledDescription>
-          </Fragment>
+          </StyledScheduleItem>
         )
       })}
-    </StyledScheduleList>
+    </div>
   )
 }
 
-const StyledScheduleList = styled.div`
+const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 
-  & > :nth-of-type(-n + 2) {
-    margin-top: ${MARGIN.NONE};
+  &:not(:first-of-type) {
+    margin-top: ${MARGIN.M};
   }
 
   ${MEDIA_QUERY.MOBILE} {
-    & > :nth-of-type(2) {
-      margin-top: ${MARGIN.XS};
-    }
+    flex-direction: column;
   }
+
+  ${({ isSummary }) => isSummary && `flex-direction: column;`}
 `
 
 // NOTE: ここでしか利用しないのでハードコードで対応する
@@ -109,9 +112,8 @@ const SCHEDULE_ITEM = {
   PADDING_LEFT_RIGHT: '12px',
 } as const
 
-const StyledPeriod = styled.div`
+const StyledPeriod = styled.div<{ isSummary: boolean }>`
   width: ${SCHEDULE_ITEM.WIDTH_EVEN};
-  margin-top: ${MARGIN.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-right: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
@@ -119,13 +121,17 @@ const StyledPeriod = styled.div`
 
   ${MEDIA_QUERY.MOBILE} {
     width: ${BLOCK_WIDTH.FULL};
-    margin-top: ${MARGIN.M};
   }
+
+  ${({ isSummary }) =>
+    isSummary &&
+    `
+      width: ${BLOCK_WIDTH.FULL};
+    `}
 `
 
-const StyledDescription = styled.div`
+const StyledDescription = styled.div<{ isSummary: boolean }>`
   width: ${SCHEDULE_ITEM.WIDTH_ODD};
-  margin-top: ${MARGIN.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-left: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
@@ -135,6 +141,17 @@ const StyledDescription = styled.div`
     width: ${BLOCK_WIDTH.FULL};
     margin-top: ${MARGIN.XS};
   }
+
+  ${({ isSummary }) =>
+    isSummary &&
+    `
+      display: -webkit-box;
+      width: ${BLOCK_WIDTH.FULL};
+      margin-top: ${MARGIN.XS};
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    `}
 `
 
 const StyledTimeFrame = styled.span`
