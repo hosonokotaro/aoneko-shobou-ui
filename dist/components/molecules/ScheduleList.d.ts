@@ -13,8 +13,6 @@ export declare type ScheduleListProps = {
     currentTime: string;
     /** 要約して表示する */
     isSummary?: boolean;
-    /** 要約して表示する最大件数。デフォルト5件 */
-    maxSummaryCount?: number;
 };
-export declare const ScheduleList: ({ scheduleList, currentTime, isSummary, maxSummaryCount, }: ScheduleListProps) => JSX.Element;
+export declare const ScheduleList: ({ scheduleList, currentTime, isSummary, }: ScheduleListProps) => JSX.Element;
 export {};
