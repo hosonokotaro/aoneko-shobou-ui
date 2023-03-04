@@ -68,4 +68,5 @@ Default.args = {
   scheduleList: scheduleList,
   currentTime: '2022/12/6',
   isSummary: false,
+  maxSummaryCount: 5,
 }

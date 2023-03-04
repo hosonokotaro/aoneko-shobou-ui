@@ -24,14 +24,17 @@ export type ScheduleListProps = {
   scheduleList: ScheduleItem[]
   /** 現在の日時 (e.g. 2022/12/1) を受け取る。Library 側では日時の取得に責任を持たない為 */
   currentTime: string
-  /** 要約して表示する。また、表示件数を最大5件で制限する */
+  /** 要約して表示する */
   isSummary?: boolean
+  /** 要約して表示する最大件数。デフォルト5件 */
+  maxSummaryCount?: number
 }
 
 export const ScheduleList = ({
   scheduleList,
   currentTime,
   isSummary = false,
+  maxSummaryCount = 5,
 }: ScheduleListProps) => {
   const dateFormat = useCallback((dateText: string) => {
     return dayjs(dateText).format('YYYY年M月D日(ddd)')
@@ -67,7 +70,11 @@ export const ScheduleList = ({
       {!beforeScheduleList.length && <div>準備中です</div>}
       {map(beforeScheduleList, (beforeScheduleItem, index) => {
         return (
-          <StyledScheduleItem key={index} isSummary={isSummary}>
+          <StyledScheduleItem
+            key={index}
+            isSummary={isSummary}
+            maxSummaryCount={Math.abs(maxSummaryCount)}
+          >
             <StyledPeriod isSummary={isSummary}>
               {beforeScheduleItem.startDate}
               {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
@@ -88,7 +95,10 @@ export const ScheduleList = ({
   )
 }
 
-const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
+const StyledScheduleItem = styled.div<{
+  isSummary: boolean
+  maxSummaryCount: number
+}>`
   display: flex;
   justify-content: space-between;
 
@@ -100,13 +110,14 @@ const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
     flex-direction: column;
   }
 
-  ${({ isSummary }) =>
+  ${({ isSummary, maxSummaryCount }) =>
     isSummary &&
     `
-      flex-direction: column;
+      display: none;
 
-      &:nth-of-type(n+6) {
-        display: none;
+      &:nth-of-type(-n+${maxSummaryCount}) {
+        display: flex;
+        flex-direction: column;
       }
     `}
 `
