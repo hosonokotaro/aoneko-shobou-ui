@@ -2,7 +2,7 @@ import 'dayjs/locale/ja'
 
 import dayjs from 'dayjs'
 import { map } from 'lodash-es'
-import { useCallback, useMemo } from 'react'
+import { useCallback } from 'react'
 import styled from 'styled-components'
 
 import { BORDER_COLOR } from '@/const/color'
@@ -22,57 +22,28 @@ type ScheduleItem = {
 export type ScheduleListProps = {
   /** 予定の開始日、終了日、時間帯、内容を記載した配列を受け取る */
   scheduleList: ScheduleItem[]
-  /** 現在の日時 (e.g. 2022/12/1) を受け取る。Library 側では日時の取得に責任を持たない為 */
-  currentTime: string
   /** 要約して表示する */
   isSummary?: boolean
 }
 
 export const ScheduleList = ({
   scheduleList,
-  currentTime,
   isSummary = false,
 }: ScheduleListProps) => {
   const dateFormat = useCallback((dateText: string) => {
     return dayjs(dateText).format('YYYY年M月D日(ddd)')
   }, [])
 
-  const beforeScheduleList = useMemo(() => {
-    const currentTimeDayJs = dayjs(currentTime)
-    let tempBeforeScheduleList: ScheduleItem[] = []
-
-    map(scheduleList, (scheduleItem) => {
-      // FIXME: 日付によるフィルタリング（data の整形）は organisms で行うべきこと
-      if (currentTimeDayJs.isAfter(dayjs(scheduleItem.endDate), 'day')) return
-
-      const startDate = dateFormat(scheduleItem.startDate)
-      const endDate = dateFormat(scheduleItem.endDate)
-
-      const formattedScheduleItem: ScheduleItem = {
-        ...scheduleItem,
-        startDate,
-        endDate,
-      }
-
-      tempBeforeScheduleList = [
-        ...tempBeforeScheduleList,
-        formattedScheduleItem,
-      ]
-    })
-
-    return tempBeforeScheduleList
-  }, [currentTime, dateFormat, scheduleList])
-
   return (
     <div>
-      {!beforeScheduleList.length && <div>準備中です</div>}
-      {map(beforeScheduleList, (beforeScheduleItem, index) => {
+      {!scheduleList.length && <div>準備中です</div>}
+      {map(scheduleList, (beforeScheduleItem, index) => {
         return (
           <StyledScheduleItem key={index} isSummary={isSummary}>
             <StyledPeriod isSummary={isSummary}>
-              {beforeScheduleItem.startDate}
+              {dateFormat(beforeScheduleItem.startDate)}
               {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
-                `〜${beforeScheduleItem.endDate}`}
+                `〜${dateFormat(beforeScheduleItem.endDate)}`}
             </StyledPeriod>
             <StyledDescription isSummary={isSummary}>
               {beforeScheduleItem.timeFrame && (
