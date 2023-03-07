@@ -15,7 +15,7 @@ Default.args = {
   text: '予約する',
   buttonSize: 'M',
   buttonColor: 'DEFAULT',
-  buttonCallback: action('Default'),
+  onClick: action('Default'),
 }
 
 export const SeeMore = Template.bind({})
@@ -24,7 +24,7 @@ SeeMore.args = {
   buttonSize: 'M',
   buttonColor: 'DEFAULT',
   iconKind: 'NAVIGATE_NEXT',
-  buttonCallback: action('SeeMore'),
+  onClick: action('SeeMore'),
 }
 
 export const External = Template.bind({})
@@ -43,7 +43,7 @@ IconOnly.args = {
   buttonColor: 'DEFAULT',
   buttonSize: 'M',
   iconKind: 'NAVIGATE_NEXT',
-  buttonCallback: action('IconOnly'),
+  onClick: action('IconOnly'),
 }
 
 export const HasAnchorCallback = Template.bind({})
@@ -52,5 +52,5 @@ HasAnchorCallback.args = {
   buttonSize: 'M',
   buttonColor: 'DEFAULT',
   isAnchor: true,
-  anchorCallback: action('HasAnchorCallback'),
+  onClick: action('HasAnchorCallback'),
 }

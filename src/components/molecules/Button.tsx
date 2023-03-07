@@ -26,10 +26,7 @@ type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 export type ButtonProps = {
   /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
   className?: string
-  /** button 要素の場合の関数を受け取る */
-  buttonCallback?: MouseEventHandler<HTMLButtonElement>
-  /** anchor 要素の場合の関数を受け取る */
-  anchorCallback?: MouseEventHandler<HTMLAnchorElement>
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
   text?: string
   buttonSize: ButtonSize
   buttonColor: ButtonBackgroundColor
@@ -43,8 +40,7 @@ export type ButtonProps = {
 
 export const Button = ({
   className,
-  buttonCallback,
-  anchorCallback,
+  onClick,
   text,
   buttonSize,
   buttonColor,
@@ -60,7 +56,7 @@ export const Button = ({
         <StyledAnchorButton
           href={href}
           target={target}
-          onClick={anchorCallback}
+          onClick={onClick}
           $buttonColor={buttonColor}
           $buttonSize={buttonSize}
         >
@@ -80,7 +76,7 @@ export const Button = ({
         <StyledButton
           $buttonColor={buttonColor}
           $buttonSize={buttonSize}
-          onClick={buttonCallback}
+          onClick={onClick}
         >
           {iconKind && (
             <StyledIcon
