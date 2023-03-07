@@ -1,5 +1,5 @@
 import { MouseEventHandler, ReactNode } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { FONT_COLOR } from '@/const/color'
 import { TRANSITION_TIME } from '@/const/common'
@@ -45,7 +45,7 @@ export const Anchor = ({
   )
 }
 
-const StyledAnchor = styled.a`
+export const anchorStyle = css`
   color: ${FONT_COLOR.LINK};
   transition: color ${TRANSITION_TIME};
 
@@ -54,4 +54,8 @@ const StyledAnchor = styled.a`
       color: ${FONT_COLOR.LINK_HOVER};
     }
   }
+`
+
+const StyledAnchor = styled.a`
+  ${anchorStyle}
 `

@@ -5,6 +5,7 @@ import { map } from 'lodash-es'
 import { useCallback } from 'react'
 import styled from 'styled-components'
 
+import { anchorStyle } from '@/atoms/Anchor'
 import { BORDER_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
 import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '@/const/size'
@@ -51,7 +52,11 @@ export const ScheduleList = ({
                   {beforeScheduleItem.timeFrame}
                 </StyledTimeFrame>
               )}
-              <span>{beforeScheduleItem.description}</span>
+              <StyledText
+                dangerouslySetInnerHTML={{
+                  __html: beforeScheduleItem.description,
+                }}
+              />
             </StyledDescription>
           </StyledScheduleItem>
         )
@@ -125,7 +130,17 @@ const StyledDescription = styled.div<{ isSummary: boolean }>`
     `}
 `
 
-const StyledTimeFrame = styled.span`
+const StyledTimeFrame = styled.div`
+  display: inline;
   margin-right: ${MARGIN.M};
   font-weight: ${FONT_WEIGHT.BOLD};
+`
+
+const StyledText = styled.div`
+  display: inline;
+
+  /* NOTE: 外部がら呼んだ html を使うため */
+  > a {
+    ${anchorStyle}
+  }
 `

@@ -16,7 +16,8 @@ const scheduleList: ScheduleListProps['scheduleList'] = [
     startDate: '2022/11/23',
     endDate: '2022/12/26',
     timeFrame: '11:00～18:00',
-    description: '「おとうさんとぼく」展示会',
+    description:
+      '「おとうさんとぼく」展示会 詳細は<a href="" target="_blank">こちら</a>',
   },
   {
     startDate: '2022/12/3',
