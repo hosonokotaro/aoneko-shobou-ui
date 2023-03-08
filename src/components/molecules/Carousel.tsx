@@ -41,14 +41,14 @@ export const Carousel = ({ imageList }: CarouselProps) => {
       centeredSlides={true}
       spaceBetween={40}
     >
-      {map(imageList, (image, index) => (
+      {map(imageList, ({ src, alt, width, height, loading }, index) => (
         <SwiperSlide key={index}>
           <StyledImage
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            loading={image.loading}
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            loading={loading}
           />
         </SwiperSlide>
       ))}
