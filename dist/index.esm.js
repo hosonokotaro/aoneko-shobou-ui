@@ -383,7 +383,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
 `,at=e.div`
   display: inline;
 
-  /* NOTE: 外部がら呼んだ html を使うため */
+  /* NOTE: 外部から呼んだ html を使うため */
   > a {
     ${M}
   }

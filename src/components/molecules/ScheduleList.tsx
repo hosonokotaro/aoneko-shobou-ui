@@ -139,7 +139,7 @@ const StyledTimeFrame = styled.div`
 const StyledText = styled.div`
   display: inline;
 
-  /* NOTE: 外部がら呼んだ html を使うため */
+  /* NOTE: 外部から呼んだ html を使うため */
   > a {
     ${anchorStyle}
   }
