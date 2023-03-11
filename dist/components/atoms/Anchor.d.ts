@@ -13,4 +13,5 @@ export declare type AnchorProps = {
     children: ReactNode;
 };
 export declare const Anchor: ({ className, href, target, onClick, children, }: AnchorProps) => JSX.Element;
+export declare const anchorStyle: import("styled-components").FlattenSimpleInterpolation;
 export {};

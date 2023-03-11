@@ -16,13 +16,20 @@ const scheduleList: ScheduleListProps['scheduleList'] = [
     startDate: '2022/11/23',
     endDate: '2022/12/26',
     timeFrame: '11:00～18:00',
-    description: '「おとうさんとぼく」展示会',
+    description:
+      '「おとうさんとぼく」展示会 詳細は<a href="" target="_blank">こちら</a>',
   },
   {
     startDate: '2022/12/3',
     endDate: '2022/12/3',
     timeFrame: '14:30～15:00',
     description: 'プレコンサート■ダミアン原田シターコンサート　無料',
+  },
+  {
+    startDate: '2022/12/3',
+    endDate: '2022/12/3',
+    timeFrame: '16:30～17:30',
+    description: '懇親会',
   },
   {
     startDate: '2022/12/4',
@@ -66,6 +73,5 @@ const scheduleList: ScheduleListProps['scheduleList'] = [
 export const Default = Template.bind({})
 Default.args = {
   scheduleList: scheduleList,
-  currentTime: '2022/12/6',
   isSummary: false,
 }
