@@ -11,10 +11,7 @@ declare type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
 export declare type ButtonProps = {
     /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
     className?: string;
-    /** button 要素の場合の関数を受け取る */
-    buttonCallback?: MouseEventHandler<HTMLButtonElement>;
-    /** anchor 要素の場合の関数を受け取る */
-    anchorCallback?: MouseEventHandler<HTMLAnchorElement>;
+    onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
     text?: string;
     buttonSize: ButtonSize;
     buttonColor: ButtonBackgroundColor;
@@ -25,5 +22,5 @@ export declare type ButtonProps = {
     href?: string;
     target?: ComponentProps<typeof Anchor>['target'];
 };
-export declare const Button: ({ className, buttonCallback, anchorCallback, text, buttonSize, buttonColor, iconKind, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
+export declare const Button: ({ className, onClick, text, buttonSize, buttonColor, iconKind, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
 export {};
