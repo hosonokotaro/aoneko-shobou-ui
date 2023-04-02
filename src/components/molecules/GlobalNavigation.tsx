@@ -1,5 +1,6 @@
 import { map } from 'lodash-es'
-import { MouseEvent, useState } from 'react'
+import { SetStateAction } from 'react'
+import { Dispatch, MouseEvent } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -38,6 +39,10 @@ export type GlobalNavigationProps = {
   ) => void
   /** 現在の path (e.g. /about/) を受け取る。Library 側では URL に責任を持たない為 */
   currentPath: string
+  /** Tablet size 以下の時のナビゲーションの開閉状態を受け取る */
+  isOpenNavigation: boolean
+  /** Tablet size 以下の時のナビゲーションの開閉状態を更新する関数を受け取る */
+  handleSetIsOpenNavigation: Dispatch<SetStateAction<boolean>>
 }
 
 export const GlobalNavigation = ({
@@ -45,14 +50,15 @@ export const GlobalNavigation = ({
   navigationList,
   handleLinkEvent,
   currentPath,
+  isOpenNavigation = true,
+  handleSetIsOpenNavigation,
 }: GlobalNavigationProps) => {
-  const [isOpenNavigation, setIsOpenNavigation] = useState(true)
   const { isTablet } = useMatchMedia()
   const isomorphicEffect = useIsomorphicEffect()
 
   // NOTE: 画面がちらつくため、isTablet が変更されるまで画面の更新を待つ
   isomorphicEffect(() => {
-    setIsOpenNavigation(!isTablet)
+    handleSetIsOpenNavigation(!isTablet)
   }, [isTablet])
 
   return (
@@ -71,7 +77,7 @@ export const GlobalNavigation = ({
                   navigationItem.path,
                   navigationItem.isExternal
                 )
-                isTablet && setIsOpenNavigation(false)
+                isTablet && handleSetIsOpenNavigation(false)
               }}
               text={navigationItem.name}
               buttonSize="M"
@@ -92,7 +98,7 @@ export const GlobalNavigation = ({
       </StyledGlobalNavigation>
       <StyledToggleButtonWrapper $isOpen={isOpenNavigation}>
         <Button
-          onClick={() => setIsOpenNavigation(!isOpenNavigation)}
+          onClick={() => handleSetIsOpenNavigation(!isOpenNavigation)}
           buttonSize="M"
           buttonColor="DEFAULT"
           iconKind={isOpenNavigation ? 'MENU_OPEN' : 'MENU'}
