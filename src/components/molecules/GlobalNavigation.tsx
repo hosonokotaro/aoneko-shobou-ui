@@ -164,6 +164,7 @@ const StyledGlobalNavigation = styled.nav<{ $isOpen: boolean }>`
   display: ${({ $isOpen }) => (!$isOpen ? 'none' : 'flex')};
   justify-content: space-between;
   overflow: hidden;
+  height: ${ICON_BUTTON_SIZE.M.HEIGHT};
   border-radius: ${BORDER_RADIUS.M};
   background: ${BUTTON_BACKGROUND_COLOR.DEFAULT};
 
