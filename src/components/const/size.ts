@@ -41,7 +41,7 @@ export const ICON_BUTTON_SIZE = {
 
 export type IconButtonSize = keyof typeof ICON_BUTTON_SIZE
 
-export const MARGIN = {
+export const SPACE = {
   AUTO: 'auto',
   XL: '20px',
   L: '16px',
@@ -51,7 +51,7 @@ export const MARGIN = {
   NONE: '0',
 } as const
 
-export type Margin = keyof typeof MARGIN
+export type Space = keyof typeof SPACE
 
 export const BORDER_RADIUS = {
   M: '6px',

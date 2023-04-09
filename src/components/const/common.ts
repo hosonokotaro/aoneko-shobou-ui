@@ -7,7 +7,7 @@ export const ROTATE = {
   DEG270: '270deg',
 } as const
 
-export type Rotate = keyof typeof ROTATE
+export type Rotate = typeof ROTATE[keyof typeof ROTATE]
 
 export const ICON_KIND = {
   INFO: 'INFO',

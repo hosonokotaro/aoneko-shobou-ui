@@ -7,9 +7,8 @@ import { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Image, ImageProps } from '@/atoms/Image'
-
-import { MEDIA_QUERY } from '../const/mediaQuery'
-import { ICON_BUTTON_SIZE, MARGIN } from '../const/size'
+import { MEDIA_QUERY } from '@/const/mediaQuery'
+import { ICON_BUTTON_SIZE, SPACE } from '@/const/size'
 
 export type CarouselProps = {
   /** Atoms の Image component の props の配列を受け取る */
@@ -84,7 +83,7 @@ const StyledCarousel = styled(Swiper)`
     justify-content: center;
     width: ${ICON_BUTTON_SIZE.M.WIDTH};
     height: ${ICON_BUTTON_SIZE.S.HEIGHT};
-    margin: ${MARGIN.NONE} ${MARGIN.S};
+    margin: ${SPACE.NONE} ${SPACE.S};
 
     ${MEDIA_QUERY.MOBILE} {
       display: none;

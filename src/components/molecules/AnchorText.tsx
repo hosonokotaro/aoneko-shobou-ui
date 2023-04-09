@@ -5,7 +5,7 @@ import { Anchor } from '@/atoms/Anchor'
 import { Icon } from '@/atoms/Icon'
 import { FONT_COLOR } from '@/const/color'
 import { TRANSITION_TIME } from '@/const/common'
-import { MARGIN } from '@/const/size'
+import { SPACE } from '@/const/size'
 
 export type AnchorTextProps = {
   text: string
@@ -17,13 +17,8 @@ export const AnchorText = ({ text, href, target }: AnchorTextProps) => {
   return (
     <StyledAnchorText href={href} target={target}>
       <StyledText>{text}</StyledText>
-      {target === 'BLANK' && (
-        <StyledIcon
-          iconKind="OPEN_IN_NEW"
-          fillColor="LINK"
-          size="M"
-          iconRotate="DEFAULT"
-        />
+      {target === '_blank' && (
+        <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
       )}
     </StyledAnchorText>
   )
@@ -36,7 +31,7 @@ const StyledAnchorText = styled(Anchor)`
   display: inline-flex;
 
   & > ${StyledIcon} {
-    margin-left: ${MARGIN.XS};
+    margin-left: ${SPACE.XS};
 
     & > svg {
       transition: fill ${TRANSITION_TIME};

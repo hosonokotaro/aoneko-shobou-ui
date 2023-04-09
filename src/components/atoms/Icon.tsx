@@ -6,7 +6,7 @@ import { SvgMenuOpen } from '@/atoms/IconSvg/SvgMenuOpen'
 import { SvgNavigateNext } from '@/atoms/IconSvg/SvgNavigateNext'
 import { SvgOpenInNew } from '@/atoms/IconSvg/SvgOpenInNew'
 import { FONT_COLOR, FontColor } from '@/const/color'
-import { ICON_KIND, IconKind, ROTATE, Rotate } from '@/const/common'
+import { ICON_KIND, IconKind, Rotate } from '@/const/common'
 import { INLINE_SIZE, InlineSize } from '@/const/size'
 
 export type IconProps = {
@@ -17,7 +17,7 @@ export type IconProps = {
   fillColor: FontColor
   size: InlineSize
   /** 左回りの角度（deg）を受け取る */
-  iconRotate: Rotate
+  iconRotate?: Rotate
 }
 
 export const Icon = ({
@@ -25,7 +25,7 @@ export const Icon = ({
   iconKind,
   fillColor,
   size,
-  iconRotate,
+  iconRotate = '0deg',
 }: IconProps) => {
   return (
     <StyledIcon className={className} $iconRotate={iconRotate}>
@@ -71,7 +71,7 @@ export const Icon = ({
 const StyledIcon = styled.i<{ $iconRotate: Rotate }>`
   display: inline-grid;
   place-content: center;
-  transform: rotate(${({ $iconRotate }) => `${ROTATE[$iconRotate]}`});
+  transform: rotate(${({ $iconRotate }) => `${$iconRotate}`});
 `
 
 const StyledInfo = styled(SvgInfo)<{

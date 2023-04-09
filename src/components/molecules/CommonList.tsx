@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { BORDER_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '@/const/size'
+import { BLOCK_WIDTH, FONT_WEIGHT, SPACE } from '@/const/size'
 
 type CommonItem = {
   title: string
@@ -37,7 +37,7 @@ const StyledCommonList = styled.dl`
   flex-wrap: wrap;
 
   & > :nth-of-type(-n + 1) {
-    margin-top: ${MARGIN.NONE};
+    margin-top: ${SPACE.NONE};
   }
 `
 
@@ -51,7 +51,7 @@ const SCHEDULE_ITEM = {
 
 const StyledTitle = styled.dt`
   width: ${SCHEDULE_ITEM.WIDTH_EVEN};
-  margin-top: ${MARGIN.M};
+  margin-top: ${SPACE.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-right: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
@@ -59,13 +59,13 @@ const StyledTitle = styled.dt`
 
   ${MEDIA_QUERY.MOBILE} {
     width: ${BLOCK_WIDTH.FULL};
-    margin-top: ${MARGIN.M};
+    margin-top: ${SPACE.M};
   }
 `
 
 const StyledDescription = styled.dd`
   width: ${SCHEDULE_ITEM.WIDTH_ODD};
-  margin-top: ${MARGIN.M};
+  margin-top: ${SPACE.M};
   padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
   padding-left: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
@@ -73,6 +73,6 @@ const StyledDescription = styled.dd`
 
   ${MEDIA_QUERY.MOBILE} {
     width: ${BLOCK_WIDTH.FULL};
-    margin-top: ${MARGIN.XS};
+    margin-top: ${SPACE.XS};
   }
 `

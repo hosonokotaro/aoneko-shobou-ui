@@ -31,7 +31,7 @@ export {
   FONT_WEIGHT,
   ICON_BUTTON_SIZE,
   INLINE_SIZE,
-  MARGIN,
+  SPACE,
 } from '@/const/size'
 export { useIsomorphicEffect } from '@/hooks/useIsomorphicEffect'
 export { useMatchMedia } from '@/hooks/useMatchMedia'
