@@ -60,9 +60,9 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
   }
 `;i`
   ${w}
-`;const x="0.25s ease",I={DEFAULT:"0deg",DEG90:"90deg",DEG180:"180deg",DEG270:"270deg"},v={INFO:"INFO",OPEN_IN_NEW:"OPEN_IN_NEW",NAVIGATE_NEXT:"NAVIGATE_NEXT",MENU:"MENU",MENU_OPEN:"MENU_OPEN"},A={SELF:"_self",BLANK:"_blank"},H=({className:e,href:t,target:i,onClick:o,children:r})=>n(_,Object.assign({className:e,href:t,target:i&&A[i],rel:"BLANK"===i?"noopener noreferrer":void 0,onClick:e=>{"function"==typeof o&&"BLANK"!==i&&o(e)}},{children:r})),M=t`
+`;const I="0.25s ease",x={DEFAULT:"0deg",DEG90:"90deg",DEG180:"180deg",DEG270:"270deg"},v={INFO:"INFO",OPEN_IN_NEW:"OPEN_IN_NEW",NAVIGATE_NEXT:"NAVIGATE_NEXT",MENU:"MENU",MENU_OPEN:"MENU_OPEN"},A={SELF:"_self",BLANK:"_blank"},H=({className:e,href:t,target:i,onClick:o,children:r})=>n(_,Object.assign({className:e,href:t,target:i&&A[i],rel:"BLANK"===i?"noopener noreferrer":void 0,onClick:e=>{"function"==typeof o&&"BLANK"!==i&&o(e)}},{children:r})),M=t`
   color: ${b.LINK};
-  transition: color ${x};
+  transition: color ${I};
 
   @media (any-hover: hover) {
     &:hover {
@@ -97,7 +97,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
 `,q=({className:e,iconKind:t,fillColor:i,size:r,iconRotate:l})=>o(Z,Object.assign({className:e,$iconRotate:l},{children:[t===v.INFO&&n(J,{$fillColor:i,width:R[r],height:R[r]}),t===v.OPEN_IN_NEW&&n(Q,{$fillColor:i,width:R[r],height:R[r]}),t===v.NAVIGATE_NEXT&&n(ee,{$fillColor:i,width:R[r],height:R[r]}),t===v.MENU&&n(te,{$fillColor:i,width:R[r],height:R[r]}),t===v.MENU_OPEN&&n(ie,{$fillColor:i,width:R[r],height:R[r]})]})),Z=e.i`
   display: inline-grid;
   place-content: center;
-  transform: rotate(${({$iconRotate:e})=>`${I[e]}`});
+  transform: rotate(${({$iconRotate:e})=>`${x[e]}`});
 `,J=e((e=>n("svg",Object.assign({xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 512 512",width:"24px",height:"24px",role:"img"},e,{children:n("path",{d:"M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"})}))))`
   ${({$fillColor:e})=>`fill: ${b[e]};`}
 `,Q=e((e=>o("svg",Object.assign({xmlns:"http://www.w3.org/2000/svg",height:"24px",viewBox:"0 0 24 24",width:"24px",role:"img"},e,{children:[n("path",{d:"M0 0h24v24H0z",fill:"none"}),n("path",{d:"M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"})]}))))`
@@ -120,7 +120,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
     margin-left: ${B.XS};
 
     & > svg {
-      transition: fill ${x};
+      transition: fill ${I};
     }
   }
 
@@ -135,7 +135,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
   }
 `,Ne=e.span`
   display: inline-flex;
-`,Oe="M",we="S",xe=({className:e,onClick:t,text:i,buttonSize:r,buttonColor:l,iconKind:a,iconRotate:s,isAnchor:d,href:c,target:p})=>o(Ie,Object.assign({className:e},{children:[d&&o(He,Object.assign({href:c,target:p,onClick:t,$buttonColor:l,$buttonSize:r},{children:[a&&n(Me,{iconKind:a,fillColor:"WHITE",size:r===Oe?"XXL":"L",iconRotate:null!=s?s:"DEFAULT",$buttonSize:r}),i&&n(_e,Object.assign({$buttonSize:r},{children:i}))]})),!d&&o(Ae,Object.assign({$buttonColor:l,$buttonSize:r,onClick:t},{children:[a&&n(Me,{iconKind:a,fillColor:"WHITE",size:r===Oe?"XXL":"L",iconRotate:null!=s?s:"DEFAULT",$buttonSize:r}),i&&n(_e,Object.assign({$buttonSize:r},{children:i}))]}))]})),Ie=e.div`
+`,Oe="M",we="S",Ie=({className:e,onClick:t,text:i,buttonSize:r,buttonColor:l,iconKind:a,iconRotate:s,isAnchor:d,href:c,target:p})=>o(xe,Object.assign({className:e},{children:[d&&o(He,Object.assign({href:c,target:p,onClick:t,$buttonColor:l,$buttonSize:r},{children:[a&&n(Me,{iconKind:a,fillColor:"WHITE",size:r===Oe?"XXL":"L",iconRotate:null!=s?s:"DEFAULT",$buttonSize:r}),i&&n(_e,Object.assign({$buttonSize:r},{children:i}))]})),!d&&o(Ae,Object.assign({$buttonColor:l,$buttonSize:r,onClick:t},{children:[a&&n(Me,{iconKind:a,fillColor:"WHITE",size:r===Oe?"XXL":"L",iconRotate:null!=s?s:"DEFAULT",$buttonSize:r}),i&&n(_e,Object.assign({$buttonSize:r},{children:i}))]}))]})),xe=e.div`
   display: inline-flex;
   pointer-events: auto;
 `,ve=t`
@@ -150,7 +150,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
   margin: ${B.NONE};
   font-size: ${R.M};
   color: ${b.WHITE};
-  transition: background ${x};
+  transition: background ${I};
 
   ${({$buttonColor:e})=>`background: ${L[e]};`}
 
@@ -254,7 +254,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
     width: ${C.FULL};
     margin-top: ${B.XS};
   }
-`,Ve=({className:e,navigationList:t,handleLinkEvent:i,currentPath:r,isOpenNavigation:l=!0,handleSetIsOpenNavigation:a})=>{const{isTablet:s}=ye();return fe()((()=>{a(!s)}),[s]),o(Xe,Object.assign({className:e,$isOpen:l},{children:[n(We,Object.assign({$isOpen:l},{children:g(t,((e,t)=>n(Pe,{onClick:t=>{i(t,e.path,e.isExternal),s&&a(!1)},text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===r?"DEFAULT_CURRENT":"DEFAULT",isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},t)))})),n(Ye,Object.assign({$isOpen:l},{children:n(xe,{onClick:()=>a(!l),buttonSize:"M",buttonColor:"DEFAULT",iconKind:l?"MENU_OPEN":"MENU"})}))]}))},Xe=e.div`
+`,Ve=({className:e,navigationList:t,handleLinkEvent:i,currentPath:r,isOpenNavigation:l=!0,handleSetIsOpenNavigation:a})=>{const{isTablet:s}=ye();return fe()((()=>{a(!s)}),[s]),o(Xe,Object.assign({className:e,$isOpen:l},{children:[n(We,Object.assign({$isOpen:l},{children:g(t,((e,t)=>n(Pe,{onClick:t=>{i(t,e.path,e.isExternal),s&&a(!1)},text:e.name,buttonSize:"M",buttonColor:e.isExternal?"EXTERNAL":e.path===r?"DEFAULT_CURRENT":"DEFAULT",isAnchor:!0,href:e.path,target:e.isExternal?"BLANK":"SELF"},t)))})),n(Ye,Object.assign({$isOpen:l},{children:n(Ie,{onClick:()=>a(!l),buttonSize:"M",buttonColor:"DEFAULT",iconKind:l?"MENU_OPEN":"MENU"})}))]}))},Xe=e.div`
   overflow-y: auto;
   transition: background 0.25s ease;
 
@@ -277,7 +277,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
   ${Te.MOBILE} {
     width: ${C.FULL};
   }
-`,Pe=e(xe)`
+`,Pe=e(Ie)`
   justify-content: center;
   flex-grow: 1;
   margin: ${B.NONE};
@@ -301,6 +301,7 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
   display: ${({$isOpen:e})=>e?"flex":"none"};
   justify-content: space-between;
   overflow: hidden;
+  height: ${z.M.HEIGHT};
   border-radius: ${U.M};
   background: ${L.DEFAULT};
 
@@ -387,4 +388,4 @@ import e,{css as t,createGlobalStyle as i}from"styled-components";import{jsx as 
   > a {
     ${M}
   }
-`;export{H as Anchor,ue as AnchorText,k as AnnotationText,u as BACKGROUND_COLOR,y as BASE_COLOR,C as BLOCK_WIDTH,O as BORDER_COLOR,U as BORDER_RADIUS,me as BREAK_POINTS,L as BUTTON_BACKGROUND_COLOR,xe as Button,N as CHIP_BACKGROUND_COLOR,Re as Carousel,F as Chip,Be as CommonList,b as FONT_COLOR,S as FONT_WEIGHT,Ve as GlobalNavigation,X as HeadingText,z as ICON_BUTTON_SIZE,v as ICON_KIND,R as INLINE_SIZE,q as Icon,re as Image,B as MARGIN,$e as MATCH_MEDIA,Te as MEDIA_QUERY,le as ParagraphText,qe as Photo,Je as ScheduleList,he as ShopMap,x as TRANSITION_TIME,w as globalStyle,fe as useIsomorphicEffect,ye as useMatchMedia};
+`;export{H as Anchor,ue as AnchorText,k as AnnotationText,u as BACKGROUND_COLOR,y as BASE_COLOR,C as BLOCK_WIDTH,O as BORDER_COLOR,U as BORDER_RADIUS,me as BREAK_POINTS,L as BUTTON_BACKGROUND_COLOR,Ie as Button,N as CHIP_BACKGROUND_COLOR,Re as Carousel,F as Chip,Be as CommonList,b as FONT_COLOR,S as FONT_WEIGHT,Ve as GlobalNavigation,X as HeadingText,z as ICON_BUTTON_SIZE,v as ICON_KIND,R as INLINE_SIZE,q as Icon,re as Image,B as MARGIN,$e as MATCH_MEDIA,Te as MEDIA_QUERY,le as ParagraphText,qe as Photo,Je as ScheduleList,he as ShopMap,I as TRANSITION_TIME,w as globalStyle,fe as useIsomorphicEffect,ye as useMatchMedia};
