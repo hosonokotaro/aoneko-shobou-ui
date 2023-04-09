@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { useState } from 'react'
 
 import {
   GlobalNavigation,
@@ -11,9 +12,18 @@ export default {
   component: GlobalNavigation,
 } as ComponentMeta<typeof GlobalNavigation>
 
-const Template: ComponentStory<typeof GlobalNavigation> = (args) => (
-  <GlobalNavigation {...args} />
-)
+const Template: ComponentStory<typeof GlobalNavigation> = (args) => {
+  // NOTE: 親側で持つ useState を mock する
+  const [isOpenNavigation, setIsOpenNavigation] = useState(true)
+
+  return (
+    <GlobalNavigation
+      {...args}
+      isOpenNavigation={isOpenNavigation}
+      handleSetIsOpenNavigation={setIsOpenNavigation}
+    />
+  )
+}
 
 const navigationList: GlobalNavigationProps['navigationList'] = [
   {

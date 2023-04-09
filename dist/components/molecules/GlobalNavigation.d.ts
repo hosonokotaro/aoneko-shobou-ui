@@ -1,4 +1,5 @@
-import { MouseEvent } from 'react';
+import { SetStateAction } from 'react';
+import { Dispatch, MouseEvent } from 'react';
 declare type NavigationItem = {
     path: string;
     name: string;
@@ -13,6 +14,10 @@ export declare type GlobalNavigationProps = {
     handleLinkEvent: (event: MouseEvent<HTMLAnchorElement>, path: string, isExternal: boolean) => void;
     /** 現在の path (e.g. /about/) を受け取る。Library 側では URL に責任を持たない為 */
     currentPath: string;
+    /** Tablet size 以下の時のナビゲーションの開閉状態を受け取る */
+    isOpenNavigation: boolean;
+    /** Tablet size 以下の時のナビゲーションの開閉状態を更新する関数を受け取る */
+    handleSetIsOpenNavigation: Dispatch<SetStateAction<boolean>>;
 };
-export declare const GlobalNavigation: ({ className, navigationList, handleLinkEvent, currentPath, }: GlobalNavigationProps) => JSX.Element;
+export declare const GlobalNavigation: ({ className, navigationList, handleLinkEvent, currentPath, isOpenNavigation, handleSetIsOpenNavigation, }: GlobalNavigationProps) => JSX.Element;
 export {};
