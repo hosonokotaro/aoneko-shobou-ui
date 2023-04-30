@@ -65,7 +65,7 @@ export const Button = ({
               iconKind={iconKind}
               fillColor="WHITE"
               size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-              iconRotate={iconRotate || '0deg'}
+              iconRotate={iconRotate}
               $buttonSize={buttonSize}
             />
           )}
@@ -83,7 +83,7 @@ export const Button = ({
               iconKind={iconKind}
               fillColor="WHITE"
               size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-              iconRotate={iconRotate || '0deg'}
+              iconRotate={iconRotate}
               $buttonSize={buttonSize}
             />
           )}
