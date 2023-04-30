@@ -1,13 +1,15 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { MATCH_MEDIA } from '@/const/mediaQuery'
 
-const tabletDevice =
-  typeof window !== 'undefined' && window.matchMedia(MATCH_MEDIA.TABLET)
-
 export const useMatchMedia = () => {
+  const matchTabletDevice = useMemo(() => {
+    if (typeof window === 'undefined') return
+    return window.matchMedia(MATCH_MEDIA.TABLET)
+  }, [])
+
   const [isTablet, setIsTablet] = useState(
-    tabletDevice !== false && tabletDevice.matches
+    matchTabletDevice ? matchTabletDevice.matches : false
   )
 
   const handleIsTablet = useCallback((event: MediaQueryListEvent) => {
@@ -15,13 +17,13 @@ export const useMatchMedia = () => {
   }, [])
 
   useEffect(() => {
-    if (tabletDevice === false) return
-    tabletDevice.addEventListener('change', handleIsTablet, false)
+    if (!matchTabletDevice) return
+    matchTabletDevice.addEventListener('change', handleIsTablet, false)
 
     return () => {
-      tabletDevice.removeEventListener('change', handleIsTablet, false)
+      matchTabletDevice.removeEventListener('change', handleIsTablet, false)
     }
-  }, [handleIsTablet])
+  }, [handleIsTablet, matchTabletDevice])
 
   return { isTablet }
 }

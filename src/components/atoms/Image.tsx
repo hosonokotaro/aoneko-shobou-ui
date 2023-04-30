@@ -4,7 +4,7 @@ const LOADING_PARAMS = {
   NONE: undefined,
 } as const
 
-type LoadingParams = keyof typeof LOADING_PARAMS
+type LoadingParams = typeof LOADING_PARAMS[keyof typeof LOADING_PARAMS]
 
 export type ImageProps = {
   /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
@@ -26,9 +26,9 @@ export const Image = ({
   loading,
 }: ImageProps) => {
   const loadingParam =
-    loading === 'EAGER'
+    loading === 'eager'
       ? LOADING_PARAMS.EAGER
-      : loading === 'LAZY'
+      : loading === 'lazy'
       ? LOADING_PARAMS.LAZY
       : undefined
 

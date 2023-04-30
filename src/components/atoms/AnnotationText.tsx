@@ -4,12 +4,21 @@ import { FONT_COLOR, FontColor } from '@/const/color'
 import { INLINE_SIZE } from '@/const/size'
 
 export type AnnotationTextProps = {
+  className?: string
   text: string
   color: FontColor
 }
 
-export const AnnotationText = ({ text, color }: AnnotationTextProps) => {
-  return <StyledAnnotationText $color={color}>{text}</StyledAnnotationText>
+export const AnnotationText = ({
+  className,
+  text,
+  color,
+}: AnnotationTextProps) => {
+  return (
+    <StyledAnnotationText className={className} $color={color}>
+      {text}
+    </StyledAnnotationText>
+  )
 }
 
 const StyledAnnotationText = styled.span<{ $color: FontColor }>`

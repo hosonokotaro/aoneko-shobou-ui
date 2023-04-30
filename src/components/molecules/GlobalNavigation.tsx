@@ -14,7 +14,7 @@ import {
   BORDER_RADIUS,
   ICON_BUTTON_SIZE,
   INLINE_SIZE,
-  MARGIN,
+  SPACE,
 } from '@/const/size'
 import { useIsomorphicEffect } from '@/hooks/useIsomorphicEffect'
 import { useMatchMedia } from '@/hooks/useMatchMedia'
@@ -91,7 +91,7 @@ export const GlobalNavigation = ({
               // NOTE: SEO のため、全て a tag にする
               isAnchor={true}
               href={navigationItem.path}
-              target={navigationItem.isExternal ? 'BLANK' : 'SELF'}
+              target={navigationItem.isExternal ? '_blank' : '_self'}
             />
           )
         })}
@@ -141,7 +141,7 @@ const StyledGlobalNavigationWrapper = styled.div<{ $isOpen: boolean }>`
 const StyledButton = styled(Button)`
   justify-content: center;
   flex-grow: 1;
-  margin: ${MARGIN.NONE};
+  margin: ${SPACE.NONE};
 
   ${MEDIA_QUERY.TABLET} {
     flex-grow: 0;
@@ -153,7 +153,7 @@ const StyledButton = styled(Button)`
     width: 100%;
 
     & > div {
-      ${MEDIA_QUERY.OVER_PC} {
+      ${MEDIA_QUERY.XGA} {
         font-size: ${INLINE_SIZE.L};
       }
     }
@@ -182,8 +182,8 @@ const StyledGlobalNavigation = styled.nav<{ $isOpen: boolean }>`
   ${MEDIA_QUERY.TABLET} {
     flex-direction: column;
     align-items: flex-end;
-    height: calc((${ICON_BUTTON_SIZE.M.HEIGHT} * 6) + (${MARGIN.L} * 5));
-    margin-bottom: ${MARGIN.L};
+    height: calc((${ICON_BUTTON_SIZE.M.HEIGHT} * 6) + (${SPACE.L} * 5));
+    margin-bottom: ${SPACE.L};
     border-radius: ${BORDER_RADIUS.NONE};
     background: none;
   }

@@ -9,7 +9,7 @@ const ANCHOR_TARGET = {
   BLANK: '_blank',
 } as const
 
-type AnchorTarget = keyof typeof ANCHOR_TARGET
+type AnchorTarget = typeof ANCHOR_TARGET[keyof typeof ANCHOR_TARGET]
 
 export type AnchorProps = {
   /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
@@ -33,10 +33,10 @@ export const Anchor = ({
     <StyledAnchor
       className={className}
       href={href}
-      target={target && ANCHOR_TARGET[target]}
-      rel={target === 'BLANK' ? externalLinkRel : undefined}
+      target={target}
+      rel={target === '_blank' ? externalLinkRel : undefined}
       onClick={(event) => {
-        if (typeof onClick !== 'function' || target === 'BLANK') return
+        if (typeof onClick !== 'function' || target === '_blank') return
         onClick(event)
       }}
     >

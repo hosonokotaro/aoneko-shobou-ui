@@ -15,12 +15,12 @@ export const Self = Template.bind({})
 Self.args = {
   text: '予定一覧はこちら',
   href: '',
-  target: 'SELF',
+  target: '_self',
 }
 
 export const Blank = Template.bind({})
 Blank.args = {
   text: '○○ の web サイトへ',
   href: '#',
-  target: 'BLANK',
+  target: '_blank',
 }

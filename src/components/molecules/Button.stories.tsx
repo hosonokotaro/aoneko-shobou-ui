@@ -35,7 +35,7 @@ External.args = {
   iconKind: 'NAVIGATE_NEXT',
   isAnchor: true,
   href: 'https://www.google.com/',
-  target: 'BLANK',
+  target: '_blank',
 }
 
 export const IconOnly = Template.bind({})

@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import { anchorStyle } from '@/atoms/Anchor'
 import { BORDER_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, FONT_WEIGHT, MARGIN } from '@/const/size'
+import { BLOCK_WIDTH, FONT_WEIGHT, SPACE } from '@/const/size'
 
 dayjs().format()
 dayjs.locale('ja')
@@ -21,6 +21,7 @@ type ScheduleItem = {
 }
 
 export type ScheduleListProps = {
+  className?: string
   /** 予定の開始日、終了日、時間帯、内容を記載した配列を受け取る */
   scheduleList: ScheduleItem[]
   /** 要約して表示する */
@@ -28,6 +29,7 @@ export type ScheduleListProps = {
 }
 
 export const ScheduleList = ({
+  className,
   scheduleList,
   isSummary = false,
 }: ScheduleListProps) => {
@@ -36,7 +38,7 @@ export const ScheduleList = ({
   }, [])
 
   return (
-    <div>
+    <div className={className}>
       {!scheduleList.length && <div>準備中です</div>}
       {map(scheduleList, (beforeScheduleItem, index) => {
         return (
@@ -70,7 +72,7 @@ const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
   justify-content: space-between;
 
   &:not(:first-of-type) {
-    margin-top: ${MARGIN.M};
+    margin-top: ${SPACE.M};
   }
 
   ${MEDIA_QUERY.MOBILE} {
@@ -115,7 +117,7 @@ const StyledDescription = styled.div<{ isSummary: boolean }>`
 
   ${MEDIA_QUERY.MOBILE} {
     width: ${BLOCK_WIDTH.FULL};
-    margin-top: ${MARGIN.XS};
+    margin-top: ${SPACE.XS};
   }
 
   ${({ isSummary }) =>
@@ -123,7 +125,7 @@ const StyledDescription = styled.div<{ isSummary: boolean }>`
     `
       display: -webkit-box;
       width: ${BLOCK_WIDTH.FULL};
-      margin-top: ${MARGIN.XS};
+      margin-top: ${SPACE.XS};
       overflow: hidden;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
@@ -132,7 +134,7 @@ const StyledDescription = styled.div<{ isSummary: boolean }>`
 
 const StyledTimeFrame = styled.div`
   display: inline;
-  margin-right: ${MARGIN.M};
+  margin-right: ${SPACE.M};
   font-weight: ${FONT_WEIGHT.BOLD};
 `
 

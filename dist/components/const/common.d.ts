@@ -5,7 +5,7 @@ export declare const ROTATE: {
     readonly DEG180: "180deg";
     readonly DEG270: "270deg";
 };
-export declare type Rotate = keyof typeof ROTATE;
+export declare type Rotate = typeof ROTATE[keyof typeof ROTATE];
 export declare const ICON_KIND: {
     readonly INFO: "INFO";
     readonly OPEN_IN_NEW: "OPEN_IN_NEW";

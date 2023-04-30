@@ -4,13 +4,14 @@ import { Image, ImageProps } from '@/atoms/Image'
 import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
 
 export type PhotoProps = {
+  className?: string
   /** Atoms の Image component の props を受け取る */
   imageProps: ImageProps
 }
 
-export const Photo = ({ imageProps }: PhotoProps) => {
+export const Photo = ({ className, imageProps }: PhotoProps) => {
   return (
-    <StyledPhoto>
+    <StyledPhoto className={className}>
       <Image
         src={imageProps.src}
         alt={imageProps.alt}

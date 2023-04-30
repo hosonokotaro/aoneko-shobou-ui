@@ -17,7 +17,7 @@ const imageProps1: ImageProps = {
   alt: 'test',
   width: 749,
   height: 295,
-  loading: 'LAZY',
+  loading: 'lazy',
 } as const
 
 const imageProps2: ImageProps = {
@@ -25,7 +25,7 @@ const imageProps2: ImageProps = {
   alt: 'test',
   width: 749,
   height: 295,
-  loading: 'LAZY',
+  loading: 'lazy',
 } as const
 
 const imageList = [imageProps1, imageProps2]

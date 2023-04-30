@@ -13,7 +13,7 @@ import {
   BORDER_RADIUS,
   ICON_BUTTON_SIZE,
   INLINE_SIZE,
-  MARGIN,
+  SPACE,
 } from '@/const/size'
 
 const BUTTON_SIZE = {
@@ -65,7 +65,7 @@ export const Button = ({
               iconKind={iconKind}
               fillColor="WHITE"
               size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-              iconRotate={iconRotate ?? 'DEFAULT'}
+              iconRotate={iconRotate}
               $buttonSize={buttonSize}
             />
           )}
@@ -83,7 +83,7 @@ export const Button = ({
               iconKind={iconKind}
               fillColor="WHITE"
               size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-              iconRotate={iconRotate ?? 'DEFAULT'}
+              iconRotate={iconRotate}
               $buttonSize={buttonSize}
             />
           )}
@@ -117,7 +117,7 @@ const baseStyle = css<{
       ? ICON_BUTTON_SIZE.S.HEIGHT
       : ICON_BUTTON_SIZE.M.HEIGHT};
 
-  margin: ${MARGIN.NONE};
+  margin: ${SPACE.NONE};
   font-size: ${INLINE_SIZE.M};
   color: ${FONT_COLOR.WHITE};
   transition: background ${TRANSITION_TIME};
@@ -168,13 +168,13 @@ const StyledAnchorButton = styled(Anchor)`
 const StyledIcon = styled(Icon)<{ $buttonSize: ButtonSize }>`
   margin: ${({ $buttonSize }) =>
     $buttonSize === BUTTON_SIZE.M
-      ? `${MARGIN.NONE} ${MARGIN.XS}`
-      : `${MARGIN.NONE}`};
+      ? `${SPACE.NONE} ${SPACE.XS}`
+      : `${SPACE.NONE}`};
 `
 
 const StyledText = styled.div<{ $buttonSize: ButtonSize }>`
   margin-right: ${({ $buttonSize }) =>
-    $buttonSize === BUTTON_SIZE.M ? MARGIN.M : MARGIN.S};
+    $buttonSize === BUTTON_SIZE.M ? SPACE.M : SPACE.S};
 
   text-align: left;
 
@@ -185,6 +185,6 @@ const StyledText = styled.div<{ $buttonSize: ButtonSize }>`
 
   &:not(${StyledIcon} + &) {
     margin-left: ${({ $buttonSize }) =>
-      $buttonSize === BUTTON_SIZE.M ? MARGIN.M : MARGIN.S};
+      $buttonSize === BUTTON_SIZE.M ? SPACE.M : SPACE.S};
   }
 `

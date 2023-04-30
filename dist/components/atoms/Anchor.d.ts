@@ -3,7 +3,7 @@ declare const ANCHOR_TARGET: {
     readonly SELF: "_self";
     readonly BLANK: "_blank";
 };
-declare type AnchorTarget = keyof typeof ANCHOR_TARGET;
+declare type AnchorTarget = typeof ANCHOR_TARGET[keyof typeof ANCHOR_TARGET];
 export declare type AnchorProps = {
     /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
     className?: string;

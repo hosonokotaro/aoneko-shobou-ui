@@ -18,7 +18,7 @@ export { ShopMap } from "./components/atoms/ShopMap";
 export { BACKGROUND_COLOR, BASE_COLOR, BORDER_COLOR, BUTTON_BACKGROUND_COLOR, CHIP_BACKGROUND_COLOR, FONT_COLOR, } from "./components/const/color";
 export { ICON_KIND, TRANSITION_TIME } from "./components/const/common";
 export { BREAK_POINTS, MATCH_MEDIA, MEDIA_QUERY } from "./components/const/mediaQuery";
-export { BLOCK_WIDTH, BORDER_RADIUS, FONT_WEIGHT, ICON_BUTTON_SIZE, INLINE_SIZE, MARGIN, } from "./components/const/size";
+export { BLOCK_WIDTH, BORDER_RADIUS, FONT_WEIGHT, ICON_BUTTON_SIZE, INLINE_SIZE, SPACE, } from "./components/const/size";
 export { useIsomorphicEffect } from "./components/hooks/useIsomorphicEffect";
 export { useMatchMedia } from "./components/hooks/useMatchMedia";
 export type { AnchorTextProps } from "./components/molecules/AnchorText";
