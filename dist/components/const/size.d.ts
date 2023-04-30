@@ -29,7 +29,7 @@ export declare const ICON_BUTTON_SIZE: {
     };
 };
 export declare type IconButtonSize = keyof typeof ICON_BUTTON_SIZE;
-export declare const MARGIN: {
+export declare const SPACE: {
     readonly AUTO: "auto";
     readonly XL: "20px";
     readonly L: "16px";
@@ -38,7 +38,7 @@ export declare const MARGIN: {
     readonly XS: "4px";
     readonly NONE: "0";
 };
-export declare type Margin = keyof typeof MARGIN;
+export declare type Space = keyof typeof SPACE;
 export declare const BORDER_RADIUS: {
     readonly M: "6px";
     readonly S: "3px";

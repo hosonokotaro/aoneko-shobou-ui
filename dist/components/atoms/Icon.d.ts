@@ -10,6 +10,6 @@ export declare type IconProps = {
     fillColor: FontColor;
     size: InlineSize;
     /** 左回りの角度（deg）を受け取る */
-    iconRotate: Rotate;
+    iconRotate?: Rotate;
 };
 export declare const Icon: ({ className, iconKind, fillColor, size, iconRotate, }: IconProps) => JSX.Element;

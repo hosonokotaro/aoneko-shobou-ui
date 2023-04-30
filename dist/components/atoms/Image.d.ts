@@ -4,7 +4,7 @@ declare const LOADING_PARAMS: {
     readonly LAZY: "lazy";
     readonly NONE: undefined;
 };
-declare type LoadingParams = keyof typeof LOADING_PARAMS;
+declare type LoadingParams = typeof LOADING_PARAMS[keyof typeof LOADING_PARAMS];
 export declare type ImageProps = {
     /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
     className?: string;
