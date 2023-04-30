@@ -8,14 +8,20 @@ import { TRANSITION_TIME } from '@/const/common'
 import { SPACE } from '@/const/size'
 
 export type AnchorTextProps = {
+  className?: string
   text: string
   href?: string
   target?: ComponentProps<typeof Anchor>['target']
 }
 
-export const AnchorText = ({ text, href, target }: AnchorTextProps) => {
+export const AnchorText = ({
+  className,
+  text,
+  href,
+  target,
+}: AnchorTextProps) => {
   return (
-    <StyledAnchorText href={href} target={target}>
+    <StyledAnchorText className={className} href={href} target={target}>
       <StyledText>{text}</StyledText>
       {target === '_blank' && (
         <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />

@@ -8,13 +8,18 @@ import {
 import { BORDER_RADIUS } from '@/const/size'
 
 export type ChipProps = {
+  className?: string
   /** 利用したい状態を名前で受け取る */
   status: ChipBackgroundColor
   text: string
 }
 
-export const Chip = ({ status, text }: ChipProps) => {
-  return <StyledChip $status={status}>{text}</StyledChip>
+export const Chip = ({ className, status, text }: ChipProps) => {
+  return (
+    <StyledChip className={className} $status={status}>
+      {text}
+    </StyledChip>
+  )
 }
 
 const StyledChip = styled.span<{ $status: ChipBackgroundColor }>`

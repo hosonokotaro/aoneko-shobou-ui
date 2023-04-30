@@ -21,6 +21,7 @@ type ScheduleItem = {
 }
 
 export type ScheduleListProps = {
+  className?: string
   /** 予定の開始日、終了日、時間帯、内容を記載した配列を受け取る */
   scheduleList: ScheduleItem[]
   /** 要約して表示する */
@@ -28,6 +29,7 @@ export type ScheduleListProps = {
 }
 
 export const ScheduleList = ({
+  className,
   scheduleList,
   isSummary = false,
 }: ScheduleListProps) => {
@@ -36,7 +38,7 @@ export const ScheduleList = ({
   }, [])
 
   return (
-    <div>
+    <div className={className}>
       {!scheduleList.length && <div>準備中です</div>}
       {map(scheduleList, (beforeScheduleItem, index) => {
         return (

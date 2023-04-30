@@ -12,22 +12,23 @@ const HEADING_KIND = {
 type HeadingKind = typeof HEADING_KIND[keyof typeof HEADING_KIND]
 
 export type HeadingTextProps = {
+  className?: string
   text: string
   /** heading tag のレベルを用途名で受け取る */
   kind: HeadingKind
 }
 
-export const HeadingText = ({ text, kind }: HeadingTextProps) => {
+export const HeadingText = ({ className, text, kind }: HeadingTextProps) => {
   return (
     <>
       {kind === HEADING_KIND.PAGE_TITLE && (
-        <StyledPageTitle>{text}</StyledPageTitle>
+        <StyledPageTitle className={className}>{text}</StyledPageTitle>
       )}
       {kind === HEADING_KIND.SECTION_TITLE && (
-        <StyledSectionTitle>{text}</StyledSectionTitle>
+        <StyledSectionTitle className={className}>{text}</StyledSectionTitle>
       )}
       {kind === HEADING_KIND.SUBTITLE && (
-        <StyledSubTitle>{text}</StyledSubTitle>
+        <StyledSubTitle className={className}>{text}</StyledSubTitle>
       )}
     </>
   )

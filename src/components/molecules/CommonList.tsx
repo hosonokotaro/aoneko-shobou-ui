@@ -12,13 +12,14 @@ type CommonItem = {
 }
 
 export type CommonListProps = {
+  className?: string
   /** title, description の配列を受け取る */
   commonList: CommonItem[]
 }
 
-export const CommonList = ({ commonList }: CommonListProps) => {
+export const CommonList = ({ className, commonList }: CommonListProps) => {
   return (
-    <StyledCommonList>
+    <StyledCommonList className={className}>
       {map(commonList, (commonItem, index) => {
         return (
           <Fragment key={index}>
