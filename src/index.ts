@@ -11,8 +11,12 @@ export type { IconProps } from '@/atoms/Icon'
 export { Icon } from '@/atoms/Icon'
 export type { ImageProps } from '@/atoms/Image'
 export { Image } from '@/atoms/Image'
+export type { InputTextProps } from '@/atoms/InputText'
+export { InputText } from '@/atoms/InputText'
 export type { ParagraphTextProps } from '@/atoms/ParagraphText'
 export { ParagraphText } from '@/atoms/ParagraphText'
+export type { SelectProps } from '@/atoms/Select'
+export { Select } from '@/atoms/Select'
 export type { ShopMapProps } from '@/atoms/ShopMap'
 export { ShopMap } from '@/atoms/ShopMap'
 export {
@@ -32,6 +36,7 @@ export {
   ICON_BUTTON_SIZE,
   INLINE_SIZE,
   SPACE,
+  TABLE_TWO_COLUMN,
 } from '@/const/size'
 export { useIsomorphicEffect } from '@/hooks/useIsomorphicEffect'
 export { useMatchMedia } from '@/hooks/useMatchMedia'

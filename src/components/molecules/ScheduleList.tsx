@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import { anchorStyle } from '@/atoms/Anchor'
 import { BORDER_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, FONT_WEIGHT, SPACE } from '@/const/size'
+import { BLOCK_WIDTH, FONT_WEIGHT, SPACE, TABLE_TWO_COLUMN } from '@/const/size'
 
 dayjs().format()
 dayjs.locale('ja')
@@ -82,19 +82,10 @@ const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
   ${({ isSummary }) => isSummary && `flex-direction: column;`}
 `
 
-// NOTE: ここでしか利用しないのでハードコードで対応する
-const SCHEDULE_ITEM = {
-  WIDTH_ODD: '68%',
-  WIDTH_EVEN: '32%',
-  PADDING_TOP_BOTTOM: '4px',
-  PADDING_LEFT_RIGHT: '12px',
-} as const
-
 const StyledPeriod = styled.div<{ isSummary: boolean }>`
-  width: ${SCHEDULE_ITEM.WIDTH_EVEN};
-  padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
-  padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
-  padding-right: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
+  width: ${TABLE_TWO_COLUMN.WIDTH_EVEN};
+  padding: ${`${TABLE_TWO_COLUMN.PADDING_TOP_BOTTOM} ${TABLE_TWO_COLUMN.PADDING_LEFT_RIGHT}`};
+  padding-left: 0;
   font-weight: ${FONT_WEIGHT.BOLD};
 
   ${MEDIA_QUERY.MOBILE} {
@@ -109,10 +100,9 @@ const StyledPeriod = styled.div<{ isSummary: boolean }>`
 `
 
 const StyledDescription = styled.div<{ isSummary: boolean }>`
-  width: ${SCHEDULE_ITEM.WIDTH_ODD};
-  padding-top: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
-  padding-bottom: ${SCHEDULE_ITEM.PADDING_TOP_BOTTOM};
-  padding-left: ${SCHEDULE_ITEM.PADDING_LEFT_RIGHT};
+  width: ${TABLE_TWO_COLUMN.WIDTH_ODD};
+  padding: ${`${TABLE_TWO_COLUMN.PADDING_TOP_BOTTOM} ${TABLE_TWO_COLUMN.PADDING_LEFT_RIGHT}`};
+  padding-right: 0;
   border-left: 2px solid ${BORDER_COLOR.LIGHT_GRAY};
 
   ${MEDIA_QUERY.MOBILE} {
