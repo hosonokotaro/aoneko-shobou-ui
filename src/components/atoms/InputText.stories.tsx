@@ -12,6 +12,4 @@ const Template: ComponentStory<typeof InputText> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  placeholder: '入力してください',
-}
+Default.args = {}

@@ -7,7 +7,7 @@ import { BLOCK_WIDTH, BORDER_RADIUS, SPACE } from '../const/size'
 export type TextAreaProps = {
   className?: string
   elementProps?: ComponentProps<'textarea'>
-  placeholder: string
+  placeholder?: string
 }
 
 export const TextArea = ({

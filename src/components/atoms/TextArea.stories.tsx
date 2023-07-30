@@ -12,6 +12,4 @@ const Template: ComponentStory<typeof TextArea> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  placeholder: '入力してください\n複数行入力できます',
-}
+Default.args = {}
