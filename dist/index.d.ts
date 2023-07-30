@@ -19,6 +19,8 @@ export type { SelectProps } from "./components/atoms/Select";
 export { Select } from "./components/atoms/Select";
 export type { ShopMapProps } from "./components/atoms/ShopMap";
 export { ShopMap } from "./components/atoms/ShopMap";
+export type { TextAreaProps } from "./components/atoms/TextArea";
+export { TextArea } from "./components/atoms/TextArea";
 export { BACKGROUND_COLOR, BASE_COLOR, BORDER_COLOR, BUTTON_BACKGROUND_COLOR, CHIP_BACKGROUND_COLOR, FONT_COLOR, } from "./components/const/color";
 export { ICON_KIND, TRANSITION_TIME } from "./components/const/common";
 export { BREAK_POINTS, MATCH_MEDIA, MEDIA_QUERY } from "./components/const/mediaQuery";

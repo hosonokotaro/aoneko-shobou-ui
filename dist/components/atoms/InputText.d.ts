@@ -1,7 +1,7 @@
-/// <reference types="react" />
+import { ComponentProps } from 'react';
 export declare type InputTextProps = {
     className?: string;
+    elementProps?: ComponentProps<'input'>;
     placeholder: string;
-    isMultiLine: boolean;
 };
-export declare const InputText: ({ className, placeholder, isMultiLine, }: InputTextProps) => JSX.Element;
+export declare const InputText: ({ className, elementProps, placeholder, }: InputTextProps) => JSX.Element;
