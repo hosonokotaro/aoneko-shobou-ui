@@ -11,7 +11,6 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  placeholder: '選択してください',
   valueList: [
     '店舗について',
     '取扱い商品について',
