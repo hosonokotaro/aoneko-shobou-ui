@@ -19,6 +19,8 @@ export type { SelectProps } from '@/atoms/Select'
 export { Select } from '@/atoms/Select'
 export type { ShopMapProps } from '@/atoms/ShopMap'
 export { ShopMap } from '@/atoms/ShopMap'
+export type { TextAreaProps } from '@/atoms/TextArea'
+export { TextArea } from '@/atoms/TextArea'
 export {
   BACKGROUND_COLOR,
   BASE_COLOR,
