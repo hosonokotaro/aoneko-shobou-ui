@@ -11,14 +11,7 @@ const Template: ComponentStory<typeof InputText> = (args) => (
   <InputText {...args} />
 )
 
-export const SingleLine = Template.bind({})
-SingleLine.args = {
+export const Default = Template.bind({})
+Default.args = {
   placeholder: '入力してください',
-  isMultiLine: false,
-}
-
-export const MultiLine = Template.bind({})
-MultiLine.args = {
-  placeholder: '入力してください\n複数行入力できます',
-  isMultiLine: true,
 }

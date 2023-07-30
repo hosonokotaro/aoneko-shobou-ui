@@ -4,29 +4,31 @@ import styled from 'styled-components'
 import { BORDER_COLOR, FONT_COLOR } from '../const/color'
 import { BLOCK_WIDTH, BORDER_RADIUS, SPACE } from '../const/size'
 
-export type InputTextProps = {
+export type TextAreaProps = {
   className?: string
-  elementProps?: ComponentProps<'input'>
+  elementProps?: ComponentProps<'textarea'>
   placeholder: string
 }
 
-export const InputText = ({
+export const TextArea = ({
   className,
   elementProps,
   placeholder,
-}: InputTextProps) => {
+}: TextAreaProps) => {
   return (
-    <StyledInputText className={className}>
-      <input type="text" {...elementProps} placeholder={placeholder} />
-    </StyledInputText>
+    <StyledTextArea className={className}>
+      <textarea {...elementProps} placeholder={placeholder} />
+    </StyledTextArea>
   )
 }
 
-const StyledInputText = styled.div`
+const StyledTextArea = styled.div`
   /* FIXME: Styled components を使った要素は DOM として制御し辛い。
      Style を子要素に適用する使い方をした。なにかの形で修正したい */
-  & > input {
+
+  & > textarea {
     width: ${BLOCK_WIDTH.FULL};
+    height: 16em;
     padding: ${`${SPACE.M} ${SPACE.S}`};
     border: 1px solid ${BORDER_COLOR.GRAY};
     color: ${FONT_COLOR.BLACK};
