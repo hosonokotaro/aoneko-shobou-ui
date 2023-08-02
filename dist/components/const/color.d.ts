@@ -43,6 +43,8 @@ export declare const CHIP_BACKGROUND_COLOR: {
 export declare type ChipBackgroundColor = keyof typeof CHIP_BACKGROUND_COLOR;
 export declare const BORDER_COLOR: {
     readonly LIGHT_GRAY: "#eee";
+    readonly GRAY: "#999";
+    readonly BLACK: "#111";
     readonly TITLE: "#a370d3";
     readonly WHITE: "#fcfcfc";
 };

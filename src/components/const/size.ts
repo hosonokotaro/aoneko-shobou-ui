@@ -60,3 +60,10 @@ export const BORDER_RADIUS = {
 } as const
 
 export type BorderRadius = keyof typeof BORDER_RADIUS
+
+export const TABLE_TWO_COLUMN = {
+  WIDTH_ODD: '68%',
+  WIDTH_EVEN: '32%',
+  PADDING_TOP_BOTTOM: SPACE.XS,
+  PADDING_LEFT_RIGHT: SPACE.M,
+} as const

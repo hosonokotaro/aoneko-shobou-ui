@@ -45,3 +45,9 @@ export declare const BORDER_RADIUS: {
     readonly NONE: "0";
 };
 export declare type BorderRadius = keyof typeof BORDER_RADIUS;
+export declare const TABLE_TWO_COLUMN: {
+    readonly WIDTH_ODD: "68%";
+    readonly WIDTH_EVEN: "32%";
+    readonly PADDING_TOP_BOTTOM: "4px";
+    readonly PADDING_LEFT_RIGHT: "12px";
+};
