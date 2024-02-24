@@ -9,11 +9,11 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: {
-      name: 'webpack5',
-      options: {
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {
+      legacyRootApi: true,
+      builder: {
         lazyCompilation: true,
         fsCache: true,
       },
@@ -25,7 +25,6 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  reactOptions: { legacyRootApi: true },
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
