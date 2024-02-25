@@ -2,7 +2,7 @@ import React from 'react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import type { Preview } from '@storybook/react'
 
-import GlobalStyle from '../src/GlobalStyle'
+import '../src/globalStyle.css'
 
 const preview: Preview = {
   parameters: {
@@ -20,7 +20,7 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <>
-        <GlobalStyle />
+        {/* FIXME: tsconfig が適用されていない為エラーが出る。支障はないが修正したい */}
         <Story />
       </>
     ),
