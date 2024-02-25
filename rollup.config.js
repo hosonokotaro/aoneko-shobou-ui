@@ -2,6 +2,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
+import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import ttypescript from 'ttypescript'
 
@@ -14,6 +15,9 @@ export default [
       {
         file: packageJson.main,
         format: 'esm',
+        assetFileNames({ name }) {
+          return name?.replace(/^src\//, '') ?? ''
+        },
       },
     ],
     plugins: [
@@ -25,6 +29,7 @@ export default [
         typescript: ttypescript,
         exclude: ['**/*.stories.tsx'],
       }),
+      vanillaExtractPlugin(),
     ],
   },
 ]
