@@ -1,4 +1,4 @@
-export { globalStyle } from './GlobalStyle';
+export * from './globalStyle.css';
 export type { AnchorProps } from "./components/atoms/Anchor";
 export { Anchor } from "./components/atoms/Anchor";
 export type { AnnotationTextProps } from "./components/atoms/AnnotationText";

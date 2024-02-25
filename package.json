@@ -63,6 +63,7 @@
     "@typescript-eslint/parser": "^5.44.0",
     "@vanilla-extract/css": "^1.14.1",
     "@vanilla-extract/dynamic": "^2.1.0",
+    "@vanilla-extract/rollup-plugin": "^1.3.4",
     "@vanilla-extract/vite-plugin": "^4.0.4",
     "chromatic": "^6.11.4",
     "dotenv": "^16.0.3",
