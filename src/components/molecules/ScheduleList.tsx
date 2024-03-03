@@ -3,12 +3,10 @@ import 'dayjs/locale/ja'
 import dayjs from 'dayjs'
 import { map } from 'lodash-es'
 import { useCallback } from 'react'
-import styled from 'styled-components'
 
-import { anchorStyle } from '@/atoms/Anchor'
-import { BORDER_COLOR } from '@/const/color'
-import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, FONT_WEIGHT, SPACE, TABLE_TWO_COLUMN } from '@/const/size'
+import * as Styles from '@/molecules/ScheduleList.css'
+
+// import { anchorStyle } from '@/atoms/Anchor'
 
 dayjs().format()
 dayjs.locale('ja')
@@ -29,7 +27,6 @@ export type ScheduleListProps = {
 }
 
 export const ScheduleList = ({
-  className,
   scheduleList,
   isSummary = false,
 }: ScheduleListProps) => {
@@ -38,101 +35,32 @@ export const ScheduleList = ({
   }, [])
 
   return (
-    <div className={className}>
+    <div className={Styles.scheduleList} data-summary={Number(isSummary)}>
       {!scheduleList.length && <div>準備中です</div>}
       {map(scheduleList, (beforeScheduleItem, index) => {
         return (
-          <StyledScheduleItem key={index} isSummary={isSummary}>
-            <StyledPeriod isSummary={isSummary}>
+          <div key={index} className={Styles.scheduleItem}>
+            <div className={Styles.period}>
               {dateFormat(beforeScheduleItem.startDate)}
               {beforeScheduleItem.startDate !== beforeScheduleItem.endDate &&
                 `〜${dateFormat(beforeScheduleItem.endDate)}`}
-            </StyledPeriod>
-            <StyledDescription isSummary={isSummary}>
+            </div>
+            <div className={Styles.description}>
               {beforeScheduleItem.timeFrame && (
-                <StyledTimeFrame>
+                <div className={Styles.timeframe}>
                   {beforeScheduleItem.timeFrame}
-                </StyledTimeFrame>
+                </div>
               )}
-              <StyledText
+              <div
+                className={Styles.text}
                 dangerouslySetInnerHTML={{
                   __html: beforeScheduleItem.description,
                 }}
               />
-            </StyledDescription>
-          </StyledScheduleItem>
+            </div>
+          </div>
         )
       })}
     </div>
   )
 }
-
-const StyledScheduleItem = styled.div<{ isSummary: boolean }>`
-  display: flex;
-  justify-content: space-between;
-
-  &:not(:first-of-type) {
-    margin-top: ${SPACE.M};
-  }
-
-  ${MEDIA_QUERY.MOBILE} {
-    flex-direction: column;
-  }
-
-  ${({ isSummary }) => isSummary && `flex-direction: column;`}
-`
-
-const StyledPeriod = styled.div<{ isSummary: boolean }>`
-  width: ${TABLE_TWO_COLUMN.WIDTH_EVEN};
-  padding: ${`${TABLE_TWO_COLUMN.PADDING_TOP_BOTTOM} ${TABLE_TWO_COLUMN.PADDING_LEFT_RIGHT}`};
-  padding-left: 0;
-  font-weight: ${FONT_WEIGHT.BOLD};
-
-  ${MEDIA_QUERY.MOBILE} {
-    width: ${BLOCK_WIDTH.FULL};
-  }
-
-  ${({ isSummary }) =>
-    isSummary &&
-    `
-      width: ${BLOCK_WIDTH.FULL};
-    `}
-`
-
-const StyledDescription = styled.div<{ isSummary: boolean }>`
-  width: ${TABLE_TWO_COLUMN.WIDTH_ODD};
-  padding: ${`${TABLE_TWO_COLUMN.PADDING_TOP_BOTTOM} ${TABLE_TWO_COLUMN.PADDING_LEFT_RIGHT}`};
-  padding-right: 0;
-  border-left: 2px solid ${BORDER_COLOR.LIGHT_GRAY};
-
-  ${MEDIA_QUERY.MOBILE} {
-    width: ${BLOCK_WIDTH.FULL};
-    margin-top: ${SPACE.XS};
-  }
-
-  ${({ isSummary }) =>
-    isSummary &&
-    `
-      display: -webkit-box;
-      width: ${BLOCK_WIDTH.FULL};
-      margin-top: ${SPACE.XS};
-      overflow: hidden;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-    `}
-`
-
-const StyledTimeFrame = styled.div`
-  display: inline;
-  margin-right: ${SPACE.M};
-  font-weight: ${FONT_WEIGHT.BOLD};
-`
-
-const StyledText = styled.div`
-  display: inline;
-
-  /* NOTE: 外部から呼んだ html を使うため */
-  > a {
-    ${anchorStyle}
-  }
-`

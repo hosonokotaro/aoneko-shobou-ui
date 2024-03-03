@@ -1,22 +1,13 @@
 import { ComponentProps, MouseEventHandler } from 'react'
-import styled, { css } from 'styled-components'
 
 import { Anchor } from '@/atoms/Anchor'
-import { Icon } from '@/atoms/Icon'
-import {
-  BUTTON_BACKGROUND_COLOR,
-  ButtonBackgroundColor,
-  FONT_COLOR,
-} from '@/const/color'
-import { Rotate, TRANSITION_TIME } from '@/const/common'
-import {
-  BORDER_RADIUS,
-  ICON_BUTTON_SIZE,
-  INLINE_SIZE,
-  SPACE,
-} from '@/const/size'
+import { ButtonBackgroundColor } from '@/const/color'
+import { Rotate } from '@/const/common'
+import * as Styles from '@/molecules/Button.css'
+import { Icon } from '@/molecules/Icon'
 
 const BUTTON_SIZE = {
+  L: 'L',
   M: 'M',
   S: 'S',
 } as const
@@ -24,8 +15,7 @@ const BUTTON_SIZE = {
 type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 
 export type ButtonProps = {
-  /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
-  className?: string
+  dataStyleProps?: Partial<Styles.DataStyleProps>
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
   text?: string
   buttonSize: ButtonSize
@@ -39,7 +29,7 @@ export type ButtonProps = {
 }
 
 export const Button = ({
-  className,
+  dataStyleProps,
   onClick,
   text,
   buttonSize,
@@ -51,140 +41,64 @@ export const Button = ({
   target,
 }: ButtonProps) => {
   return (
-    <StyledButtonWrapper className={className}>
+    <div className={Styles.buttonWrapper} {...dataStyleProps}>
       {isAnchor && (
-        <StyledAnchorButton
+        <Anchor
+          dataStyleProps={{
+            'data-parent-component': 'Button',
+            'data-background-color': buttonColor,
+            'data-size': buttonSize,
+            ...dataStyleProps,
+          }}
           href={href}
           target={target}
           onClick={onClick}
-          $buttonColor={buttonColor}
-          $buttonSize={buttonSize}
         >
           {iconKind && (
-            <StyledIcon
+            <Icon
+              dataStyleProps={{
+                'data-parent-component': 'Button',
+                'data-icon-rotate': iconRotate,
+                'data-fill-color': 'WHITE',
+                'data-size': buttonSize,
+              }}
               iconKind={iconKind}
-              fillColor="WHITE"
               size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-              iconRotate={iconRotate}
-              $buttonSize={buttonSize}
             />
           )}
-          {text && <StyledText $buttonSize={buttonSize}>{text}</StyledText>}
-        </StyledAnchorButton>
+          {text && (
+            <span className={Styles.text} data-button-size={buttonSize}>
+              {text}
+            </span>
+          )}
+        </Anchor>
       )}
       {!isAnchor && (
-        <StyledButton
-          $buttonColor={buttonColor}
-          $buttonSize={buttonSize}
+        <button
+          className={Styles.button}
+          data-background-color={buttonColor}
+          data-size={buttonSize}
           onClick={onClick}
         >
           {iconKind && (
-            <StyledIcon
+            <Icon
+              dataStyleProps={{
+                'data-parent-component': 'Button',
+                'data-icon-rotate': iconRotate,
+                'data-fill-color': 'WHITE',
+                'data-size': buttonSize,
+              }}
               iconKind={iconKind}
-              fillColor="WHITE"
               size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-              iconRotate={iconRotate}
-              $buttonSize={buttonSize}
             />
           )}
-          {text && <StyledText $buttonSize={buttonSize}>{text}</StyledText>}
-        </StyledButton>
+          {text && (
+            <span className={Styles.text} data-button-size={buttonSize}>
+              {text}
+            </span>
+          )}
+        </button>
       )}
-    </StyledButtonWrapper>
+    </div>
   )
 }
-
-const StyledButtonWrapper = styled.div`
-  display: inline-flex;
-  pointer-events: auto;
-`
-
-const baseStyle = css<{
-  $buttonColor: ButtonBackgroundColor
-  $buttonSize: ButtonSize
-}>`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  min-width: ${({ $buttonSize }) =>
-    $buttonSize === BUTTON_SIZE.S
-      ? ICON_BUTTON_SIZE.S.WIDTH
-      : ICON_BUTTON_SIZE.M.WIDTH};
-
-  min-height: ${({ $buttonSize }) =>
-    $buttonSize === BUTTON_SIZE.S
-      ? ICON_BUTTON_SIZE.S.HEIGHT
-      : ICON_BUTTON_SIZE.M.HEIGHT};
-
-  margin: ${SPACE.NONE};
-  font-size: ${INLINE_SIZE.M};
-  color: ${FONT_COLOR.WHITE};
-  transition: background ${TRANSITION_TIME};
-
-  ${({ $buttonColor }) =>
-    `background: ${BUTTON_BACKGROUND_COLOR[$buttonColor]};`}
-
-  ${({ $buttonColor }) => {
-    if ($buttonColor === 'DEFAULT_CURRENT') {
-      return `
-        cursor: pointer;
-        pointer-events: none;
-      `
-    }
-  }}
-
-  border-radius: ${BORDER_RADIUS.S};
-
-  @media (any-hover: hover) {
-    &:hover {
-      color: ${FONT_COLOR.WHITE};
-
-      ${({ $buttonColor }) => {
-        if ($buttonColor === 'DEFAULT') {
-          return `
-            background: ${BUTTON_BACKGROUND_COLOR.DEFAULT_HOVER};
-          `
-        }
-
-        if ($buttonColor === 'EXTERNAL') {
-          return `
-            background: ${BUTTON_BACKGROUND_COLOR.EXTERNAL_HOVER};
-          `
-        }
-      }}
-    }
-  }
-`
-
-const StyledButton = styled.button`
-  ${baseStyle}
-`
-
-const StyledAnchorButton = styled(Anchor)`
-  ${baseStyle}
-`
-
-const StyledIcon = styled(Icon)<{ $buttonSize: ButtonSize }>`
-  margin: ${({ $buttonSize }) =>
-    $buttonSize === BUTTON_SIZE.M
-      ? `${SPACE.NONE} ${SPACE.XS}`
-      : `${SPACE.NONE}`};
-`
-
-const StyledText = styled.div<{ $buttonSize: ButtonSize }>`
-  margin-right: ${({ $buttonSize }) =>
-    $buttonSize === BUTTON_SIZE.M ? SPACE.M : SPACE.S};
-
-  text-align: left;
-
-  font-size: ${({ $buttonSize }) =>
-    $buttonSize === BUTTON_SIZE.M ? INLINE_SIZE.M : INLINE_SIZE.S};
-
-  user-select: none;
-
-  &:not(${StyledIcon} + &) {
-    margin-left: ${({ $buttonSize }) =>
-      $buttonSize === BUTTON_SIZE.M ? SPACE.M : SPACE.S};
-  }
-`

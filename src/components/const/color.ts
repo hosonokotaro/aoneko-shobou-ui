@@ -62,3 +62,10 @@ export const BORDER_COLOR = {
 } as const
 
 export type BorderColor = keyof typeof BORDER_COLOR
+
+export const BULLET_COLOR = {
+  DEFAULT: BASE_COLOR.WHITE,
+  ACTIVE: BASE_COLOR.CAUTION,
+} as const
+
+export type BulletColor = keyof typeof BULLET_COLOR

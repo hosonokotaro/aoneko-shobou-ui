@@ -1,55 +1,21 @@
-import styled from 'styled-components'
+import * as Styles from '@/atoms/HeadingText.css'
 
-import { BORDER_COLOR, FONT_COLOR } from '@/const/color'
-import { FONT_WEIGHT, INLINE_SIZE } from '@/const/size'
-
-const HEADING_KIND = {
-  PAGE_TITLE: 'PAGE_TITLE',
-  SECTION_TITLE: 'SECTION_TITLE',
-  SUBTITLE: 'SUBTITLE',
-} as const
-
-type HeadingKind = typeof HEADING_KIND[keyof typeof HEADING_KIND]
+type HeadingKind = 'PAGE_TITLE' | 'SECTION_TITLE' | 'SUBTITLE'
 
 export type HeadingTextProps = {
-  className?: string
   text: string
   /** heading tag のレベルを用途名で受け取る */
   kind: HeadingKind
 }
 
-export const HeadingText = ({ className, text, kind }: HeadingTextProps) => {
+export const HeadingText = ({ text, kind }: HeadingTextProps) => {
   return (
     <>
-      {kind === HEADING_KIND.PAGE_TITLE && (
-        <StyledPageTitle className={className}>{text}</StyledPageTitle>
+      {kind === 'PAGE_TITLE' && <h1 className={Styles.pageTitle}>{text}</h1>}
+      {kind === 'SECTION_TITLE' && (
+        <h2 className={Styles.sectionTitle}>{text}</h2>
       )}
-      {kind === HEADING_KIND.SECTION_TITLE && (
-        <StyledSectionTitle className={className}>{text}</StyledSectionTitle>
-      )}
-      {kind === HEADING_KIND.SUBTITLE && (
-        <StyledSubTitle className={className}>{text}</StyledSubTitle>
-      )}
+      {kind === 'SUBTITLE' && <h3 className={Styles.subTitle}>{text}</h3>}
     </>
   )
 }
-
-const StyledPageTitle = styled.h1`
-  font-size: ${INLINE_SIZE.XXL};
-  font-weight: ${FONT_WEIGHT.NORMAL};
-  color: ${FONT_COLOR.TITLE};
-`
-
-const StyledSectionTitle = styled.h2`
-  padding-left: 8px;
-  border-left: 2px solid ${BORDER_COLOR.TITLE};
-  font-size: ${INLINE_SIZE.XL};
-  font-weight: ${FONT_WEIGHT.NORMAL};
-  color: ${FONT_COLOR.TITLE};
-`
-
-const StyledSubTitle = styled.h3`
-  font-size: ${INLINE_SIZE.L};
-  font-weight: ${FONT_WEIGHT.NORMAL};
-  color: ${FONT_COLOR.TITLE};
-`
