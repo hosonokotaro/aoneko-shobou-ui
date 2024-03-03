@@ -1,6 +1,5 @@
 import { Loader, LoaderOptions } from '@googlemaps/js-api-loader'
 import { useCallback, useEffect, useRef } from 'react'
-import styled from 'styled-components'
 
 export type ShopMapProps = {
   /** see https://developers.google.com/maps/documentation/javascript/overview?hl=ja */
@@ -265,9 +264,5 @@ export const ShopMap = ({ loaderOptions, height }: ShopMapProps) => {
     }
   }, [mapLoader])
 
-  return <StyledShopMap ref={mapRef} $height={height} />
+  return <div ref={mapRef} style={{ height }} />
 }
-
-const StyledShopMap = styled.div<{ $height: string }>`
-  height: ${({ $height }) => $height};
-`

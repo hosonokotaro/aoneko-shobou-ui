@@ -18,10 +18,10 @@ export const MATCH_MEDIA = {
 export type MatchMedia = keyof typeof MATCH_MEDIA
 
 export const MEDIA_QUERY = {
-  XGA: `@media screen and ${MATCH_MEDIA.XGA}`,
-  PC: `@media screen and ${MATCH_MEDIA.PC}`,
-  TABLET: `@media screen and ${MATCH_MEDIA.TABLET}`,
-  MOBILE: `@media screen and ${MATCH_MEDIA.MOBILE}`,
+  XGA: `screen and ${MATCH_MEDIA.XGA}`,
+  PC: `screen and ${MATCH_MEDIA.PC}`,
+  TABLET: `screen and ${MATCH_MEDIA.TABLET}`,
+  MOBILE: `screen and ${MATCH_MEDIA.MOBILE}`,
 } as const
 
 export type MediaQuery = keyof typeof MEDIA_QUERY

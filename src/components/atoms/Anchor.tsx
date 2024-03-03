@@ -1,8 +1,6 @@
 import { MouseEventHandler, ReactNode } from 'react'
-import styled, { css } from 'styled-components'
 
-import { FONT_COLOR } from '@/const/color'
-import { TRANSITION_TIME } from '@/const/common'
+import * as Styles from '@/atoms/Anchor.css'
 
 const ANCHOR_TARGET = {
   SELF: '_self',
@@ -12,8 +10,7 @@ const ANCHOR_TARGET = {
 type AnchorTarget = typeof ANCHOR_TARGET[keyof typeof ANCHOR_TARGET]
 
 export type AnchorProps = {
-  /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
-  className?: string
+  dataStyleProps?: Partial<Styles.DataStyleProps>
   href?: string
   target?: AnchorTarget
   onClick?: MouseEventHandler<HTMLAnchorElement>
@@ -23,15 +20,16 @@ export type AnchorProps = {
 const externalLinkRel = 'noopener noreferrer'
 
 export const Anchor = ({
-  className,
+  dataStyleProps,
   href,
   target,
   onClick,
   children,
 }: AnchorProps) => {
   return (
-    <StyledAnchor
-      className={className}
+    <a
+      className={Styles.anchor}
+      {...dataStyleProps}
       href={href}
       target={target}
       rel={target === '_blank' ? externalLinkRel : undefined}
@@ -41,21 +39,6 @@ export const Anchor = ({
       }}
     >
       {children}
-    </StyledAnchor>
+    </a>
   )
 }
-
-export const anchorStyle = css`
-  color: ${FONT_COLOR.LINK};
-  transition: color ${TRANSITION_TIME};
-
-  @media (any-hover: hover) {
-    &:hover {
-      color: ${FONT_COLOR.LINK_HOVER};
-    }
-  }
-`
-
-const StyledAnchor = styled.a`
-  ${anchorStyle}
-`

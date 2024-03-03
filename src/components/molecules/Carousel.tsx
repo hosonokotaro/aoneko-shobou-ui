@@ -2,13 +2,11 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { map } from 'lodash-es'
-import styled from 'styled-components'
 import { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Image, ImageProps } from '@/atoms/Image'
-import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { ICON_BUTTON_SIZE, SPACE } from '@/const/size'
+import * as Styles from '@/molecules/Carousel.css'
 
 export type CarouselProps = {
   /** Atoms の Image component の props の配列を受け取る */
@@ -21,7 +19,8 @@ const renderBullet = (_: number, className: string) => {
 
 export const Carousel = ({ imageList }: CarouselProps) => {
   return (
-    <StyledCarousel
+    <Swiper
+      className={Styles.carousel}
       modules={[Autoplay, Pagination]}
       loop={true}
       slidesPerView={1}
@@ -41,8 +40,9 @@ export const Carousel = ({ imageList }: CarouselProps) => {
       spaceBetween={40}
     >
       {map(imageList, ({ src, alt, width, height, loading }, index) => (
-        <SwiperSlide key={index}>
-          <StyledImage
+        <SwiperSlide key={index} className={Styles.slide}>
+          <Image
+            dataStyleProps={{ 'data-parent-component': 'Carousel' }}
             src={src}
             alt={alt}
             width={width}
@@ -51,52 +51,6 @@ export const Carousel = ({ imageList }: CarouselProps) => {
           />
         </SwiperSlide>
       ))}
-    </StyledCarousel>
+    </Swiper>
   )
 }
-
-const StyledImage = styled(Image)``
-
-// NOTE: ここでしか利用しないのでハードコードで対応する
-const MAX_WIDTH = '749px'
-
-const StyledCarousel = styled(Swiper)`
-  & .swiper-slide {
-    display: grid;
-    place-content: center;
-  }
-
-  & .swiper-slide ${StyledImage} {
-    width: 100%;
-    max-width: ${MAX_WIDTH};
-    height: 100%;
-    object-fit: cover;
-  }
-
-  & .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 0;
-  }
-
-  & .custom-bullet-style {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: ${ICON_BUTTON_SIZE.M.WIDTH};
-    height: ${ICON_BUTTON_SIZE.S.HEIGHT};
-    margin: ${SPACE.NONE} ${SPACE.S};
-
-    ${MEDIA_QUERY.MOBILE} {
-      display: none;
-    }
-  }
-
-  & .custom-bullet-style .inner {
-    width: 100%;
-    height: 4px;
-    background: #fff;
-  }
-
-  & .custom-bullet-style-active .inner {
-    background: #ff8897;
-  }
-`

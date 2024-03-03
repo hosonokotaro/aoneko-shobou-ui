@@ -24,6 +24,11 @@ export const FONT_WEIGHT = {
 
 export type FontWeight = keyof typeof FONT_WEIGHT
 
+const ICON_BUTTON_SIZE_LARGE = {
+  WIDTH: '60px',
+  HEIGHT: '60px',
+} as const
+
 const ICON_BUTTON_SIZE_MEDIUM = {
   WIDTH: '40px',
   HEIGHT: '40px',
@@ -35,6 +40,7 @@ const ICON_BUTTON_SIZE_SMALL = {
 } as const
 
 export const ICON_BUTTON_SIZE = {
+  L: ICON_BUTTON_SIZE_LARGE,
   M: ICON_BUTTON_SIZE_MEDIUM,
   S: ICON_BUTTON_SIZE_SMALL,
 } as const

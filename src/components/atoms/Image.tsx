@@ -1,3 +1,5 @@
+import * as Styles from '@/atoms/Image.css'
+
 const LOADING_PARAMS = {
   EAGER: 'eager',
   LAZY: 'lazy',
@@ -7,8 +9,7 @@ const LOADING_PARAMS = {
 type LoadingParams = typeof LOADING_PARAMS[keyof typeof LOADING_PARAMS]
 
 export type ImageProps = {
-  /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
-  className?: string
+  dataStyleProps?: Partial<Styles.DataStyleProps>
   src: string
   alt?: string
   width?: number
@@ -18,7 +19,7 @@ export type ImageProps = {
 }
 
 export const Image = ({
-  className,
+  dataStyleProps,
   src,
   alt = '',
   width,
@@ -34,7 +35,8 @@ export const Image = ({
 
   return (
     <img
-      className={className}
+      className={Styles.image}
+      {...dataStyleProps}
       src={src}
       alt={alt}
       width={width}
