@@ -13,9 +13,9 @@ export declare const MATCH_MEDIA: {
 };
 export declare type MatchMedia = keyof typeof MATCH_MEDIA;
 export declare const MEDIA_QUERY: {
-    readonly XGA: "@media screen and (min-width: 1025px)";
-    readonly PC: "@media screen and (min-width: 769px)";
-    readonly TABLET: "@media screen and (max-width: 768px)";
-    readonly MOBILE: "@media screen and (max-width: 540px)";
+    readonly XGA: "screen and (min-width: 1025px)";
+    readonly PC: "screen and (min-width: 769px)";
+    readonly TABLET: "screen and (max-width: 768px)";
+    readonly MOBILE: "screen and (max-width: 540px)";
 };
 export declare type MediaQuery = keyof typeof MEDIA_QUERY;

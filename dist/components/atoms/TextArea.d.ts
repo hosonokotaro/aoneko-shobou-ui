@@ -1,7 +1,5 @@
-import { ComponentProps } from 'react';
+/// <reference types="react" />
 export declare type TextAreaProps = {
-    className?: string;
-    elementProps?: ComponentProps<'textarea'>;
     placeholder?: string;
 };
-export declare const TextArea: ({ className, elementProps, placeholder, }: TextAreaProps) => JSX.Element;
+export declare const TextArea: ({ placeholder }: TextAreaProps) => JSX.Element;

@@ -13,5 +13,5 @@ export declare type ScheduleListProps = {
     /** 要約して表示する */
     isSummary?: boolean;
 };
-export declare const ScheduleList: ({ className, scheduleList, isSummary, }: ScheduleListProps) => JSX.Element;
+export declare const ScheduleList: ({ scheduleList, isSummary, }: ScheduleListProps) => JSX.Element;
 export {};

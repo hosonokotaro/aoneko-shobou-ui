@@ -49,3 +49,8 @@ export declare const BORDER_COLOR: {
     readonly WHITE: "#fcfcfc";
 };
 export declare type BorderColor = keyof typeof BORDER_COLOR;
+export declare const BULLET_COLOR: {
+    readonly DEFAULT: "#fcfcfc";
+    readonly ACTIVE: "#ff8897";
+};
+export declare type BulletColor = keyof typeof BULLET_COLOR;
