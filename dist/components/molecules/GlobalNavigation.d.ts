@@ -6,8 +6,6 @@ declare type NavigationItem = {
     isExternal: boolean;
 };
 export declare type GlobalNavigationProps = {
-    /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
-    className?: string;
     /** path, name, isExternal の配列を受け取る */
     navigationList: NavigationItem[];
     /** event, path, isExternal を利用側に渡す。実行したい関数を受け取る */
@@ -19,5 +17,5 @@ export declare type GlobalNavigationProps = {
     /** Tablet size 以下の時のナビゲーションの開閉状態を更新する関数を受け取る */
     handleSetIsOpenNavigation: Dispatch<SetStateAction<boolean>>;
 };
-export declare const GlobalNavigation: ({ className, navigationList, handleLinkEvent, currentPath, isOpenNavigation, handleSetIsOpenNavigation, }: GlobalNavigationProps) => JSX.Element;
+export declare const GlobalNavigation: ({ navigationList, handleLinkEvent, currentPath, isOpenNavigation, handleSetIsOpenNavigation, }: GlobalNavigationProps) => JSX.Element;
 export {};
