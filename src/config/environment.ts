@@ -1,1 +1,1 @@
-export const mapKey = process.env.MAP_KEY || ''
+export const mapKey = import.meta.env.VITE_MAP_KEY || ''
