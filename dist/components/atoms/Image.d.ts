@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import * as Styles from "./Image.css";
 declare const LOADING_PARAMS: {
     readonly EAGER: "eager";
     readonly LAZY: "lazy";
@@ -6,8 +7,7 @@ declare const LOADING_PARAMS: {
 };
 declare type LoadingParams = typeof LOADING_PARAMS[keyof typeof LOADING_PARAMS];
 export declare type ImageProps = {
-    /** styled-components が wrap して style を適用するために存在する（利用側で明示的に指定する必要はない） */
-    className?: string;
+    dataStyleProps?: Partial<Styles.DataStyleProps>;
     src: string;
     alt?: string;
     width?: number;
@@ -15,5 +15,5 @@ export declare type ImageProps = {
     /** img の loading param を受け取る */
     loading?: LoadingParams;
 };
-export declare const Image: ({ className, src, alt, width, height, loading, }: ImageProps) => JSX.Element;
+export declare const Image: ({ dataStyleProps, src, alt, width, height, loading, }: ImageProps) => JSX.Element;
 export {};

@@ -1,8 +1,7 @@
 /// <reference types="react" />
 import { FontColor } from "../const/color";
 export declare type AnnotationTextProps = {
-    className?: string;
     text: string;
     color: FontColor;
 };
-export declare const AnnotationText: ({ className, text, color, }: AnnotationTextProps) => JSX.Element;
+export declare const AnnotationText: ({ text, color }: AnnotationTextProps) => JSX.Element;
