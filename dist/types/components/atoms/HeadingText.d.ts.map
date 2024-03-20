@@ -1,0 +1,1 @@
+{"version":3,"file":"HeadingText.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/HeadingText.tsx"],"names":[],"mappings":"AAEA,aAAK,WAAW,GAAG,YAAY,GAAG,eAAe,GAAG,UAAU,CAAA;AAE9D,oBAAY,gBAAgB,GAAG;IAC7B,IAAI,EAAE,MAAM,CAAA;IACZ,gCAAgC;IAChC,IAAI,EAAE,WAAW,CAAA;CAClB,CAAA;AAED,eAAO,MAAM,WAAW,mBAAoB,gBAAgB,gBAU3D,CAAA"}

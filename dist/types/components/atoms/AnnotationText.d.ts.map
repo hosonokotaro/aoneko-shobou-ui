@@ -1,0 +1,1 @@
+{"version":3,"file":"AnnotationText.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/AnnotationText.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,SAAS,EAAE,MAAM,eAAe,CAAA;AAEzC,oBAAY,mBAAmB,GAAG;IAChC,IAAI,EAAE,MAAM,CAAA;IACZ,KAAK,EAAE,SAAS,CAAA;CACjB,CAAA;AAED,eAAO,MAAM,cAAc,oBAAqB,mBAAmB,gBAMlE,CAAA"}
