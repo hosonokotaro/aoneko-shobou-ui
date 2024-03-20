@@ -1,0 +1,1 @@
+{"version":3,"file":"CommonList.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/CommonList.tsx"],"names":[],"mappings":"AAKA,aAAK,UAAU,GAAG;IAChB,KAAK,EAAE,MAAM,CAAA;IACb,WAAW,EAAE,MAAM,CAAA;CACpB,CAAA;AAED,oBAAY,eAAe,GAAG;IAC5B,kCAAkC;IAClC,UAAU,EAAE,UAAU,EAAE,CAAA;CACzB,CAAA;AAED,eAAO,MAAM,UAAU,mBAAoB,eAAe,gBAazD,CAAA"}
