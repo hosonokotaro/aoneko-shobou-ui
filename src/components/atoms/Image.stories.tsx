@@ -16,4 +16,7 @@ Default.args = {
   width: 640,
   height: 480,
   loading: undefined,
+  dataStyleProps: {
+    'data-photo-style': '0',
+  },
 }

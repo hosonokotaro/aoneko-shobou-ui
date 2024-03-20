@@ -1,60 +1,30 @@
 import { ComponentProps } from 'react'
-import styled from 'styled-components'
 
 import { Anchor } from '@/atoms/Anchor'
-import { Icon } from '@/atoms/Icon'
-import { FONT_COLOR } from '@/const/color'
-import { TRANSITION_TIME } from '@/const/common'
-import { SPACE } from '@/const/size'
+import * as Styles from '@/molecules/AnchorText.css'
+import { Icon } from '@/molecules/Icon'
 
 export type AnchorTextProps = {
-  className?: string
   text: string
   href?: string
   target?: ComponentProps<typeof Anchor>['target']
 }
 
-export const AnchorText = ({
-  className,
-  text,
-  href,
-  target,
-}: AnchorTextProps) => {
+export const AnchorText = ({ text, href, target }: AnchorTextProps) => {
   return (
-    <StyledAnchorText className={className} href={href} target={target}>
-      <StyledText>{text}</StyledText>
+    <Anchor
+      dataStyleProps={{ 'data-parent-component': 'AnchorText' }}
+      href={href}
+      target={target}
+    >
+      <span className={Styles.text}>{text}</span>
       {target === '_blank' && (
-        <StyledIcon iconKind="OPEN_IN_NEW" fillColor="LINK" size="M" />
+        <Icon
+          dataStyleProps={{ 'data-fill-color': 'LINK' }}
+          iconKind="OPEN_IN_NEW"
+          size="M"
+        />
       )}
-    </StyledAnchorText>
+    </Anchor>
   )
 }
-
-// NOTE: component を選択して styling するため
-const StyledIcon = styled(Icon)``
-
-const StyledAnchorText = styled(Anchor)`
-  display: inline-flex;
-
-  & > ${StyledIcon} {
-    margin-left: ${SPACE.XS};
-
-    & > svg {
-      transition: fill ${TRANSITION_TIME};
-    }
-  }
-
-  @media (any-hover: hover) {
-    &:hover {
-      & > ${StyledIcon} {
-        & > svg {
-          fill: ${FONT_COLOR.LINK_HOVER};
-        }
-      }
-    }
-  }
-`
-
-const StyledText = styled.span`
-  display: inline-flex;
-`
