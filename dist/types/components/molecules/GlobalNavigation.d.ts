@@ -1,11 +1,11 @@
 import { SetStateAction } from 'react';
 import { Dispatch, MouseEvent } from 'react';
-declare type NavigationItem = {
+type NavigationItem = {
     path: string;
     name: string;
     isExternal: boolean;
 };
-export declare type GlobalNavigationProps = {
+export type GlobalNavigationProps = {
     /** path, name, isExternal の配列を受け取る */
     navigationList: NavigationItem[];
     /** event, path, isExternal を利用側に渡す。実行したい関数を受け取る */

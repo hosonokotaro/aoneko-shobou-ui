@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
-import { Anchor } from '@/atoms/Anchor';
-export declare type AnchorTextProps = {
+import { Anchor } from "../atoms/Anchor";
+export type AnchorTextProps = {
     text: string;
     href?: string;
     target?: ComponentProps<typeof Anchor>['target'];

@@ -1,7 +1,7 @@
-import { FontColor } from '@/const/color';
-import { Rotate } from '@/const/common';
-import { IconButtonSize } from '@/const/size';
-export declare type DataStyleProps = {
+import { FontColor } from "../const/color";
+import { Rotate } from "../const/common";
+import { IconButtonSize } from "../const/size";
+export type DataStyleProps = {
     'data-parent-component': 'Button';
     'data-icon-rotate': Rotate;
     'data-fill-color': FontColor;

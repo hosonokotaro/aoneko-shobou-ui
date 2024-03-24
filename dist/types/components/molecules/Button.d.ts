@@ -1,16 +1,16 @@
 import { ComponentProps, MouseEventHandler } from 'react';
-import { Anchor } from '@/atoms/Anchor';
-import { ButtonBackgroundColor } from '@/const/color';
-import { Rotate } from '@/const/common';
-import * as Styles from '@/molecules/Button.css';
-import { Icon } from '@/molecules/Icon';
+import { Anchor } from "../atoms/Anchor";
+import { ButtonBackgroundColor } from "../const/color";
+import { Rotate } from "../const/common";
+import * as Styles from "./Button.css";
+import { Icon } from "./Icon";
 declare const BUTTON_SIZE: {
     readonly L: "L";
     readonly M: "M";
     readonly S: "S";
 };
-declare type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
-export declare type ButtonProps = {
+type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
+export type ButtonProps = {
     dataStyleProps?: Partial<Styles.DataStyleProps>;
     onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
     text?: string;

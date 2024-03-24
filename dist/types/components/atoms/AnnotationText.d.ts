@@ -1,5 +1,6 @@
-import { FontColor } from '@/const/color';
-export declare type AnnotationTextProps = {
+/// <reference types="react" />
+import { FontColor } from "../const/color";
+export type AnnotationTextProps = {
     text: string;
     color: FontColor;
 };

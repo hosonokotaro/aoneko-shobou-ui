@@ -1,1 +1,1 @@
-{"version":3,"file":"AnnotationText.stories.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/AnnotationText.stories.tsx"],"names":[],"mappings":";AAIA,wBAGyC;AAMzC,eAAO,MAAM,OAAO,qJAAoB,CAAA;AAMxC,eAAO,MAAM,OAAO,qJAAoB,CAAA"}
+{"version":3,"file":"AnnotationText.stories.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/AnnotationText.stories.tsx"],"names":[],"mappings":";AAIA,wBAGyC;AAMzC,eAAO,MAAM,OAAO,uIAAoB,CAAA;AAMxC,eAAO,MAAM,OAAO,uIAAoB,CAAA"}

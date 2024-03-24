@@ -1,4 +1,4 @@
-export declare type DataStyleProps = {
+export type DataStyleProps = {
     'data-parent-component': 'Carousel';
     'data-photo-style': '0' | '1';
 };

@@ -1,7 +1,8 @@
-import { IconKind } from '@/const/common';
-import { InlineSize } from '@/const/size';
-import * as Styles from '@/molecules/Icon.css';
-export declare type IconProps = {
+/// <reference types="react" />
+import { IconKind } from "../const/common";
+import { InlineSize } from "../const/size";
+import * as Styles from "./Icon.css";
+export type IconProps = {
     dataStyleProps?: Partial<Styles.DataStyleProps>;
     iconKind: IconKind;
     /** SVG の fill color を受け取る */
