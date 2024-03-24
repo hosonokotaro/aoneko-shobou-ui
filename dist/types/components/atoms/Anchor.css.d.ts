@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
-import { ButtonBackgroundColor } from '@/const/color';
-import { IconButtonSize } from '@/const/size';
-export declare type DataStyleProps = {
+import { ButtonBackgroundColor } from "../const/color";
+import { IconButtonSize } from "../const/size";
+export type DataStyleProps = {
     'data-parent-component': 'AnchorText' | 'Button' | 'GlobalNavigation';
     'data-background-color': ButtonBackgroundColor;
     'data-size': IconButtonSize;

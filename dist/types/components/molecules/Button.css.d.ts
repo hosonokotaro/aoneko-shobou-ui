@@ -1,4 +1,4 @@
-export declare type DataStyleProps = {
+export type DataStyleProps = {
     'data-parent-component': 'GlobalNavigation';
 };
 export declare const buttonWrapper: string;

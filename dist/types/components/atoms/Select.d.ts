@@ -1,4 +1,5 @@
-export declare type SelectProps = {
+/// <reference types="react" />
+export type SelectProps = {
     valueList: string[];
 };
 export declare const Select: ({ valueList }: SelectProps) => JSX.Element;

@@ -1,4 +1,5 @@
-export declare type ParagraphTextProps = {
+/// <reference types="react" />
+export type ParagraphTextProps = {
     text: string;
 };
 export declare const ParagraphText: ({ text }: ParagraphTextProps) => JSX.Element;
