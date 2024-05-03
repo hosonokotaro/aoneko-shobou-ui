@@ -1057,7 +1057,11 @@ const bn = "0.25s ease", ie = {
     const r = window.matchMedia(ee.TABLET), n = window.matchMedia(ee.MOBILE), u = (l) => (d) => {
       a((m) => ({ ...m, [l]: d.matches }));
     };
-    return r.addEventListener("change", u("isTablet")), n.addEventListener("change", u("isMobile")), () => {
+    return r.addEventListener("change", u("isTablet")), n.addEventListener("change", u("isMobile")), u("isTablet")({
+      matches: r.matches
+    }), u("isMobile")({
+      matches: n.matches
+    }), () => {
       r.removeEventListener("change", u("isTablet")), n.removeEventListener("change", u("isMobile"));
     };
   }, []), t;
