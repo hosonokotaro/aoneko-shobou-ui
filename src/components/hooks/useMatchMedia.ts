@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { MATCH_MEDIA } from '@/const/mediaQuery'
 
@@ -9,43 +9,27 @@ type MatchMedia = {
 
 export const useMatchMedia = () => {
   const [matchMedia, setMatchMedia] = useState<MatchMedia>({
-    isTablet: window.matchMedia(MATCH_MEDIA.TABLET).matches,
-    isMobile: window.matchMedia(MATCH_MEDIA.MOBILE).matches,
+    isTablet: false,
+    isMobile: false,
   })
 
-  const matchTabletDevice = useMemo(() => {
-    return window.matchMedia(MATCH_MEDIA.TABLET)
-  }, [])
-
-  const matchMobileDevice = useMemo(() => {
-    return window.matchMedia(MATCH_MEDIA.MOBILE)
-  }, [])
-
-  const handleChangeTablet = useCallback(
-    (event: MediaQueryListEvent) => {
-      setMatchMedia({ ...matchMedia, isTablet: event.matches })
-    },
-    [matchMedia]
-  )
-
-  const handleChangeMobile = useCallback(
-    (event: MediaQueryListEvent) => {
-      setMatchMedia({ ...matchMedia, isMobile: event.matches })
-    },
-    [matchMedia]
-  )
-
   useEffect(() => {
-    matchTabletDevice.addEventListener('change', handleChangeTablet, false)
-    matchMobileDevice.addEventListener('change', handleChangeMobile, false)
+    const matchTabletDevice = window.matchMedia(MATCH_MEDIA.TABLET)
+    const matchMobileDevice = window.matchMedia(MATCH_MEDIA.MOBILE)
+
+    const handleChange =
+      (type: keyof MatchMedia) => (event: MediaQueryListEvent) => {
+        setMatchMedia((prev) => ({ ...prev, [type]: event.matches }))
+      }
+
+    matchTabletDevice.addEventListener('change', handleChange('isTablet'))
+    matchMobileDevice.addEventListener('change', handleChange('isMobile'))
 
     return () => {
-      matchTabletDevice.removeEventListener('change', handleChangeTablet, false)
-      matchMobileDevice.removeEventListener('change', handleChangeMobile, false)
+      matchTabletDevice.removeEventListener('change', handleChange('isTablet'))
+      matchMobileDevice.removeEventListener('change', handleChange('isMobile'))
     }
-  }, [matchTabletDevice, matchMobileDevice])
+  }, [])
 
-  return {
-    ...matchMedia,
-  }
+  return matchMedia
 }
