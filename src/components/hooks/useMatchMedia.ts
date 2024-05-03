@@ -1,29 +1,35 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { MATCH_MEDIA } from '@/const/mediaQuery'
 
+type MatchMedia = {
+  isTablet: boolean
+  isMobile: boolean
+}
+
 export const useMatchMedia = () => {
-  const matchTabletDevice = useMemo(() => {
-    if (typeof window === 'undefined') return
-    return window.matchMedia(MATCH_MEDIA.TABLET)
-  }, [])
-
-  const [isTablet, setIsTablet] = useState(
-    matchTabletDevice ? matchTabletDevice.matches : false
-  )
-
-  const handleIsTablet = useCallback((event: MediaQueryListEvent) => {
-    setIsTablet(event.matches)
-  }, [])
+  const [matchMedia, setMatchMedia] = useState<MatchMedia>({
+    isTablet: false,
+    isMobile: false,
+  })
 
   useEffect(() => {
-    if (!matchTabletDevice) return
-    matchTabletDevice.addEventListener('change', handleIsTablet, false)
+    const matchTabletDevice = window.matchMedia(MATCH_MEDIA.TABLET)
+    const matchMobileDevice = window.matchMedia(MATCH_MEDIA.MOBILE)
+
+    const handleChange =
+      (type: keyof MatchMedia) => (event: MediaQueryListEvent) => {
+        setMatchMedia((prev) => ({ ...prev, [type]: event.matches }))
+      }
+
+    matchTabletDevice.addEventListener('change', handleChange('isTablet'))
+    matchMobileDevice.addEventListener('change', handleChange('isMobile'))
 
     return () => {
-      matchTabletDevice.removeEventListener('change', handleIsTablet, false)
+      matchTabletDevice.removeEventListener('change', handleChange('isTablet'))
+      matchMobileDevice.removeEventListener('change', handleChange('isMobile'))
     }
-  }, [handleIsTablet, matchTabletDevice])
+  }, [])
 
-  return { isTablet }
+  return matchMedia
 }
