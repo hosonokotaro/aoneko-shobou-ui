@@ -25,6 +25,14 @@ export const useMatchMedia = () => {
     matchTabletDevice.addEventListener('change', handleChange('isTablet'))
     matchMobileDevice.addEventListener('change', handleChange('isMobile'))
 
+    handleChange('isTablet')({
+      matches: matchTabletDevice.matches,
+    } as MediaQueryListEvent)
+
+    handleChange('isMobile')({
+      matches: matchMobileDevice.matches,
+    } as MediaQueryListEvent)
+
     return () => {
       matchTabletDevice.removeEventListener('change', handleChange('isTablet'))
       matchMobileDevice.removeEventListener('change', handleChange('isMobile'))
