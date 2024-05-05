@@ -62,14 +62,15 @@ export type Space = keyof typeof SPACE
 export const BORDER_RADIUS = {
   M: '6px',
   S: '3px',
+  HALF: '50%',
   NONE: '0',
 } as const
 
 export type BorderRadius = keyof typeof BORDER_RADIUS
 
 export const TABLE_TWO_COLUMN = {
-  WIDTH_ODD: '68%',
-  WIDTH_EVEN: '32%',
+  WIDTH_ODD: '61.8%',
+  WIDTH_EVEN: '38.2%',
   PADDING_TOP_BOTTOM: SPACE.XS,
   PADDING_LEFT_RIGHT: SPACE.M,
 } as const

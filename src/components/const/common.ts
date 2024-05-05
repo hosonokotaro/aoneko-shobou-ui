@@ -5,6 +5,7 @@ export const ROTATE = {
   DEG90: '90deg',
   DEG180: '180deg',
   DEG270: '270deg',
+  DEG360: '360deg',
 } as const
 
 export type Rotate = typeof ROTATE[keyof typeof ROTATE]
@@ -15,6 +16,7 @@ export const ICON_KIND = {
   NAVIGATE_NEXT: 'NAVIGATE_NEXT',
   MENU: 'MENU',
   MENU_OPEN: 'MENU_OPEN',
+  SPINNER: 'SPINNER',
 } as const
 
 export type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND]

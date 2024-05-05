@@ -44,3 +44,10 @@ MenuOpen.args = {
   size: 'XXL',
   dataStyleProps: { 'data-fill-color': 'LINK' },
 }
+
+export const Spinner = Template.bind({})
+Spinner.args = {
+  iconKind: ICON_KIND.SPINNER,
+  size: 'XXL',
+  dataStyleProps: { 'data-size': 'M' },
+}
