@@ -11,11 +11,11 @@ export type IconProps = {
   dataStyleProps?: Partial<Styles.DataStyleProps>
   iconKind: IconKind
   /** NOTE: SVG としての size を受け取る。適用後のサイズ単位は rem */
-  size: InlineSize
+  size?: InlineSize
 }
 
 // FIXME: SVG と CSS の size が混在しているので統一したい
-export const Icon = ({ dataStyleProps, iconKind, size }: IconProps) => {
+export const Icon = ({ dataStyleProps, iconKind, size = 'XXL' }: IconProps) => {
   return (
     <i className={Styles.icon} {...dataStyleProps}>
       {iconKind === ICON_KIND.INFO && (
