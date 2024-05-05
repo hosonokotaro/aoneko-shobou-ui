@@ -1,9 +1,14 @@
-import { style } from '@vanilla-extract/css'
+import { keyframes, style } from '@vanilla-extract/css'
 
 import { anchor } from '@/atoms/Anchor.css'
-import { FONT_COLOR, FontColor } from '@/const/color'
-import { Rotate, TRANSITION_TIME } from '@/const/common'
-import { IconButtonSize, SPACE } from '@/const/size'
+import { BORDER_COLOR, FONT_COLOR, FontColor } from '@/const/color'
+import { ROTATE, Rotate, TRANSITION_TIME } from '@/const/common'
+import {
+  BORDER_RADIUS,
+  ICON_BUTTON_SIZE,
+  IconButtonSize,
+  SPACE,
+} from '@/const/size'
 
 export type DataStyleProps = {
   'data-parent-component': 'Button'
@@ -21,16 +26,16 @@ export const icon = style({
       margin: `${SPACE.NONE} ${SPACE.XS}`,
     },
     '&[data-icon-rotate="0deg"]': {
-      transform: 'rotate(0deg)',
+      transform: `rotate(${ROTATE.DEFAULT})`,
     },
     '&[data-icon-rotate="90deg"]': {
-      transform: 'rotate(90deg)',
+      transform: `rotate(${ROTATE.DEG90})`,
     },
     '&[data-icon-rotate="180deg"]': {
-      transform: 'rotate(180deg)',
+      transform: `rotate(${ROTATE.DEG180})`,
     },
     '&[data-icon-rotate="270deg"]': {
-      transform: 'rotate(270deg)',
+      transform: `rotate(${ROTATE.DEG270})`,
     },
   },
 })
@@ -56,6 +61,19 @@ const sharedSelectors = {
   },
   '&[data-fill-color="BLACK"]': {
     fill: FONT_COLOR.BLACK,
+  },
+  // NOTE: CSS としての size を受け取る。適用後のサイズ単位は px
+  '&[data-size="L"]': {
+    width: ICON_BUTTON_SIZE.L.WIDTH,
+    height: ICON_BUTTON_SIZE.L.HEIGHT,
+  },
+  '&[data-size="M"]': {
+    width: ICON_BUTTON_SIZE.M.WIDTH,
+    height: ICON_BUTTON_SIZE.M.HEIGHT,
+  },
+  '&[data-size="S"]': {
+    width: ICON_BUTTON_SIZE.S.WIDTH,
+    height: ICON_BUTTON_SIZE.S.HEIGHT,
   },
 } as const
 
@@ -88,6 +106,22 @@ export const menu = style({
 })
 
 export const menuOpen = style({
+  selectors: {
+    ...sharedSelectors,
+  },
+})
+
+const spin = keyframes({
+  '0%': { transform: `rotate(${ROTATE.DEFAULT})` },
+  '100%': { transform: `rotate(${ROTATE.DEG360})` },
+})
+
+export const spinner = style({
+  border: `4px solid ${BORDER_COLOR.GRAY}`,
+  borderRadius: BORDER_RADIUS.HALF,
+  borderLeftColor: BORDER_COLOR.LIGHT_GRAY,
+  animation: `${spin} 1s linear infinite`,
+
   selectors: {
     ...sharedSelectors,
   },

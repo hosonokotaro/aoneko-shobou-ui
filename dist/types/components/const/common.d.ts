@@ -4,6 +4,7 @@ export declare const ROTATE: {
     readonly DEG90: "90deg";
     readonly DEG180: "180deg";
     readonly DEG270: "270deg";
+    readonly DEG360: "360deg";
 };
 export type Rotate = typeof ROTATE[keyof typeof ROTATE];
 export declare const ICON_KIND: {
@@ -12,6 +13,7 @@ export declare const ICON_KIND: {
     readonly NAVIGATE_NEXT: "NAVIGATE_NEXT";
     readonly MENU: "MENU";
     readonly MENU_OPEN: "MENU_OPEN";
+    readonly SPINNER: "SPINNER";
 };
 export type IconKind = typeof ICON_KIND[keyof typeof ICON_KIND];
 //# sourceMappingURL=common.d.ts.map

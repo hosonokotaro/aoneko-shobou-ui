@@ -46,12 +46,13 @@ export type Space = keyof typeof SPACE;
 export declare const BORDER_RADIUS: {
     readonly M: "6px";
     readonly S: "3px";
+    readonly HALF: "50%";
     readonly NONE: "0";
 };
 export type BorderRadius = keyof typeof BORDER_RADIUS;
 export declare const TABLE_TWO_COLUMN: {
-    readonly WIDTH_ODD: "68%";
-    readonly WIDTH_EVEN: "32%";
+    readonly WIDTH_ODD: "61.8%";
+    readonly WIDTH_EVEN: "38.2%";
     readonly PADDING_TOP_BOTTOM: "4px";
     readonly PADDING_LEFT_RIGHT: "12px";
 };
