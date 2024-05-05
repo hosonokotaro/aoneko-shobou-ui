@@ -13,4 +13,5 @@ export declare const openInNew: string;
 export declare const navigateNext: string;
 export declare const menu: string;
 export declare const menuOpen: string;
+export declare const spinner: string;
 //# sourceMappingURL=Icon.css.d.ts.map
