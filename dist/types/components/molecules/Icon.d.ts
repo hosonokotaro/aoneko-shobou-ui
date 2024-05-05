@@ -6,7 +6,7 @@ export type IconProps = {
     dataStyleProps?: Partial<Styles.DataStyleProps>;
     iconKind: IconKind;
     /** NOTE: SVG としての size を受け取る。適用後のサイズ単位は rem */
-    size: InlineSize;
+    size?: InlineSize;
 };
 export declare const Icon: ({ dataStyleProps, iconKind, size }: IconProps) => JSX.Element;
 //# sourceMappingURL=Icon.d.ts.map
