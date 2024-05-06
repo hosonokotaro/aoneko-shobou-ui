@@ -8,7 +8,6 @@ import {
 import { BORDER_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
 import { INLINE_SIZE, SPACE } from '@/const/size'
-import * as IconStyles from '@/molecules/Icon.css'
 
 export type DataStyleProps = {
   'data-parent-component': 'GlobalNavigation'
@@ -52,6 +51,15 @@ export const button = style({
   },
 })
 
+export const iconWrapper = style({
+  display: 'inline-flex',
+  margin: `${SPACE.NONE} ${SPACE.XS}`,
+})
+
+export const iconWrapperNoText = style({
+  display: 'inline-flex',
+})
+
 export const text = style({
   textAlign: 'left',
   userSelect: 'none',
@@ -72,7 +80,7 @@ export const text = style({
       marginRight: SPACE.L,
       fontSize: INLINE_SIZE.L,
     },
-    [`${IconStyles.icon} + &`]: {
+    [`${iconWrapper} + &`]: {
       marginLeft: SPACE.NONE,
     },
   },

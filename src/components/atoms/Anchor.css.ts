@@ -11,16 +11,16 @@ import { MEDIA_QUERY } from '@/const/mediaQuery'
 import {
   BLOCK_WIDTH,
   BORDER_RADIUS,
-  ICON_BUTTON_SIZE,
-  IconButtonSize,
+  BUTTON_SIZE,
   INLINE_SIZE,
+  InlineSize,
   SPACE,
 } from '@/const/size'
 
 export type DataStyleProps = {
   'data-parent-component': 'AnchorText' | 'Button' | 'GlobalNavigation'
   'data-background-color': ButtonBackgroundColor
-  'data-size': IconButtonSize
+  'data-size': InlineSize
 }
 
 // FIXME: as const satisfies を使いたいが、TypeScript の version が古いため使えない
@@ -56,16 +56,16 @@ export const anchorSelectorStyle = {
     pointerEvents: 'none',
   },
   '&[data-size="S"]': {
-    minWidth: ICON_BUTTON_SIZE.S.WIDTH,
-    minHeight: ICON_BUTTON_SIZE.S.HEIGHT,
+    minWidth: BUTTON_SIZE.S.WIDTH,
+    minHeight: BUTTON_SIZE.S.HEIGHT,
   },
   '&[data-size="M"]': {
-    minWidth: ICON_BUTTON_SIZE.M.WIDTH,
-    minHeight: ICON_BUTTON_SIZE.M.HEIGHT,
+    minWidth: BUTTON_SIZE.M.WIDTH,
+    minHeight: BUTTON_SIZE.M.HEIGHT,
   },
   '&[data-size="L"]': {
-    minWidth: ICON_BUTTON_SIZE.L.WIDTH,
-    minHeight: ICON_BUTTON_SIZE.L.HEIGHT,
+    minWidth: BUTTON_SIZE.L.WIDTH,
+    minHeight: BUTTON_SIZE.L.HEIGHT,
   },
 } as const
 
@@ -84,7 +84,7 @@ export const anchorStyle = {
 } as const
 
 export const anchorHoverStyle = {
-  color: 'red',
+  color: FONT_COLOR.LINK_HOVER,
 } as const
 
 export const anchor = style({

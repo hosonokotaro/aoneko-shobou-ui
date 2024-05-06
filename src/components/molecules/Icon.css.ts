@@ -3,44 +3,36 @@ import { keyframes, style } from '@vanilla-extract/css'
 import { anchor } from '@/atoms/Anchor.css'
 import { BORDER_COLOR, FONT_COLOR, FontColor } from '@/const/color'
 import { ROTATE, Rotate, TRANSITION_TIME } from '@/const/common'
-import {
-  BORDER_RADIUS,
-  ICON_BUTTON_SIZE,
-  IconButtonSize,
-  SPACE,
-} from '@/const/size'
+import { BORDER_RADIUS, INLINE_SIZE, InlineSize } from '@/const/size'
 
-export type DataStyleProps = {
-  'data-parent-component': 'Button'
-  'data-icon-rotate': Rotate
-  'data-fill-color': FontColor
-  'data-size': IconButtonSize
-}
+// export type DataParentNameProps = {
+//   'data-parent-component': 'Button'
+// }
 
 export const icon = style({
   display: 'inline-grid',
   placeContent: 'center',
-
-  selectors: {
-    '&[data-parent-component="Button"][data-size="M"]': {
-      margin: `${SPACE.NONE} ${SPACE.XS}`,
-    },
-    '&[data-icon-rotate="0deg"]': {
-      transform: `rotate(${ROTATE.DEFAULT})`,
-    },
-    '&[data-icon-rotate="90deg"]': {
-      transform: `rotate(${ROTATE.DEG90})`,
-    },
-    '&[data-icon-rotate="180deg"]': {
-      transform: `rotate(${ROTATE.DEG180})`,
-    },
-    '&[data-icon-rotate="270deg"]': {
-      transform: `rotate(${ROTATE.DEG270})`,
-    },
-  },
 })
 
-const sharedSelectors = {
+export type DataIconProps = {
+  'data-rotate': Rotate
+  'data-fill-color': FontColor
+  'data-size': InlineSize
+}
+
+const iconDataSelectors = {
+  '&[data-rotate="0deg"]': {
+    transform: `rotate(${ROTATE.DEFAULT})`,
+  },
+  '&[data-rotate="90deg"]': {
+    transform: `rotate(${ROTATE.DEG90})`,
+  },
+  '&[data-rotate="180deg"]': {
+    transform: `rotate(${ROTATE.DEG180})`,
+  },
+  '&[data-rotate="270deg"]': {
+    transform: `rotate(${ROTATE.DEG270})`,
+  },
   '&[data-fill-color="CAPTION"]': {
     fill: FONT_COLOR.CAPTION,
   },
@@ -62,31 +54,38 @@ const sharedSelectors = {
   '&[data-fill-color="BLACK"]': {
     fill: FONT_COLOR.BLACK,
   },
-  // NOTE: CSS としての size を受け取る。適用後のサイズ単位は px
+  '&[data-size="XXL"]': {
+    width: INLINE_SIZE.XXL,
+    height: INLINE_SIZE.XXL,
+  },
+  '&[data-size="XL"]': {
+    width: INLINE_SIZE.XL,
+    height: INLINE_SIZE.XL,
+  },
   '&[data-size="L"]': {
-    width: ICON_BUTTON_SIZE.L.WIDTH,
-    height: ICON_BUTTON_SIZE.L.HEIGHT,
+    width: INLINE_SIZE.L,
+    height: INLINE_SIZE.L,
   },
   '&[data-size="M"]': {
-    width: ICON_BUTTON_SIZE.M.WIDTH,
-    height: ICON_BUTTON_SIZE.M.HEIGHT,
+    width: INLINE_SIZE.M,
+    height: INLINE_SIZE.M,
   },
   '&[data-size="S"]': {
-    width: ICON_BUTTON_SIZE.S.WIDTH,
-    height: ICON_BUTTON_SIZE.S.HEIGHT,
+    width: INLINE_SIZE.S,
+    height: INLINE_SIZE.S,
   },
 } as const
 
 export const info = style({
   selectors: {
-    ...sharedSelectors,
+    ...iconDataSelectors,
   },
 })
 
 export const openInNew = style({
   transition: `fill ${TRANSITION_TIME}`,
   selectors: {
-    ...sharedSelectors,
+    ...iconDataSelectors,
     [`${anchor}:hover &`]: {
       fill: FONT_COLOR.LINK_HOVER,
     },
@@ -95,19 +94,19 @@ export const openInNew = style({
 
 export const navigateNext = style({
   selectors: {
-    ...sharedSelectors,
+    ...iconDataSelectors,
   },
 })
 
 export const menu = style({
   selectors: {
-    ...sharedSelectors,
+    ...iconDataSelectors,
   },
 })
 
 export const menuOpen = style({
   selectors: {
-    ...sharedSelectors,
+    ...iconDataSelectors,
   },
 })
 
@@ -123,6 +122,6 @@ export const spinner = style({
   animation: `${spin} 1s linear infinite`,
 
   selectors: {
-    ...sharedSelectors,
+    ...iconDataSelectors,
   },
 })

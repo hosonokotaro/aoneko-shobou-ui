@@ -3,22 +3,15 @@ import { ComponentProps, MouseEventHandler } from 'react'
 import { Anchor } from '@/atoms/Anchor'
 import { ButtonBackgroundColor } from '@/const/color'
 import { Rotate } from '@/const/common'
+import { InlineSize } from '@/const/size'
 import * as Styles from '@/molecules/Button.css'
 import { Icon } from '@/molecules/Icon'
-
-const BUTTON_SIZE = {
-  L: 'L',
-  M: 'M',
-  S: 'S',
-} as const
-
-type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE]
 
 export type ButtonProps = {
   dataStyleProps?: Partial<Styles.DataStyleProps>
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
   text?: string
-  buttonSize: ButtonSize
+  buttonSize: InlineSize
   buttonColor: ButtonBackgroundColor
   iconKind?: ComponentProps<typeof Icon>['iconKind']
   iconRotate?: Rotate
@@ -55,16 +48,25 @@ export const Button = ({
           onClick={onClick}
         >
           {iconKind && (
-            <Icon
-              dataStyleProps={{
-                'data-parent-component': 'Button',
-                'data-icon-rotate': iconRotate,
-                'data-fill-color': 'WHITE',
-                'data-size': buttonSize,
-              }}
-              iconKind={iconKind}
-              size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-            />
+            <span
+              className={text ? Styles.iconWrapper : Styles.iconWrapperNoText}
+            >
+              <Icon
+                dataIconProps={{
+                  'data-rotate': iconRotate,
+                  'data-fill-color': 'WHITE',
+                  'data-size':
+                    buttonSize === 'XXL' ||
+                    buttonSize === 'XL' ||
+                    buttonSize === 'L'
+                      ? 'XXL'
+                      : buttonSize === 'M'
+                      ? 'XL'
+                      : 'L',
+                }}
+                iconKind={iconKind}
+              />
+            </span>
           )}
           {text && (
             <span className={Styles.text} data-button-size={buttonSize}>
@@ -81,16 +83,25 @@ export const Button = ({
           onClick={onClick}
         >
           {iconKind && (
-            <Icon
-              dataStyleProps={{
-                'data-parent-component': 'Button',
-                'data-icon-rotate': iconRotate,
-                'data-fill-color': 'WHITE',
-                'data-size': buttonSize,
-              }}
-              iconKind={iconKind}
-              size={buttonSize === BUTTON_SIZE.M ? 'XXL' : 'L'}
-            />
+            <span
+              className={text ? Styles.iconWrapper : Styles.iconWrapperNoText}
+            >
+              <Icon
+                dataIconProps={{
+                  'data-rotate': iconRotate,
+                  'data-fill-color': 'WHITE',
+                  'data-size':
+                    buttonSize === 'XXL' ||
+                    buttonSize === 'XL' ||
+                    buttonSize === 'L'
+                      ? 'XXL'
+                      : buttonSize === 'M'
+                      ? 'XL'
+                      : 'L',
+                }}
+                iconKind={iconKind}
+              />
+            </span>
           )}
           {text && (
             <span className={Styles.text} data-button-size={buttonSize}>
