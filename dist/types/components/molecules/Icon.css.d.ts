@@ -1,13 +1,12 @@
 import { FontColor } from "../const/color";
 import { Rotate } from "../const/common";
-import { IconButtonSize } from "../const/size";
-export type DataStyleProps = {
-    'data-parent-component': 'Button';
-    'data-icon-rotate': Rotate;
-    'data-fill-color': FontColor;
-    'data-size': IconButtonSize;
-};
+import { InlineSize } from "../const/size";
 export declare const icon: string;
+export type DataIconProps = {
+    'data-rotate': Rotate;
+    'data-fill-color': FontColor;
+    'data-size': InlineSize;
+};
 export declare const info: string;
 export declare const openInNew: string;
 export declare const navigateNext: string;
