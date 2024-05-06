@@ -2,19 +2,14 @@ import { ComponentProps, MouseEventHandler } from 'react';
 import { Anchor } from "../atoms/Anchor";
 import { ButtonBackgroundColor } from "../const/color";
 import { Rotate } from "../const/common";
+import { InlineSize } from "../const/size";
 import * as Styles from "./Button.css";
 import { Icon } from "./Icon";
-declare const BUTTON_SIZE: {
-    readonly L: "L";
-    readonly M: "M";
-    readonly S: "S";
-};
-type ButtonSize = typeof BUTTON_SIZE[keyof typeof BUTTON_SIZE];
 export type ButtonProps = {
     dataStyleProps?: Partial<Styles.DataStyleProps>;
     onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
     text?: string;
-    buttonSize: ButtonSize;
+    buttonSize: InlineSize;
     buttonColor: ButtonBackgroundColor;
     iconKind?: ComponentProps<typeof Icon>['iconKind'];
     iconRotate?: Rotate;
@@ -24,5 +19,4 @@ export type ButtonProps = {
     target?: ComponentProps<typeof Anchor>['target'];
 };
 export declare const Button: ({ dataStyleProps, onClick, text, buttonSize, buttonColor, iconKind, iconRotate, isAnchor, href, target, }: ButtonProps) => JSX.Element;
-export {};
 //# sourceMappingURL=Button.d.ts.map

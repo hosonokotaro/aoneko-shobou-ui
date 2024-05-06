@@ -2,7 +2,7 @@ import { globalStyle, style } from '@vanilla-extract/css'
 
 import { BULLET_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, ICON_BUTTON_SIZE, SPACE } from '@/const/size'
+import { BLOCK_WIDTH, BUTTON_SIZE, SPACE } from '@/const/size'
 
 export const carousel = style({})
 
@@ -23,8 +23,8 @@ globalStyle(`${carousel} .custom-bullet-style`, {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  width: ICON_BUTTON_SIZE.M.WIDTH,
-  height: ICON_BUTTON_SIZE.S.HEIGHT,
+  width: BUTTON_SIZE.M.WIDTH,
+  height: BUTTON_SIZE.S.HEIGHT,
   margin: `${SPACE.NONE} ${SPACE.S}`,
 
   '@media': {

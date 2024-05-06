@@ -24,28 +24,28 @@ export const FONT_WEIGHT = {
 
 export type FontWeight = keyof typeof FONT_WEIGHT
 
-const ICON_BUTTON_SIZE_LARGE = {
+const BUTTON_SIZE_LARGE = {
   WIDTH: '60px',
   HEIGHT: '60px',
 } as const
 
-const ICON_BUTTON_SIZE_MEDIUM = {
+const BUTTON_SIZE_MEDIUM = {
   WIDTH: '40px',
   HEIGHT: '40px',
 } as const
 
-const ICON_BUTTON_SIZE_SMALL = {
+const BUTTON_SIZE_SMALL = {
   WIDTH: '20px',
   HEIGHT: '20px',
 } as const
 
-export const ICON_BUTTON_SIZE = {
-  L: ICON_BUTTON_SIZE_LARGE,
-  M: ICON_BUTTON_SIZE_MEDIUM,
-  S: ICON_BUTTON_SIZE_SMALL,
+export const BUTTON_SIZE = {
+  L: BUTTON_SIZE_LARGE,
+  M: BUTTON_SIZE_MEDIUM,
+  S: BUTTON_SIZE_SMALL,
 } as const
 
-export type IconButtonSize = keyof typeof ICON_BUTTON_SIZE
+export type buttonSize = keyof typeof BUTTON_SIZE
 
 export const SPACE = {
   AUTO: 'auto',

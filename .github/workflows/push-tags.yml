@@ -1,8 +1,8 @@
-name: Push on Master
+name: Push Tags
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-latest

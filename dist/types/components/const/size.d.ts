@@ -18,7 +18,7 @@ export declare const FONT_WEIGHT: {
     readonly NORMAL: "300";
 };
 export type FontWeight = keyof typeof FONT_WEIGHT;
-export declare const ICON_BUTTON_SIZE: {
+export declare const BUTTON_SIZE: {
     readonly L: {
         readonly WIDTH: "60px";
         readonly HEIGHT: "60px";
@@ -32,7 +32,7 @@ export declare const ICON_BUTTON_SIZE: {
         readonly HEIGHT: "20px";
     };
 };
-export type IconButtonSize = keyof typeof ICON_BUTTON_SIZE;
+export type buttonSize = keyof typeof BUTTON_SIZE;
 export declare const SPACE: {
     readonly AUTO: "auto";
     readonly XL: "20px";

@@ -1,10 +1,10 @@
 import { CSSProperties } from 'react';
 import { ButtonBackgroundColor } from "../const/color";
-import { IconButtonSize } from "../const/size";
+import { InlineSize } from "../const/size";
 export type DataStyleProps = {
     'data-parent-component': 'AnchorText' | 'Button' | 'GlobalNavigation';
     'data-background-color': ButtonBackgroundColor;
-    'data-size': IconButtonSize;
+    'data-size': InlineSize;
 };
 export declare const buttonLikeStyle: CSSProperties;
 export declare const anchorSelectorStyle: {
@@ -45,7 +45,7 @@ export declare const anchorStyle: {
     readonly transition: "color 0.25s ease";
 };
 export declare const anchorHoverStyle: {
-    readonly color: "red";
+    readonly color: "#417cb5";
 };
 export declare const anchor: string;
 //# sourceMappingURL=Anchor.css.d.ts.map

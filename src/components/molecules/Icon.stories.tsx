@@ -12,42 +12,60 @@ const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />
 
 export const Info = Template.bind({})
 Info.args = {
+  dataIconProps: {
+    'data-rotate': '0deg',
+    'data-fill-color': 'TITLE',
+    'data-size': 'XXL',
+  },
   iconKind: ICON_KIND.INFO,
-  size: 'XXL',
-  dataStyleProps: { 'data-fill-color': 'TITLE' },
 }
 
 export const OpenInNew = Template.bind({})
 OpenInNew.args = {
+  dataIconProps: {
+    'data-rotate': '0deg',
+    'data-fill-color': 'LINK',
+    'data-size': 'XXL',
+  },
   iconKind: ICON_KIND.OPEN_IN_NEW,
-  size: 'XXL',
-  dataStyleProps: { 'data-fill-color': 'LINK' },
 }
 
 export const NavigateNext = Template.bind({})
 NavigateNext.args = {
+  dataIconProps: {
+    'data-rotate': '0deg',
+    'data-fill-color': 'BLACK',
+    'data-size': 'XXL',
+  },
   iconKind: ICON_KIND.NAVIGATE_NEXT,
-  size: 'XXL',
-  dataStyleProps: { 'data-fill-color': 'BLACK' },
 }
 
 export const Menu = Template.bind({})
 Menu.args = {
+  dataIconProps: {
+    'data-rotate': '0deg',
+    'data-fill-color': 'LINK',
+    'data-size': 'XXL',
+  },
   iconKind: ICON_KIND.MENU,
-  size: 'XXL',
-  dataStyleProps: { 'data-fill-color': 'LINK' },
 }
 
 export const MenuOpen = Template.bind({})
 MenuOpen.args = {
+  dataIconProps: {
+    'data-rotate': '0deg',
+    'data-fill-color': 'LINK',
+    'data-size': 'XXL',
+  },
   iconKind: ICON_KIND.MENU_OPEN,
-  size: 'XXL',
-  dataStyleProps: { 'data-fill-color': 'LINK' },
 }
 
 export const Spinner = Template.bind({})
 Spinner.args = {
+  dataIconProps: {
+    'data-rotate': '0deg',
+    'data-fill-color': 'TITLE',
+    'data-size': 'XXL',
+  },
   iconKind: ICON_KIND.SPINNER,
-  size: 'XXL',
-  dataStyleProps: { 'data-size': 'M' },
 }

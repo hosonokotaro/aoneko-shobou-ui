@@ -2,12 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 import { BACKGROUND_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
-import {
-  BLOCK_WIDTH,
-  BORDER_RADIUS,
-  ICON_BUTTON_SIZE,
-  SPACE,
-} from '@/const/size'
+import { BLOCK_WIDTH, BORDER_RADIUS, BUTTON_SIZE, SPACE } from '@/const/size'
 
 export const globalNavigationWrapper = style({
   overflowY: 'auto',
@@ -55,7 +50,7 @@ export const globalNavigation = style({
     [MEDIA_QUERY.TABLET]: {
       flexDirection: 'column',
       alignItems: 'flex-end',
-      height: `calc((${ICON_BUTTON_SIZE.M.HEIGHT} * 6) + (${SPACE.L} * 5))`,
+      height: `calc((${BUTTON_SIZE.M.HEIGHT} * 6) + (${SPACE.L} * 5))`,
       marginBottom: SPACE.L,
       borderRadius: BORDER_RADIUS.NONE,
     },
