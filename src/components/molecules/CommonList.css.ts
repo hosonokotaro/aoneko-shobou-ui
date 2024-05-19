@@ -20,9 +20,10 @@ export const description = style({
   display: 'flex',
   alignItems: 'center',
   width: TABLE_TWO_COLUMN.WIDTH_ODD,
-  height: '30px',
+  minHeight: '30px',
   paddingLeft: TABLE_TWO_COLUMN.PADDING_LEFT_RIGHT,
   borderLeft: `2px solid ${BORDER_COLOR.LIGHT_GRAY}`,
+  whiteSpace: 'pre-line',
 
   '@media': {
     [MEDIA_QUERY.MOBILE]: {
@@ -35,9 +36,10 @@ export const title = style({
   display: 'flex',
   alignItems: 'center',
   width: TABLE_TWO_COLUMN.WIDTH_EVEN,
-  height: '30px',
+  minHeight: '30px',
   paddingRight: TABLE_TWO_COLUMN.PADDING_LEFT_RIGHT,
   fontWeight: FONT_WEIGHT.BOLD,
+  whiteSpace: 'pre-line',
 
   '@media': {
     [MEDIA_QUERY.MOBILE]: {
