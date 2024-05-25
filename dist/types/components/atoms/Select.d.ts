@@ -1,7 +1,8 @@
 import { ComponentProps } from 'react';
 export type SelectProps = {
     valueList: string[];
-    elementProps: ComponentProps<'select'>;
+    selectElementProps: ComponentProps<'select'>;
+    defaultSelectOption?: string;
 };
-export declare const Select: ({ valueList, elementProps }: SelectProps) => JSX.Element;
+export declare const Select: ({ valueList, selectElementProps, defaultSelectOption, }: SelectProps) => JSX.Element;
 //# sourceMappingURL=Select.d.ts.map
