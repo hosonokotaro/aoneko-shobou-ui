@@ -5,14 +5,23 @@ import * as Styles from '@/atoms/Select.css'
 
 export type SelectProps = {
   valueList: string[]
-  elementProps: ComponentProps<'select'>
+  selectElementProps: ComponentProps<'select'>
+  defaultSelectOption?: string
 }
 
-export const Select = ({ valueList, elementProps }: SelectProps) => {
+export const Select = ({
+  valueList,
+  selectElementProps,
+  defaultSelectOption,
+}: SelectProps) => {
   return (
-    <select className={Styles.select} {...elementProps}>
+    <select className={Styles.select} {...selectElementProps}>
       {map(valueList, (value) => (
-        <option key={value} value={value}>
+        <option
+          key={value}
+          value={value}
+          selected={value === defaultSelectOption}
+        >
           {value}
         </option>
       ))}

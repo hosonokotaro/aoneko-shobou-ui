@@ -20,4 +20,5 @@ Default.args = {
     'お取引について',
     'その他',
   ],
+  defaultSelectOption: '',
 }
