@@ -18,6 +18,7 @@ export const globalNavigationWrapper = style({
       // NOTE: iOS Safari の address bar 対策のため
       height: ['100vh', '100dvh'],
 
+      padding: SPACE.XL,
       background: 'none',
       pointerEvents: 'none',
 
@@ -68,10 +69,12 @@ export const toggleButtonWrapper = style({
       display: 'flex',
       justifyContent: 'flex-end',
       marginTop: MOBILE_NAVIGATION_HEIGHT,
+      opacity: 0.75,
 
       selectors: {
         [`${globalNavigationWrapper}[data-open-navigation="1"] > &`]: {
           marginTop: 0,
+          opacity: 1,
         },
       },
     },
