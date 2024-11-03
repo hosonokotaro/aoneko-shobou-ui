@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          # NOTE: Chromatic needs the full git history to compare changes
+          fetch-depth: 0
 
       - name: Setup
         uses: actions/setup-node@v3
