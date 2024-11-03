@@ -15,7 +15,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -71,6 +72,7 @@
     "prettier": "^2.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "release-it": "^17.10.0",
     "storybook": "^7.6.17",
     "ts-patch": "^3.1.2",
     "tslib": "^2.4.1",
