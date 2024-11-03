@@ -3,19 +3,15 @@ on:
   pull_request:
 
 jobs:
-  checkout:
-    uses: ./.github/workflows/checkout-install.yml
-    with:
-      node-version: '18'
-      registry-url: 'https://npm.pkg.github.com'
-      scope: '@hosonokotaro'
-
   build:
-    needs: checkout
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout and Install Dependencies
+        uses: ./.github/workflows/checkout-install.yml
+        with:
+          node-version: '18'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@hosonokotaro'
 
       - name: Build
         run: npm run build
