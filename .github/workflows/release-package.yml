@@ -1,42 +1,25 @@
-name: Node.js Package
+name: Release Package
 
 on:
   release:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@hosonokotaro'
-      - run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm test
+  checkout:
+    uses: ./.github/workflows/checkout.yml
+    with:
+      node-version: '18'
+      registry-url: 'https://npm.pkg.github.com'
+      scope: '@hosonokotaro'
 
   publish-gpr:
-    needs: build
+    needs: checkout
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-          registry-url: https://npm.pkg.github.com/
-          scope: '@hosonokotaro'
-      - run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm publish
+      - name: Publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

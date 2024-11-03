@@ -1,22 +1,18 @@
 name: Install and Build
 on:
   pull_request:
-    branches:
-      - master
+
 jobs:
+  checkout:
+    uses: ./.github/workflows/checkout.yml
+    with:
+      node-version: '18'
+      registry-url: 'https://npm.pkg.github.com'
+      scope: '@hosonokotaro'
+
   build:
+    needs: checkout
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@hosonokotaro'
-      - run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm test
+      - name: Build
+        run: npm run build
