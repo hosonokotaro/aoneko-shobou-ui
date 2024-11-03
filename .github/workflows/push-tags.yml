@@ -4,20 +4,29 @@ on:
     tags:
       - '*'
 jobs:
-  chromatic-deployment:
+  checkout:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://npm.pkg.github.com'
           scope: '@hosonokotaro'
-      - run: npm ci
+
+      - name: Install dependencies
+        run: npm ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: chromaui/action@v1
+
+  chromatic-deployment:
+    needs: checkout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Chromatic
+        uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
