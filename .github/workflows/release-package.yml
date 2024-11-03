@@ -6,7 +6,7 @@ on:
 
 jobs:
   checkout:
-    uses: ./.github/workflows/checkout.yml
+    uses: ./.github/workflows/checkout-install.yml
     with:
       node-version: '18'
       registry-url: 'https://npm.pkg.github.com'
