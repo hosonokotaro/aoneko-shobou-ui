@@ -6,9 +6,6 @@
     "push": true,
     "tagName": "v${version}"
   },
-  "hooks": {
-    "preRelease": "git add package.json && git commit -m 'chore: Prepare create new tag v${version}'"
-  },
   "npm": {
     "publish": false
   }
