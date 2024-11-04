@@ -5,9 +5,11 @@
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
   "types": "./dist/types/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "npm run remove-build && vite build && tspc --emitDeclarationOnly",
     "remove-build": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
+    "prepublishOnly": "npm run build",
     "lint": "eslint './src/**/*.{ts,tsx}' --fix",
     "format-code": "prettier --write './src/**/**.{ts,tsx}'",
     "test": "npm run lint",
