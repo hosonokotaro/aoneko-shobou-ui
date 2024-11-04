@@ -1,6 +1,6 @@
 {
   "name": "@hosonokotaro/aoneko-shobou-ui",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
@@ -16,7 +16,7 @@
     "build-storybook": "storybook build",
     "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "release": "release-it"
+    "tag": "release-it --ci"
   },
   "repository": {
     "type": "git",
