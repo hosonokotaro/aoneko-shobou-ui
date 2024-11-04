@@ -28,9 +28,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # NOTE: Target branch への commit が発生する workflow のため
+      # NOTE: Target branch への commit, push が発生する workflow のため
       - name: Create branch
-        run: git switch -c ${{ env.NEW_TAG_BRANCH }}
+        run: |
+          git switch -c ${{ env.NEW_TAG_BRANCH }}
+          git push -u origin ${{ env.NEW_TAG_BRANCH }}
 
       - name: Create tag
         env:
@@ -40,9 +42,6 @@ jobs:
           GIT_COMMITTER_EMAIL: 'ci-bot@aoneko-shobou.jp'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx release-it
-
-      - name: Push changes to temporary branch
-        run: git push origin ${{ env.NEW_TAG_BRANCH }}
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
