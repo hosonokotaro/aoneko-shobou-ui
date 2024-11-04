@@ -1,0 +1,10 @@
+{
+  "$schema": "https://unpkg.com/release-it@17/schema/release-it.json",
+  "git": {
+    "commitMessage": "chore: Create new tag v${version}",
+    "tagName": "v${version}"
+  },
+  "npm": {
+    "publish": false
+  }
+}
