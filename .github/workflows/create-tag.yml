@@ -9,6 +9,9 @@ on:
 env:
   NEW_TAG_BRANCH: new-tag
 
+permissions:
+  contents: write
+
 jobs:
   create-tag:
     runs-on: ubuntu-latest
