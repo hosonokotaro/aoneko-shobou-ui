@@ -1,0 +1,54 @@
+name: Create Tag
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+env:
+  NEW_TAG_BRANCH: new-tag
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@hosonokotaro'
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # NOTE: Target branch への commit が発生する workflow のため
+      - name: Create branch
+        run: git switch -c ${{ env.NEW_TAG_BRANCH }}
+
+      - name: Create tag
+        env:
+          GIT_AUTHOR_NAME: 'CI Bot'
+          GIT_AUTHOR_EMAIL: 'ci-bot@aoneko-shobou.jp'
+          GIT_COMMITTER_NAME: 'CI Bot'
+          GIT_COMMITTER_EMAIL: 'ci-bot@aoneko-shobou.jp'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx release-it
+
+      - name: Push changes to temporary branch
+        run: git push origin ${{ env.NEW_TAG_BRANCH }}
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.NEW_TAG_BRANCH }}
+          title: 'Create new version of tag'
+          body: 'This PR contains a new version of the tag.'
+          base: master
