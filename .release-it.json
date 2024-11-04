@@ -3,7 +3,7 @@
   "git": {
     "commit": true,
     "commitMessage": "chore: Create new tag v${version}",
-    "push": true,
+    "push": false,
     "tagName": "v${version}"
   },
   "npm": {
