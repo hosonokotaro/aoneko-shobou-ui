@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { ImageProps } from '@/atoms/Image'
 import { Carousel } from '@/molecules/Carousel'
@@ -6,11 +6,7 @@ import { Carousel } from '@/molecules/Carousel'
 export default {
   title: 'molecules/Carousel',
   component: Carousel,
-} as ComponentMeta<typeof Carousel>
-
-const Template: ComponentStory<typeof Carousel> = (args) => (
-  <Carousel {...args} />
-)
+} as Meta<typeof Carousel>
 
 const imageProps1: ImageProps = {
   src: 'images/home_main_03.jpg',
@@ -30,7 +26,8 @@ const imageProps2: ImageProps = {
 
 const imageList = [imageProps1, imageProps2]
 
-export const Default = Template.bind({})
-Default.args = {
-  imageList,
+export const Default = {
+  args: {
+    imageList,
+  },
 }

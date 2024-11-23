@@ -1,5 +1,5 @@
 import { LoaderOptions } from '@googlemaps/js-api-loader'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { ShopMap } from '@/atoms/ShopMap'
 import { mapKey } from '~/config/environment'
@@ -7,11 +7,7 @@ import { mapKey } from '~/config/environment'
 export default {
   title: 'atoms/ShopMap',
   component: ShopMap,
-} as ComponentMeta<typeof ShopMap>
-
-const Template: ComponentStory<typeof ShopMap> = (args) => <ShopMap {...args} />
-
-export const Default = Template.bind({})
+} as Meta<typeof ShopMap>
 
 const loaderOptions: LoaderOptions = {
   apiKey: mapKey,
@@ -21,7 +17,9 @@ const loaderOptions: LoaderOptions = {
 
 const height = '600px'
 
-Default.args = {
-  loaderOptions,
-  height,
+export const Default = {
+  args: {
+    loaderOptions,
+    height,
+  },
 }

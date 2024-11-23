@@ -1,15 +1,11 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { CommonList, CommonListProps } from '@/molecules/CommonList'
 
 export default {
   title: 'molecules/CommonList',
   component: CommonList,
-} as ComponentMeta<typeof CommonList>
-
-const Template: ComponentStory<typeof CommonList> = (args) => (
-  <CommonList {...args} />
-)
+} as Meta<typeof CommonList>
 
 const commonList: CommonListProps['commonList'] = [
   {
@@ -42,7 +38,8 @@ const commonList: CommonListProps['commonList'] = [
   },
 ]
 
-export const Default = Template.bind({})
-Default.args = {
-  commonList,
+export const Default = {
+  args: {
+    commonList,
+  },
 }

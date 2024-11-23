@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { useState } from 'react'
 
 import {
@@ -10,9 +10,9 @@ import {
 export default {
   title: 'molecules/GlobalNavigation',
   component: GlobalNavigation,
-} as ComponentMeta<typeof GlobalNavigation>
+} as Meta<typeof GlobalNavigation>
 
-const Template: ComponentStory<typeof GlobalNavigation> = (args) => {
+const Template: StoryFn<typeof GlobalNavigation> = (args) => {
   // NOTE: 親側で持つ useState を mock する
   const [isOpenNavigation, setIsOpenNavigation] = useState(true)
 
@@ -58,9 +58,12 @@ const navigationList: GlobalNavigationProps['navigationList'] = [
   },
 ]
 
-export const Default = Template.bind({})
-Default.args = {
-  navigationList,
-  handleLinkEvent: action('[event, path, isExternal]'),
-  currentPath: '/',
+export const Default = {
+  render: Template,
+
+  args: {
+    navigationList,
+    handleLinkEvent: action('[event, path, isExternal]'),
+    currentPath: '/',
+  },
 }

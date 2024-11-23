@@ -1,15 +1,12 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { TextArea } from '@/atoms/TextArea'
 
 export default {
   title: 'atoms/TextArea',
   component: TextArea,
-} as ComponentMeta<typeof TextArea>
+} as Meta<typeof TextArea>
 
-const Template: ComponentStory<typeof TextArea> = (args) => (
-  <TextArea {...args} />
-)
-
-export const Default = Template.bind({})
-Default.args = {}
+export const Default = {
+  args: {},
+}

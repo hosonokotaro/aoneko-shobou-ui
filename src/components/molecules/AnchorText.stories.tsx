@@ -1,26 +1,24 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { AnchorText } from '@/molecules/AnchorText'
 
 export default {
   title: 'molecules/AnchorText',
   component: AnchorText,
-} as ComponentMeta<typeof AnchorText>
+} as Meta<typeof AnchorText>
 
-const Template: ComponentStory<typeof AnchorText> = (args) => (
-  <AnchorText {...args} />
-)
-
-export const Self = Template.bind({})
-Self.args = {
-  text: '予定一覧はこちら',
-  href: '',
-  target: '_self',
+export const Self = {
+  args: {
+    text: '予定一覧はこちら',
+    href: '',
+    target: '_self',
+  },
 }
 
-export const Blank = Template.bind({})
-Blank.args = {
-  text: '○○ の web サイトへ',
-  href: '#',
-  target: '_blank',
+export const Blank = {
+  args: {
+    text: '○○ の web サイトへ',
+    href: '#',
+    target: '_blank',
+  },
 }
