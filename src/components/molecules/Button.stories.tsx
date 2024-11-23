@@ -1,56 +1,59 @@
 import { action } from '@storybook/addon-actions'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { Button } from '@/molecules/Button'
 
 export default {
   title: 'molecules/Button',
   component: Button,
-} as ComponentMeta<typeof Button>
+} as Meta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  text: '予約する',
-  buttonSize: 'M',
-  buttonColor: 'DEFAULT',
-  onClick: action('Default'),
+export const Default = {
+  args: {
+    text: '予約する',
+    buttonSize: 'M',
+    buttonColor: 'DEFAULT',
+    onClick: action('Default'),
+  },
 }
 
-export const SeeMore = Template.bind({})
-SeeMore.args = {
-  text: '続きを見る',
-  buttonSize: 'M',
-  buttonColor: 'DEFAULT',
-  iconKind: 'NAVIGATE_NEXT',
-  onClick: action('SeeMore'),
+export const SeeMore = {
+  args: {
+    text: '続きを見る',
+    buttonSize: 'M',
+    buttonColor: 'DEFAULT',
+    iconKind: 'NAVIGATE_NEXT',
+    onClick: action('SeeMore'),
+  },
 }
 
-export const External = Template.bind({})
-External.args = {
-  text: '外のサイトへ',
-  buttonSize: 'M',
-  buttonColor: 'EXTERNAL',
-  iconKind: 'NAVIGATE_NEXT',
-  isAnchor: true,
-  href: 'https://www.google.com/',
-  target: '_blank',
+export const External = {
+  args: {
+    text: '外のサイトへ',
+    buttonSize: 'M',
+    buttonColor: 'EXTERNAL',
+    iconKind: 'NAVIGATE_NEXT',
+    isAnchor: true,
+    href: 'https://www.google.com/',
+    target: '_blank',
+  },
 }
 
-export const IconOnly = Template.bind({})
-IconOnly.args = {
-  buttonColor: 'DEFAULT',
-  buttonSize: 'M',
-  iconKind: 'NAVIGATE_NEXT',
-  onClick: action('IconOnly'),
+export const IconOnly = {
+  args: {
+    buttonColor: 'DEFAULT',
+    buttonSize: 'M',
+    iconKind: 'NAVIGATE_NEXT',
+    onClick: action('IconOnly'),
+  },
 }
 
-export const HasAnchorCallback = Template.bind({})
-HasAnchorCallback.args = {
-  text: 'Anchor かつ Callback 付',
-  buttonSize: 'M',
-  buttonColor: 'DEFAULT',
-  isAnchor: true,
-  onClick: action('HasAnchorCallback'),
+export const HasAnchorCallback = {
+  args: {
+    text: 'Anchor かつ Callback 付',
+    buttonSize: 'M',
+    buttonColor: 'DEFAULT',
+    isAnchor: true,
+    onClick: action('HasAnchorCallback'),
+  },
 }

@@ -1,15 +1,11 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 import { ScheduleList, ScheduleListProps } from '@/molecules/ScheduleList'
 
 export default {
   title: 'molecules/ScheduleList',
   component: ScheduleList,
-} as ComponentMeta<typeof ScheduleList>
-
-const Template: ComponentStory<typeof ScheduleList> = (args) => (
-  <ScheduleList {...args} />
-)
+} as Meta<typeof ScheduleList>
 
 const scheduleList: ScheduleListProps['scheduleList'] = [
   {
@@ -70,8 +66,9 @@ const scheduleList: ScheduleListProps['scheduleList'] = [
   },
 ]
 
-export const Default = Template.bind({})
-Default.args = {
-  scheduleList: scheduleList,
-  isSummary: false,
+export const Default = {
+  args: {
+    scheduleList: scheduleList,
+    isSummary: false,
+  },
 }

@@ -15,8 +15,10 @@ const config: StorybookConfig = {
       legacyRootApi: true,
     },
   },
-  docs: {
-    autodocs: 'tag',
+  docs: {},
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 }
+
 export default config
