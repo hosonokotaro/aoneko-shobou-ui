@@ -4,6 +4,19 @@ import { BULLET_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
 import { BLOCK_WIDTH, BUTTON_SIZE, SPACE } from '@/const/size'
 
+export const carouselWrapper = style({
+  position: 'relative',
+})
+
+export const bottomContent = style({
+  position: 'absolute',
+  // NOTE: pager の領域を避けるため
+  bottom: '22px',
+  left: 0,
+  zIndex: 2,
+  width: '100%',
+})
+
 export const carousel = style({})
 
 export const slide = style({

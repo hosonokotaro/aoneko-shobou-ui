@@ -31,3 +31,24 @@ export const Default = {
     imageList,
   },
 }
+
+export const WithBottomContent = {
+  args: {
+    imageList,
+    bottomContent: (
+      <div
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.75)',
+          color: '#111',
+          padding: '10px',
+          textAlign: 'center',
+        }}
+      >
+        bottom content{' '}
+        <a href="https://www.google.com" target="_blank" rel="noreferrer">
+          google.com
+        </a>
+      </div>
+    ),
+  },
+}
