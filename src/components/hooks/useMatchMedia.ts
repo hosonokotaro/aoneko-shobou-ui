@@ -14,28 +14,26 @@ export const useMatchMedia = () => {
   })
 
   useEffect(() => {
-    const matchTabletDevice = window.matchMedia(MATCH_MEDIA.TABLET)
-    const matchMobileDevice = window.matchMedia(MATCH_MEDIA.MOBILE)
+    if (typeof window === 'undefined') return
 
-    const handleChange =
-      (type: keyof MatchMedia) => (event: MediaQueryListEvent) => {
-        setMatchMedia((prev) => ({ ...prev, [type]: event.matches }))
-      }
+    const tabletQuery = window.matchMedia(MATCH_MEDIA.TABLET)
+    const mobileQuery = window.matchMedia(MATCH_MEDIA.MOBILE)
 
-    matchTabletDevice.addEventListener('change', handleChange('isTablet'))
-    matchMobileDevice.addEventListener('change', handleChange('isMobile'))
+    const updateMedia = () => {
+      setMatchMedia({
+        isTablet: tabletQuery.matches,
+        isMobile: mobileQuery.matches,
+      })
+    }
 
-    handleChange('isTablet')({
-      matches: matchTabletDevice.matches,
-    } as MediaQueryListEvent)
+    updateMedia()
 
-    handleChange('isMobile')({
-      matches: matchMobileDevice.matches,
-    } as MediaQueryListEvent)
+    tabletQuery.addEventListener('change', updateMedia)
+    mobileQuery.addEventListener('change', updateMedia)
 
     return () => {
-      matchTabletDevice.removeEventListener('change', handleChange('isTablet'))
-      matchMobileDevice.removeEventListener('change', handleChange('isMobile'))
+      tabletQuery.removeEventListener('change', updateMedia)
+      mobileQuery.removeEventListener('change', updateMedia)
     }
   }, [])
 
