@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { MATCH_MEDIA } from '@/const/mediaQuery'
+import { mediaQueries } from '~/styles/theme/breakpoints'
 
 type MatchMedia = {
   isTablet: boolean
@@ -16,8 +16,8 @@ export const useMatchMedia = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const tabletQuery = window.matchMedia(MATCH_MEDIA.TABLET)
-    const mobileQuery = window.matchMedia(MATCH_MEDIA.MOBILE)
+    const tabletQuery = window.matchMedia(mediaQueries.down.tablet)
+    const mobileQuery = window.matchMedia(mediaQueries.down.mobile)
 
     const updateMedia = () => {
       setMatchMedia({

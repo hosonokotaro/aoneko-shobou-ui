@@ -65,7 +65,7 @@ export const GlobalNavigation = ({
                 isTablet && handleSetIsOpenNavigation(false)
               }}
               text={navigationItem.name}
-              buttonSize="M"
+              buttonSize="m"
               buttonColor={
                 navigationItem.isExternal
                   ? 'EXTERNAL'
@@ -84,7 +84,7 @@ export const GlobalNavigation = ({
       <div className={Styles.toggleButtonWrapper}>
         <Button
           onClick={() => handleSetIsOpenNavigation(!isOpenNavigation)}
-          buttonSize="M"
+          buttonSize="m"
           buttonColor="DEFAULT"
           iconKind={isOpenNavigation ? 'MENU_OPEN' : 'MENU'}
         />

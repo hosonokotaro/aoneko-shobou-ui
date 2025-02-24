@@ -1,31 +1,31 @@
 import { style } from '@vanilla-extract/css'
 
-import { FONT_COLOR } from '@/const/color'
-import { INLINE_SIZE } from '@/const/size'
+import { colors } from '~/styles/theme/colors'
+import { sizes } from '~/styles/theme/spacing'
 
 export const annotationText = style({
-  fontSize: INLINE_SIZE.M,
+  fontSize: sizes.font.m,
   selectors: {
-    '&[data-color="CAPTION"]': {
-      color: FONT_COLOR.CAPTION,
+    '&[data-color="caption"]': {
+      color: colors.text.caption,
     },
-    '&[data-color="CAUTION"]': {
-      color: FONT_COLOR.CAUTION,
+    '&[data-color="caution"]': {
+      color: colors.text.caution,
     },
-    '&[data-color="LINK"]': {
-      color: FONT_COLOR.LINK,
+    '&[data-color="default"]': {
+      color: colors.link.default,
     },
-    '&[data-color="LINK_HOVER"]': {
-      color: FONT_COLOR.LINK_HOVER,
+    '&[data-color="hover"]': {
+      color: colors.link.hover,
     },
-    '&[data-color="TITLE"]': {
-      color: FONT_COLOR.TITLE,
+    '&[data-color="title"]': {
+      color: colors.text.title,
     },
-    '&[data-color="WHITE"]': {
-      color: FONT_COLOR.WHITE,
+    '&[data-color="white"]': {
+      color: colors.text.white,
     },
-    '&[data-color="BLACK"]': {
-      color: FONT_COLOR.BLACK,
+    '&[data-color="primary"]': {
+      color: colors.text.primary,
     },
   },
 })

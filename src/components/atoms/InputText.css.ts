@@ -1,21 +1,21 @@
 import { style } from '@vanilla-extract/css'
 
-import { BORDER_COLOR, FONT_COLOR } from '@/const/color'
-import { BLOCK_WIDTH, BORDER_RADIUS, INLINE_SIZE, SPACE } from '@/const/size'
+import { colors } from '~/styles/theme/colors'
+import { radius, sizes, space } from '~/styles/theme/spacing'
 
 export const inputText = style({
-  width: BLOCK_WIDTH.FULL,
-  padding: `${SPACE.M} ${SPACE.S}`,
-  fontSize: INLINE_SIZE.L,
-  border: `1px solid ${BORDER_COLOR.GRAY}`,
-  color: FONT_COLOR.BLACK,
-  borderRadius: BORDER_RADIUS.S,
+  width: sizes.width.full,
+  padding: `${space.m} ${space.s}`,
+  fontSize: sizes.font.l,
+  border: `1px solid ${colors.border.gray}`,
+  color: colors.text.primary,
+  borderRadius: radius.s,
   selectors: {
     '&::placeholder': {
-      color: FONT_COLOR.CAPTION,
+      color: colors.text.caption,
     },
     '&:focus': {
-      outline: `1px solid ${BORDER_COLOR.BLACK}`,
+      outline: `1px solid ${colors.border.black}`,
     },
   },
 })

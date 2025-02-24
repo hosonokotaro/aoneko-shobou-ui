@@ -1,14 +1,14 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 
 import { anchorHoverStyle, anchorStyle } from '@/atoms/Anchor.css'
-import { BORDER_COLOR } from '@/const/color'
-import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, FONT_WEIGHT, SPACE, TABLE_TWO_COLUMN } from '@/const/size'
+import { mediaQueries } from '~/styles/theme/breakpoints'
+import { colors } from '~/styles/theme/colors'
+import { fontWeight, sizes, space } from '~/styles/theme/spacing'
 
 export const scheduleList = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: SPACE.L,
+  gap: space.l,
 })
 
 export const scheduleItem = style({
@@ -18,34 +18,34 @@ export const scheduleItem = style({
   selectors: {
     [`${scheduleList}[data-summary="1"] > &`]: {
       flexDirection: 'column',
-      gap: SPACE.S,
+      gap: space.s,
     },
   },
 
   '@media': {
-    [MEDIA_QUERY.MOBILE]: {
+    [mediaQueries.down.mobile]: {
       flexDirection: 'column',
-      gap: SPACE.S,
+      gap: space.s,
     },
   },
 })
 
 export const period = style({
-  width: TABLE_TWO_COLUMN.WIDTH_EVEN,
-  padding: `${SPACE.S} ${SPACE.M}`,
+  width: sizes.table.twoColumn.widthEven,
+  padding: `${space.s} ${space.m}`,
   paddingLeft: 0,
-  fontWeight: FONT_WEIGHT.BOLD,
+  fontWeight: fontWeight.bold,
 
   selectors: {
     [`${scheduleList}[data-summary="1"] &`]: {
-      width: BLOCK_WIDTH.FULL,
+      width: sizes.width.full,
       padding: 0,
     },
   },
 
   '@media': {
-    [MEDIA_QUERY.MOBILE]: {
-      width: BLOCK_WIDTH.FULL,
+    [mediaQueries.down.mobile]: {
+      width: sizes.width.full,
       padding: 0,
     },
   },
@@ -53,17 +53,17 @@ export const period = style({
 
 export const description = style({
   display: 'flex',
-  gap: `${SPACE.NONE} ${SPACE.M}`,
-  width: TABLE_TWO_COLUMN.WIDTH_ODD,
-  padding: `${SPACE.S} ${SPACE.M}`,
+  gap: `${space.none} ${space.m}`,
+  width: sizes.table.twoColumn.widthOdd,
+  padding: `${space.s} ${space.m}`,
   paddingRight: 0,
-  borderLeft: `2px solid ${BORDER_COLOR.LIGHT_GRAY}`,
+  borderLeft: `2px solid ${colors.border.light}`,
 
   selectors: {
     [`${scheduleList}[data-summary="1"] &`]: {
       display: '-webkit-box',
       overflow: 'hidden',
-      width: BLOCK_WIDTH.FULL,
+      width: sizes.width.full,
       paddingTop: 0,
       paddingBottom: 0,
       // NOTE: 子要素が inline でないと WebkitLineClamp が効かない
@@ -73,9 +73,9 @@ export const description = style({
   },
 
   '@media': {
-    [MEDIA_QUERY.MOBILE]: {
+    [mediaQueries.down.mobile]: {
       display: 'block',
-      width: BLOCK_WIDTH.FULL,
+      width: sizes.width.full,
     },
   },
 })
@@ -83,7 +83,7 @@ export const description = style({
 export const timeframe = style({
   display: 'inline',
   flexShrink: 0,
-  fontWeight: FONT_WEIGHT.BOLD,
+  fontWeight: fontWeight.bold,
 })
 
 // NOTE: 外部から呼んだ html を使うため
@@ -93,13 +93,13 @@ export const text = style({
 
   selectors: {
     [`${scheduleList}[data-summary="1"] &`]: {
-      marginLeft: SPACE.M,
+      marginLeft: space.m,
     },
   },
 
   '@media': {
-    [MEDIA_QUERY.MOBILE]: {
-      marginLeft: SPACE.M,
+    [mediaQueries.down.mobile]: {
+      marginLeft: space.m,
     },
   },
 })

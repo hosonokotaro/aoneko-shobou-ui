@@ -5,9 +5,9 @@ import {
   anchorSelectorStyle,
   buttonLikeStyle,
 } from '@/atoms/Anchor.css'
-import { BORDER_COLOR } from '@/const/color'
-import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { INLINE_SIZE, SPACE } from '@/const/size'
+import { mediaQueries } from '~/styles/theme/breakpoints'
+import { colors } from '~/styles/theme/colors'
+import { sizes, space } from '~/styles/theme/spacing'
 
 export type DataStyleProps = {
   'data-parent-component': 'GlobalNavigation'
@@ -22,12 +22,12 @@ export const buttonWrapper = style({
       flexGrow: 1,
     },
     [`&[data-parent-component="GlobalNavigation"] + &`]: {
-      borderLeft: `1px solid ${BORDER_COLOR.WHITE}`,
+      borderLeft: `1px solid ${colors.text.white}`,
     },
   },
 
   '@media': {
-    [MEDIA_QUERY.TABLET]: {
+    [mediaQueries.down.tablet]: {
       selectors: {
         [`&[data-parent-component="GlobalNavigation"]`]: {
           flexGrow: 0,
@@ -53,7 +53,7 @@ export const button = style({
 
 export const iconWrapper = style({
   display: 'inline-flex',
-  margin: `${SPACE.NONE} ${SPACE.XS}`,
+  margin: `${space.none} ${space.xs}`,
 })
 
 export const iconWrapperNoText = style({
@@ -66,22 +66,22 @@ export const text = style({
 
   selectors: {
     '&[data-button-size="S"]': {
-      marginLeft: SPACE.S,
-      marginRight: SPACE.S,
-      fontSize: INLINE_SIZE.S,
+      marginLeft: space.s,
+      marginRight: space.s,
+      fontSize: sizes.font.s,
     },
     '&[data-button-size="M"]': {
-      marginLeft: SPACE.M,
-      marginRight: SPACE.M,
-      fontSize: INLINE_SIZE.M,
+      marginLeft: space.m,
+      marginRight: space.m,
+      fontSize: sizes.font.m,
     },
     '&[data-button-size="L"]': {
-      marginLeft: SPACE.L,
-      marginRight: SPACE.L,
-      fontSize: INLINE_SIZE.L,
+      marginLeft: space.l,
+      marginRight: space.l,
+      fontSize: sizes.font.l,
     },
     [`${iconWrapper} + &`]: {
-      marginLeft: SPACE.NONE,
+      marginLeft: space.none,
     },
   },
 })

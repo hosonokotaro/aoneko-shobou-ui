@@ -1,6 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css'
 
-import { FONT_COLOR } from '@/const/color'
+import { colors } from '~/styles/theme/colors'
 
 // NOTE: Reset CSS
 globalStyle(
@@ -23,7 +23,7 @@ globalStyle('html', {
 globalStyle('body', {
   fontFamily:
     "'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif",
-  color: FONT_COLOR.BLACK,
+  color: colors.text.primary,
 })
 
 globalStyle('button', {

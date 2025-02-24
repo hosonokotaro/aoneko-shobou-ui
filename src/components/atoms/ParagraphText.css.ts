@@ -1,8 +1,9 @@
 import { style } from '@vanilla-extract/css'
 
-import { BORDER_COLOR } from '@/const/color'
+import { colors } from '~/styles/theme/colors'
+import { space } from '~/styles/theme/spacing'
 
 export const paragraphText = style({
-  padding: '12px',
-  borderLeft: `2px solid ${BORDER_COLOR.LIGHT_GRAY}`,
+  padding: space.m,
+  borderLeft: `2px solid ${colors.border.light}`,
 })

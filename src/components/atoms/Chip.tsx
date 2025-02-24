@@ -1,9 +1,8 @@
 import * as Styles from '@/atoms/Chip.css'
-import { ChipBackgroundColor } from '@/const/color'
+import { Colors } from '~/styles/theme/colors'
 
 export type ChipProps = {
-  /** 利用したい状態を名前で受け取る */
-  status: ChipBackgroundColor
+  status: keyof Colors['chip']
   text: string
 }
 

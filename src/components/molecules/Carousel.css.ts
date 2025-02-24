@@ -1,8 +1,8 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 
-import { BULLET_COLOR } from '@/const/color'
-import { MEDIA_QUERY } from '@/const/mediaQuery'
-import { BLOCK_WIDTH, BUTTON_SIZE, SPACE } from '@/const/size'
+import { mediaQueries } from '~/styles/theme/breakpoints'
+import { colors } from '~/styles/theme/colors'
+import { sizes, space } from '~/styles/theme/spacing'
 
 export const carouselWrapper = style({
   position: 'relative',
@@ -36,21 +36,21 @@ globalStyle(`${carousel} .custom-bullet-style`, {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  width: BUTTON_SIZE.M.WIDTH,
-  height: BUTTON_SIZE.S.HEIGHT,
-  margin: `${SPACE.NONE} ${SPACE.S}`,
+  width: sizes.button.m.width,
+  height: sizes.button.s.height,
+  margin: `${space.none} ${space.s}`,
 
   '@media': {
-    [MEDIA_QUERY.MOBILE]: {
+    [mediaQueries.down.mobile]: {
       display: 'none',
     },
   },
 })
 
 globalStyle(`${carousel} .custom-bullet-style .inner`, {
-  width: BLOCK_WIDTH.FULL,
+  width: sizes.width.full,
   height: '4px',
-  background: BULLET_COLOR.DEFAULT,
+  background: colors.bullet.default,
 })
 
 globalStyle(`${carousel} .custom-bullet-style-active`, {
@@ -59,5 +59,5 @@ globalStyle(`${carousel} .custom-bullet-style-active`, {
 })
 
 globalStyle(`${carousel} .custom-bullet-style-active .inner`, {
-  background: BULLET_COLOR.ACTIVE,
+  background: colors.bullet.active,
 })

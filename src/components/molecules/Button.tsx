@@ -1,18 +1,19 @@
 import { ComponentProps, MouseEventHandler } from 'react'
 
 import { Anchor } from '@/atoms/Anchor'
-import { ButtonBackgroundColor } from '@/const/color'
 import { Rotate } from '@/const/common'
-import { InlineSize } from '@/const/size'
 import * as Styles from '@/molecules/Button.css'
 import { Icon } from '@/molecules/Icon'
+
+type ButtonSize = 's' | 'm' | 'l' | 'xl' | 'xxl'
+type ButtonColor = 'DEFAULT' | 'EXTERNAL' | 'DEFAULT_CURRENT'
 
 export type ButtonProps = {
   dataStyleProps?: Partial<Styles.DataStyleProps>
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
   text?: string
-  buttonSize: InlineSize
-  buttonColor: ButtonBackgroundColor
+  buttonSize: ButtonSize
+  buttonColor: ButtonColor
   iconKind?: ComponentProps<typeof Icon>['iconKind']
   iconRotate?: Rotate
   /** Button 要素ではなく Anchor 要素として表現する場合 */
@@ -54,15 +55,15 @@ export const Button = ({
               <Icon
                 dataIconProps={{
                   'data-rotate': iconRotate,
-                  'data-fill-color': 'WHITE',
+                  'data-fill-color': 'white',
                   'data-size':
-                    buttonSize === 'XXL' ||
-                    buttonSize === 'XL' ||
-                    buttonSize === 'L'
-                      ? 'XXL'
-                      : buttonSize === 'M'
-                      ? 'XL'
-                      : 'L',
+                    buttonSize === 'xxl' ||
+                    buttonSize === 'xl' ||
+                    buttonSize === 'l'
+                      ? 'xxl'
+                      : buttonSize === 'm'
+                      ? 'xl'
+                      : 'l',
                 }}
                 iconKind={iconKind}
               />
@@ -89,15 +90,15 @@ export const Button = ({
               <Icon
                 dataIconProps={{
                   'data-rotate': iconRotate,
-                  'data-fill-color': 'WHITE',
+                  'data-fill-color': 'white',
                   'data-size':
-                    buttonSize === 'XXL' ||
-                    buttonSize === 'XL' ||
-                    buttonSize === 'L'
-                      ? 'XXL'
-                      : buttonSize === 'M'
-                      ? 'XL'
-                      : 'L',
+                    buttonSize === 'xxl' ||
+                    buttonSize === 'xl' ||
+                    buttonSize === 'l'
+                      ? 'xxl'
+                      : buttonSize === 'm'
+                      ? 'xl'
+                      : 'l',
                 }}
                 iconKind={iconKind}
               />

@@ -20,7 +20,7 @@ export const AnchorText = ({ text, href, target }: AnchorTextProps) => {
       <span className={Styles.text}>{text}</span>
       {target === '_blank' && (
         <Icon
-          dataIconProps={{ 'data-fill-color': 'LINK', 'data-size': 'M' }}
+          dataIconProps={{ 'data-fill-color': 'LINK', 'data-size': 'm' }}
           iconKind="OPEN_IN_NEW"
         />
       )}

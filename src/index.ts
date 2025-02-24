@@ -18,25 +18,7 @@ export type { ShopMapProps } from '@/atoms/ShopMap'
 export { ShopMap } from '@/atoms/ShopMap'
 export type { TextAreaProps } from '@/atoms/TextArea'
 export { TextArea } from '@/atoms/TextArea'
-export {
-  BACKGROUND_COLOR,
-  BASE_COLOR,
-  BORDER_COLOR,
-  BUTTON_BACKGROUND_COLOR,
-  CHIP_BACKGROUND_COLOR,
-  FONT_COLOR,
-} from '@/const/color'
 export { ICON_KIND, TRANSITION_TIME } from '@/const/common'
-export { BREAK_POINTS, MATCH_MEDIA, MEDIA_QUERY } from '@/const/mediaQuery'
-export {
-  BLOCK_WIDTH,
-  BORDER_RADIUS,
-  BUTTON_SIZE,
-  FONT_WEIGHT,
-  INLINE_SIZE,
-  SPACE,
-  TABLE_TWO_COLUMN,
-} from '@/const/size'
 export { useIsomorphicEffect } from '@/hooks/useIsomorphicEffect'
 export { useMatchMedia } from '@/hooks/useMatchMedia'
 export type { AnchorTextProps } from '@/molecules/AnchorText'
@@ -54,3 +36,9 @@ export { Icon } from '@/molecules/Icon'
 export type { ScheduleListProps } from '@/molecules/ScheduleList'
 export { ScheduleList } from '@/molecules/ScheduleList'
 export * from '~/globalStyle.css'
+export type { Breakpoints, MediaQueries } from '~/styles/theme/breakpoints'
+export { breakpoints, mediaQueries } from '~/styles/theme/breakpoints'
+export type { BaseColors, Colors } from '~/styles/theme/colors'
+export { baseColors, colors } from '~/styles/theme/colors'
+export type { FontWeight, Radius, Sizes, Space } from '~/styles/theme/spacing'
+export { fontWeight, radius, sizes, space } from '~/styles/theme/spacing'

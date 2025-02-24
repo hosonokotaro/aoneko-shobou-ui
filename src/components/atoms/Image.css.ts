@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css'
 
-import { BASE_COLOR, BORDER_COLOR } from '@/const/color'
-import { BLOCK_WIDTH } from '@/const/size'
+import { colors } from '~/styles/theme/colors'
+import { sizes } from '~/styles/theme/spacing'
 
 export type DataStyleProps = {
   'data-parent-component': 'Carousel'
@@ -12,21 +12,21 @@ export type DataStyleProps = {
 const MAX_WIDTH = '749px'
 
 export const image = style({
-  maxWidth: BLOCK_WIDTH.FULL,
+  maxWidth: sizes.width.full,
   height: 'auto',
 
   selectors: {
     '&[data-parent-component="Carousel"]': {
-      width: BLOCK_WIDTH.FULL,
+      width: sizes.width.full,
       maxWidth: MAX_WIDTH,
       height: '100%',
       objectFit: 'cover',
     },
     '&[data-photo-style="1"]': {
-      border: `8px solid ${BORDER_COLOR.LIGHT_GRAY}`,
+      border: `8px solid ${colors.border.light}`,
 
       // NOTE: ここでしか利用しないのでハードコードで対応する
-      background: BASE_COLOR.LIGHT_GRAY,
+      background: colors.background.secondary,
     },
   },
 })
