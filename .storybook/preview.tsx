@@ -16,6 +16,7 @@ const preview: Preview = {
       viewports: INITIAL_VIEWPORTS,
     },
   },
+
   decorators: [
     (Story) => (
       <>
@@ -24,6 +25,8 @@ const preview: Preview = {
       </>
     ),
   ],
+
+  tags: ['autodocs']
 }
 
 export default preview

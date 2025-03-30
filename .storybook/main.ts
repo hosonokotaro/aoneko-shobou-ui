@@ -16,9 +16,7 @@ const config: StorybookConfig = {
       legacyRootApi: true,
     },
   },
-  docs: {
-    autodocs: true
-  },
+  docs: {},
   typescript: {
     reactDocgen: 'react-docgen-typescript',
   },
