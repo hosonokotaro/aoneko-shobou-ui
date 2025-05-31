@@ -90,6 +90,7 @@ export const timeframe = style({
 export const text = style({
   display: 'inline',
   wordBreak: 'break-all',
+  whiteSpace: 'pre-wrap',
 
   selectors: {
     [`${scheduleList}[data-summary="1"] &`]: {
