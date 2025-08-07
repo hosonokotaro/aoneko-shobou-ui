@@ -11,10 +11,70 @@ updates:
     schedule:
       interval: 'weekly'
     commit-message:
-      prefix: 'fix:'
+      prefix: 'dependabot:'
     open-pull-requests-limit: 10
     target-branch: 'master'
     versioning-strategy: 'lockfile-only'
     rebase-strategy: 'auto'
     registries:
       - github-packages
+    groups:
+      storybook-ecosystem:
+        patterns:
+          - '@storybook/*'
+          - 'storybook'
+          - '@chromatic-com/storybook'
+          - 'chromatic'
+          - 'eslint-plugin-storybook'
+        update-types:
+          - 'minor'
+          - 'patch'
+      eslint-ecosystem:
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+          - '@typescript-eslint/*'
+        exclude-patterns:
+          - 'eslint-plugin-storybook'
+        update-types:
+          - 'minor'
+          - 'patch'
+      babel-ecosystem:
+        patterns:
+          - '@babel/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      types-ecosystem:
+        patterns:
+          - '@types/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      vite-ecosystem:
+        patterns:
+          - 'vite'
+          - '@vitejs/*'
+          - 'vite-*'
+          - '@vanilla-extract/vite-plugin'
+        update-types:
+          - 'minor'
+          - 'patch'
+      typescript-ecosystem:
+        patterns:
+          - 'typescript'
+          - 'ts-patch'
+          - 'tslib'
+          - 'typescript-transform-paths'
+        update-types:
+          - 'minor'
+          - 'patch'
+      dev-tools:
+        patterns:
+          - 'dotenv'
+          - 'prettier'
+          - 'release-it'
+          - '@svgr/cli'
+        update-types:
+          - 'minor'
+          - 'patch'
