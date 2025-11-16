@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { createVar, style } from '@vanilla-extract/css'
 
 import { BACKGROUND_COLOR } from '@/const/color'
 import { MEDIA_QUERY } from '@/const/mediaQuery'
@@ -35,6 +35,8 @@ export const globalNavigationWrapper = style({
   },
 })
 
+export const navigationItemCount = createVar()
+
 export const globalNavigation = style({
   display: 'none',
   justifyContent: 'space-between',
@@ -51,15 +53,12 @@ export const globalNavigation = style({
     [MEDIA_QUERY.TABLET]: {
       flexDirection: 'column',
       alignItems: 'flex-end',
-      height: `calc((${BUTTON_SIZE.M.HEIGHT} * 6) + (${SPACE.L} * 5))`,
+      height: `calc((${BUTTON_SIZE.M.HEIGHT} * ${navigationItemCount}) + (${SPACE.L} * (${navigationItemCount} - 1)))`,
       marginBottom: SPACE.L,
       borderRadius: BORDER_RADIUS.NONE,
     },
   },
 })
-
-// NOTE: ここでしか利用しないのでハードコードで対応する
-const MOBILE_NAVIGATION_HEIGHT = '336px'
 
 export const toggleButtonWrapper = style({
   display: 'none',
@@ -68,7 +67,7 @@ export const toggleButtonWrapper = style({
     [MEDIA_QUERY.TABLET]: {
       display: 'flex',
       justifyContent: 'flex-end',
-      marginTop: MOBILE_NAVIGATION_HEIGHT,
+      marginTop: `calc((${BUTTON_SIZE.M.HEIGHT} * ${navigationItemCount}) + (${SPACE.L} * (${navigationItemCount} - 1)) + ${SPACE.L})`,
       opacity: 0.75,
 
       selectors: {

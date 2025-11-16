@@ -1,3 +1,4 @@
+import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { map } from 'lodash-es'
 import { SetStateAction } from 'react'
 import { Dispatch, MouseEvent } from 'react'
@@ -50,7 +51,12 @@ export const GlobalNavigation = ({
       className={Styles.globalNavigationWrapper}
       data-open-navigation={Number(isOpenNavigation)}
     >
-      <nav className={Styles.globalNavigation}>
+      <nav
+        className={Styles.globalNavigation}
+        style={assignInlineVars({
+          [Styles.navigationItemCount]: String(navigationList.length),
+        })}
+      >
         {map(navigationList, (navigationItem, index) => {
           return (
             <Button
@@ -81,7 +87,12 @@ export const GlobalNavigation = ({
           )
         })}
       </nav>
-      <div className={Styles.toggleButtonWrapper}>
+      <div
+        className={Styles.toggleButtonWrapper}
+        style={assignInlineVars({
+          [Styles.navigationItemCount]: String(navigationList.length),
+        })}
+      >
         <Button
           onClick={() => handleSetIsOpenNavigation(!isOpenNavigation)}
           buttonSize="M"
