@@ -25,4 +25,5 @@
 
 - ルール本文は `docs/ai` のみを更新する
 - `CLAUDE.md` / `AGENTS.md` / `.clinerules` は参照先を示す最小構成を維持する
+- `.github/copilot-instructions.md` は Copilot がファイル参照不可のため要約を記載する。ルール変更時は合わせて反映する
 - 重複が発生した場合は `docs/ai` 側を正本とする
