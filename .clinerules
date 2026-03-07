@@ -1,6 +1,6 @@
-# CLAUDE.md
+# CLINE.md
 
-このファイルは Claude 用の入口です。詳細ルールは `docs/ai` を参照してください。
+このファイルは Cline 用の入口です。詳細ルールは `docs/ai` を参照してください。
 
 ## 参照順
 
@@ -10,4 +10,4 @@
 4. `docs/ai/architecture.md`
 5. `docs/ai/coding-rules.md`
 6. `docs/ai/workflow.md`
-7. `docs/ai/agent-specific/claude.md`
+7. `docs/ai/agent-specific/cline.md`
