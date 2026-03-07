@@ -16,7 +16,7 @@
 
 ## リリース関連
 
-- `npm run tag`: release-it によるタグ作成とリリース
+- `npm run tag`: タグの作成と push のみ行う（バージョン変更・コミットは行わない）。事前に PR でバージョンバンプを master にマージしておくこと
 - `npm run chromatic`: Chromatic へデプロイ
 
 ## 推奨チェック順
