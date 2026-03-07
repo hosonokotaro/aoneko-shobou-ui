@@ -1,0 +1,13 @@
+# CLAUDE.md
+
+このファイルは Claude 用の入口です。詳細ルールは `docs/ai` を参照してください。
+
+## 参照順
+
+1. `docs/ai/README.md`
+2. `docs/ai/project-context.md`
+3. `docs/ai/commands.md`
+4. `docs/ai/architecture.md`
+5. `docs/ai/coding-rules.md`
+6. `docs/ai/workflow.md`
+7. `docs/ai/agent-specific/claude.md`
