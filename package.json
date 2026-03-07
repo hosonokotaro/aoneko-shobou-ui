@@ -20,7 +20,7 @@
     "build-storybook": "storybook build",
     "svg-to-tsx": "npx @svgr/cli -d ./src/components/atoms/IconSvg ./svg",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "tag": "release-it --ci"
+    "tag": "release-it --ci --no-increment"
   },
   "repository": {
     "type": "git",
