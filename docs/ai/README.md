@@ -1,7 +1,7 @@
 # AI Rules Hub
 
 このディレクトリは、AI エージェント向けルールの一次情報です。
-ルールの更新はここで行い、各エージェント用ファイルは参照の入口として扱います。
+ルールの更新はここで行い、このディレクトリ内のファイルを正本とします。
 
 ## 読み順
 
@@ -10,7 +10,6 @@
 3. `architecture.md`
 4. `coding-rules.md`
 5. `workflow.md`
-6. `agent-specific/<agent>.md`
 
 ## ファイル構成
 
@@ -19,7 +18,6 @@
 - `architecture.md`: 実装構造と設計方針
 - `coding-rules.md`: 実装時の規約
 - `workflow.md`: 作業プロセスと完了条件
-- `agent-specific/`: エージェントごとの差分ルール
 
 ## 運用ルール
 
