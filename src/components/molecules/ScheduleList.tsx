@@ -1,7 +1,6 @@
 import 'dayjs/locale/ja'
 
 import dayjs from 'dayjs'
-import { map } from 'lodash-es'
 import { useCallback } from 'react'
 
 import * as Styles from '@/molecules/ScheduleList.css'
@@ -37,7 +36,7 @@ export const ScheduleList = ({
   return (
     <div className={Styles.scheduleList} data-summary={Number(isSummary)}>
       {!scheduleList.length && <div>準備中です</div>}
-      {map(scheduleList, (beforeScheduleItem, index) => {
+      {scheduleList.map((beforeScheduleItem, index) => {
         return (
           <div key={index} className={Styles.scheduleItem}>
             <div className={Styles.period}>

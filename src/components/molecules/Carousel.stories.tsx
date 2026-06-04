@@ -24,11 +24,31 @@ const imageProps2: ImageProps = {
   loading: 'lazy',
 } as const
 
+const imageProps3: ImageProps = {
+  src: 'images/home_main_05.jpg',
+  alt: 'test',
+  width: 749,
+  height: 295,
+  loading: 'lazy',
+} as const
+
 const imageList = [imageProps1, imageProps2]
+
+export const OneImage = {
+  args: {
+    imageList: [imageProps1],
+  },
+}
 
 export const Default = {
   args: {
     imageList,
+  },
+}
+
+export const ThreeImages = {
+  args: {
+    imageList: [imageProps1, imageProps2, imageProps3],
   },
 }
 

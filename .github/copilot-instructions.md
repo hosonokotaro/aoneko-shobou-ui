@@ -14,7 +14,6 @@
 - `react` / `react-dom`
 - `@vanilla-extract/css` / `@vanilla-extract/dynamic`
 - `dayjs`
-- `lodash-es`
 - `swiper`
 - `@googlemaps/js-api-loader`
 

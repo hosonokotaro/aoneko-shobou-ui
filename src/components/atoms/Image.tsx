@@ -16,6 +16,7 @@ export type ImageProps = {
   height?: number
   /** img の loading param を受け取る */
   loading?: LoadingParams
+  draggable?: boolean
 }
 
 export const Image = ({
@@ -25,6 +26,7 @@ export const Image = ({
   width,
   height,
   loading,
+  draggable,
 }: ImageProps) => {
   const loadingParam =
     loading === 'eager'
@@ -42,6 +44,7 @@ export const Image = ({
       width={width}
       height={height}
       loading={loadingParam}
+      draggable={draggable}
     />
   )
 }

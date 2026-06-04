@@ -1,5 +1,4 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic'
-import { map } from 'lodash-es'
 import { SetStateAction } from 'react'
 import { Dispatch, MouseEvent } from 'react'
 
@@ -57,7 +56,7 @@ export const GlobalNavigation = ({
           [Styles.navigationItemCount]: String(navigationList.length),
         })}
       >
-        {map(navigationList, (navigationItem, index) => {
+        {navigationList.map((navigationItem, index) => {
           return (
             <Button
               key={index}
