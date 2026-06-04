@@ -1,4 +1,3 @@
-import { map } from 'lodash-es'
 import { Fragment } from 'react'
 
 import * as Styles from '@/molecules/CommonList.css'
@@ -16,7 +15,7 @@ export type CommonListProps = {
 export const CommonList = ({ commonList }: CommonListProps) => {
   return (
     <dl className={Styles.commonList}>
-      {map(commonList, (commonItem, index) => {
+      {commonList.map((commonItem, index) => {
         return (
           <Fragment key={index}>
             <dt className={Styles.title}>{commonItem.title}</dt>

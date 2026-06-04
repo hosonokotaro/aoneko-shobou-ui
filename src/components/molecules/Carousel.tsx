@@ -1,7 +1,6 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-import { map } from 'lodash-es'
 import { ReactElement } from 'react'
 import { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -42,7 +41,7 @@ export const Carousel = ({ imageList, bottomContent }: CarouselProps) => {
         centeredSlides={true}
         spaceBetween={40}
       >
-        {map(imageList, ({ src, alt, width, height, loading }, index) => (
+        {imageList.map(({ src, alt, width, height, loading }, index) => (
           <SwiperSlide key={index} className={Styles.slide}>
             <Image
               dataStyleProps={{ 'data-parent-component': 'Carousel' }}
