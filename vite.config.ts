@@ -21,6 +21,8 @@ export default defineConfig({
         'react',
         'react-dom',
         'swiper',
+        'swiper/react',
+        'swiper/modules',
       ],
       output: {
         globals: {
@@ -31,6 +33,8 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           swiper: 'Swiper',
+          'swiper/react': 'SwiperReact',
+          'swiper/modules': 'SwiperModules',
         },
       },
       plugins: [],

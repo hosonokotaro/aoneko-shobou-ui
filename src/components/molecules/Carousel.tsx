@@ -2,7 +2,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { ReactElement } from 'react'
-import { Autoplay, Pagination } from 'swiper'
+import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Image, ImageProps } from '@/atoms/Image'
@@ -24,7 +24,7 @@ export const Carousel = ({ imageList, bottomContent }: CarouselProps) => {
       <Swiper
         className={Styles.carousel}
         modules={[Autoplay, Pagination]}
-        loop={true}
+        loop={imageList.length >= 3}
         slidesPerView={1}
         speed={1200}
         autoplay={{
@@ -38,7 +38,7 @@ export const Carousel = ({ imageList, bottomContent }: CarouselProps) => {
           bulletClass: 'custom-bullet-style',
           bulletActiveClass: 'custom-bullet-style-active',
         }}
-        centeredSlides={true}
+        centeredSlides={false}
         spaceBetween={40}
       >
         {imageList.map(({ src, alt, width, height, loading }, index) => (
@@ -50,6 +50,7 @@ export const Carousel = ({ imageList, bottomContent }: CarouselProps) => {
               width={width}
               height={height}
               loading={loading}
+              draggable={false}
             />
           </SwiperSlide>
         ))}
