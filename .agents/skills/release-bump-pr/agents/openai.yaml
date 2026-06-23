@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Bump PR"
+  short_description: "Prepare release version bump PRs"
+  default_prompt: "Use $release-bump-pr to prepare the next version bump branch, checks, and draft PR for this repository."
