@@ -36,6 +36,7 @@ Do not use this skill when:
    - The release target is the current `master` state.
    - If not already on `master`, switch: `git checkout master`.
    - Update: `git pull --ff-only`.
+   - Fetch tags: `git fetch --tags --prune`.
    - If checkout or pull is blocked by local changes or divergence, stop and ask the user.
 
 3. Inspect the unreleased delta.
