@@ -1,5 +1,5 @@
 import { LoaderOptions } from '@googlemaps/js-api-loader'
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 import { ShopMap } from '@/atoms/ShopMap'
 import { mapKey } from '~/config/environment'

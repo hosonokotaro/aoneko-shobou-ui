@@ -4,17 +4,14 @@ const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
-    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
+    '@storybook/addon-docs'
   ],
   framework: {
     name: '@storybook/react-vite',
-    options: {
-      legacyRootApi: true,
-    },
+    options: {},
   },
   docs: {},
   typescript: {

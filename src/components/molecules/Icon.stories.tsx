@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/react'
+import { Meta } from '@storybook/react-vite'
 
 import { ICON_KIND } from '@/const/common'
 import { Icon } from '@/molecules/Icon'

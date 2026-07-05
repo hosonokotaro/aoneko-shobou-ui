@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "target": "ES6",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowJs": true,
     "declaration": true,
     "declarationDir": "./dist/types",
