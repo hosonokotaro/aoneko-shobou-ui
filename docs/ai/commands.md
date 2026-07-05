@@ -6,7 +6,8 @@
 - `npm run lint`: ESLint を自動修正付きで実行
 - `npm run typecheck`: TypeScript の型検査を実行
 - `npm run format-code`: Prettier で整形
-- `npm test`: 現在は `npm run lint` のエイリアス
+- `npm test`: vitest でユニットテストを実行
+- `npm run test:watch`: vitest を watch モードで実行
 - `npm run storybook`: Storybook 開発サーバーを起動
 - `npm run build-storybook`: Storybook をビルド
 
@@ -23,4 +24,5 @@
 
 1. `npm run typecheck`
 2. `npm run lint`
-3. `npm run build`
+3. `npm test`
+4. `npm run build`
