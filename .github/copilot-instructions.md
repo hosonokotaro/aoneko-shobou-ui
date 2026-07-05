@@ -39,5 +39,6 @@
 
 1. `npm run typecheck` — TypeScript 型検査
 2. `npm run lint` — ESLint（自動修正付き）
-3. `npm run build` — ビルド確認
-4. UI 変更時は Storybook で表示確認
+3. `npm test` — vitest によるユニットテスト
+4. `npm run build` — ビルド確認
+5. UI 変更時は Storybook で表示確認
