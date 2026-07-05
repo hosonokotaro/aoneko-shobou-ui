@@ -1,6 +1,6 @@
 import React from 'react'
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import type { Preview } from '@storybook/react'
+import { INITIAL_VIEWPORTS } from 'storybook/viewport'
+import type { Preview } from '@storybook/react-vite'
 
 import '../src/globalStyle.css'
 
@@ -13,7 +13,7 @@ const preview: Preview = {
       },
     },
     viewport: {
-      viewports: INITIAL_VIEWPORTS,
+      options: INITIAL_VIEWPORTS,
     },
   },
 
