@@ -13,6 +13,7 @@
     "remove-build": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
     "prepublishOnly": "npm run build",
     "lint": "eslint './src/**/*.{ts,tsx}' --fix",
+    "lint:check": "eslint './src/**/*.{ts,tsx}'",
     "format-code": "prettier --write './src/**/**.{ts,tsx}'",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -4,6 +4,7 @@
 
 - `npm run build`: ライブラリをビルド
 - `npm run lint`: ESLint を自動修正付きで実行
+- `npm run lint:check`: ESLint を自動修正なしで実行（CI 用）
 - `npm run typecheck`: TypeScript の型検査を実行
 - `npm run format-code`: Prettier で整形
 - `npm test`: vitest でユニットテストを実行
